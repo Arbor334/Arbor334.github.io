@@ -35,22 +35,6 @@
 
 <body>
 <script src="/js/cursor.js"></script>
-<div id="he-plugin-standard"></div>
-<script>
-WIDGET = {
-  CONFIG: {
-    "layout": 2,
-    "width": "230",
-    "height": "270",
-    "background": 1,
-    "dataColor": "FFFFFF",
-    "borderRadius": 5,
-    "key": "H0Cm4SPIBV"
-  }
-}
-</script>
-<script src="https://apip.weatherdt.com/standard/static/js/weather-standard-common.js?v=2.0"></script>
-
 
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
@@ -1042,6 +1026,23 @@ $(function () {
     
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
+<!-- 天气接口控件  -->
+
+  <!-- 天气接口    -->
+<script type="text/javascript">
+  WIDGET = {FID: '1tFpFZ5Mtj'}
+</script>
+<!-- <script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script> -->
+
+<script type="text/javascript">
+  //只在桌面版网页启用特效
+  var windowWidth = $(window).width();
+  if (windowWidth > 768) {
+      document.write('<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"><\/script>');
+  }
+  </script>
+
+
 
     
 
