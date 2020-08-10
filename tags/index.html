@@ -34,6 +34,24 @@
 
 
 <body>
+<script src="/js/cursor.js"></script>
+<div id="he-plugin-standard"></div>
+<script>
+WIDGET = {
+  CONFIG: {
+    "layout": 2,
+    "width": "230",
+    "height": "270",
+    "background": 1,
+    "dataColor": "FFFFFF",
+    "borderRadius": 5,
+    "key": "H0Cm4SPIBV"
+  }
+}
+</script>
+<script src="https://apip.weatherdt.com/standard/static/js/weather-standard-common.js?v=2.0"></script>
+
+
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
@@ -298,10 +316,43 @@
             </div>
             <div class="tag-chips">
                 
+                
+                <a href="/tags/%E7%AE%97%E6%B3%95/" title="算法: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="算法" style="background-color: #F9EBEA;">算法
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
             </div>
         </div>
     </div>
 </div>
+
+    
+    <link rel="stylesheet" type="text/css" href="/libs/jqcloud/jqcloud.css">
+<style type="text/css">
+    #tag-wordcloud {
+        width: 100%;
+        height: 300px;
+    }
+</style>
+
+<div class="container" data-aos="fade-up">
+    <div class="card">
+        <div id="tag-wordcloud" class="card-content"></div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/libs/jqcloud/jqcloud-1.0.4.min.js"></script>
+<script type="text/javascript">
+    
+
+    $('#tag-wordcloud').jQCloud([{"text":"算法","weight":1,"link":"/tags/算法/"}], {
+        autoResize: true
+    });
+</script>
 
     
 
@@ -496,23 +547,6 @@ $(function () {
         document.hidden?(document.title="ヽ(●-`Д´-)ノ你要玩捉迷藏嘛",clearTimeout(st)):(document.title="(Ő∀Ő3)ノ好哦！",st=setTimeout(function(){document.title=OriginTitile},3e3))
     })
 </script>
-<script src="/js/cursor.js"></script>
-<div id="he-plugin-standard"></div>
-<script>
-WIDGET = {
-  CONFIG: {
-    "layout": 2,
-    "width": "230",
-    "height": "270",
-    "background": 1,
-    "dataColor": "FFFFFF",
-    "borderRadius": 5,
-    "key": "JYR8zj0kNy"
-  }
-}
-</script>
-<script src="https://apip.weatherdt.com/standard/static/js/weather-standard-common.js?v=2.0"></script>
-
 
 </body>
 

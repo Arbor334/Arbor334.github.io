@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, 乔木_Arbor1">
+    <meta name="keywords" content="克鲁斯卡尔">
     <meta name="description" content="个人博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | 乔木_Arbor1</title>
+    <title>克鲁斯卡尔算法 | 乔木_Arbor1</title>
     <link rel="icon" type="image/jpeg" href="/img/header.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -264,12 +264,12 @@ WIDGET = {
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">克鲁斯卡尔算法</h1>
                 </div>
             </div>
         </div>
@@ -384,12 +384,25 @@ WIDGET = {
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                算法
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -414,15 +427,54 @@ WIDGET = {
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <h2 id="克鲁斯卡尔-（Kruskal）算法求最小生成树"><a href="#克鲁斯卡尔-（Kruskal）算法求最小生成树" class="headerlink" title="克鲁斯卡尔 （Kruskal）算法求最小生成树"></a>克鲁斯卡尔 （Kruskal）算法求最小生成树</h2><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/861/">模板题木链接</a></p>
+<h2 id="克鲁斯卡尔算法概括"><a href="#克鲁斯卡尔算法概括" class="headerlink" title="克鲁斯卡尔算法概括"></a>克鲁斯卡尔算法概括</h2><blockquote>
+<p>文字来自蓝书【算法竞赛进阶指南】</p>
+<p>克鲁斯卡尔算法总是==维护无向图的最小生成森林==</p>
+<p>最初可认为森林由0条边构成，每个节点各自构成仅包含一个节点的树。</p>
+<p>在任何时刻，克鲁斯卡尔算法从剩余的边中选择一条权值最小的，并且这条边的两个端点属于生成森林中两颗不同的树，把该边加入生成森林。</p>
+</blockquote>
+<h2 id="算法流程"><a href="#算法流程" class="headerlink" title="算法流程"></a>算法流程</h2><blockquote>
+<p>【1】、建立并查集，每个点各自构成一个集合</p>
+<p>【2】、把所有边按照权值从小到大排序，依次扫描每条边（x,y,z）</p>
+<p>【3】、若x,y属于同一集合，则忽略这条边，继续扫描下一条边</p>
+<p>【4】、否则，合并x，y所在的集合，并把z累加到ans中</p>
+<p>【5】、所有边都扫描完成后，第四步处理过的边就构成了最小生成树</p>
+</blockquote>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><pre class=" language-c++"><code class="language-c++">#include<iostream>
+#include<stdio.h>
+#include<algorithm>
+using namespace std;
+const int N=200010;
+struct rec&#123;int x,y,z;&#125;e[N*2];
+int fa[N],n,m,ans;
+bool operator<(rec a,rec b)&#123;
+    return a.z<b.z;
+&#125;
+int get(int x)&#123; //并查集
+    if(x==fa[x]) return x;
+    return fa[x]=get(fa[x]);
+&#125;
+int main()&#123;
+    int k=0;
+    cin>>n>>m;
+    for(int i=1;i<=m;i++)&#123;
+        cin>>e[i].x>>e[i].y>>e[i].z;
+    &#125;
+    for(int i=1;i<=n;i++)fa[i]=i; //并查集的初始化
+    sort(e+1,e+m+1);
+    for(int i=1;i<=m;i++)&#123;//扫描m条边
+        int x=get(e[i].x); //找到x边的父亲节点
+        int y=get(e[i].y);//找到y边的父亲节点
+        if(x==y)continue; //如果他们的父节点是一个，说明x，y之间是连通的
+        fa[x]=y; //不联通就让x的父节点是y 
+        k++;//走过的有效边数增加
+        ans+=e[i].z; //权值加上
+    &#125;
+    if(k<n-1)cout<<"impossible"<<endl; //[Tip]： n个点的最小生成树是n-1条边
+    else
+    cout<<ans<<endl;
+&#125;</code></pre>
 
             </div>
             <hr/>
@@ -448,7 +500,7 @@ WIDGET = {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://arbor334.github.io/2020/081016107.html">https://arbor334.github.io/2020/081016107.html</a>
+                    <a href="https://arbor334.github.io/2020/081051182.html">https://arbor334.github.io/2020/081051182.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -485,7 +537,11 @@ WIDGET = {
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -651,9 +707,10 @@ WIDGET = {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/081051182.html">
                     <div class="card-image">
@@ -676,9 +733,9 @@ WIDGET = {
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-10
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -691,6 +748,7 @@ WIDGET = {
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -706,7 +764,7 @@ WIDGET = {
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2020/081016107.html">
@@ -736,7 +794,6 @@ WIDGET = {
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
