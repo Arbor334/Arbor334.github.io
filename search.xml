@@ -4,31 +4,6 @@
   
     
     <entry>
-      <title>克鲁斯卡尔算法</title>
-      <link href="/2020/081051182.html"/>
-      <url>/2020/081051182.html</url>
-      
-        <content type="html"><![CDATA[<h2 id="克鲁斯卡尔-（Kruskal）算法求最小生成树"><a href="#克鲁斯卡尔-（Kruskal）算法求最小生成树" class="headerlink" title="克鲁斯卡尔 （Kruskal）算法求最小生成树"></a>克鲁斯卡尔 （Kruskal）算法求最小生成树</h2><p><a href="https://www.acwing.com/problem/content/description/861/">模板题木链接</a></p><h2 id="克鲁斯卡尔算法概括"><a href="#克鲁斯卡尔算法概括" class="headerlink" title="克鲁斯卡尔算法概括"></a>克鲁斯卡尔算法概括</h2><blockquote><p>文字来自蓝书【算法竞赛进阶指南】</p><p>克鲁斯卡尔算法总是==维护无向图的最小生成森林==</p><p>最初可认为森林由0条边构成，每个节点各自构成仅包含一个节点的树。</p><p>在任何时刻，克鲁斯卡尔算法从剩余的边中选择一条权值最小的，并且这条边的两个端点属于生成森林中两颗不同的树，把该边加入生成森林。</p></blockquote><h2 id="算法流程"><a href="#算法流程" class="headerlink" title="算法流程"></a>算法流程</h2><blockquote><p>【1】、建立并查集，每个点各自构成一个集合</p><p>【2】、把所有边按照权值从小到大排序，依次扫描每条边（x,y,z）</p><p>【3】、若x,y属于同一集合，则忽略这条边，继续扫描下一条边</p><p>【4】、否则，合并x，y所在的集合，并把z累加到ans中</p><p>【5】、所有边都扫描完成后，第四步处理过的边就构成了最小生成树</p></blockquote><h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><pre class=" language-c++"><code class="language-c++">#include<iostream>#include<stdio.h>#include<algorithm>using namespace std;const int N=200010;struct rec&#123;int x,y,z;&#125;e[N*2];int fa[N],n,m,ans;bool operator<(rec a,rec b)&#123;    return a.z<b.z;&#125;int get(int x)&#123; //并查集    if(x==fa[x]) return x;    return fa[x]=get(fa[x]);&#125;int main()&#123;    int k=0;    cin>>n>>m;    for(int i=1;i<=m;i++)&#123;        cin>>e[i].x>>e[i].y>>e[i].z;    &#125;    for(int i=1;i<=n;i++)fa[i]=i; //并查集的初始化    sort(e+1,e+m+1);    for(int i=1;i<=m;i++)&#123;//扫描m条边        int x=get(e[i].x); //找到x边的父亲节点        int y=get(e[i].y);//找到y边的父亲节点        if(x==y)continue; //如果他们的父节点是一个，说明x，y之间是连通的        fa[x]=y; //不联通就让x的父节点是y         k++;//走过的有效边数增加        ans+=e[i].z; //权值加上    &#125;    if(k<n-1)cout<<"impossible"<<endl; //[Tip]： n个点的最小生成树是n-1条边    else    cout<<ans<<endl;&#125;</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> 算法 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 算法 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Hello World</title>
       <link href="/2020/081016107.html"/>
       <url>/2020/081016107.html</url>
