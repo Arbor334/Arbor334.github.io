@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>页内链接</title>
+      <link href="/2020/081360887.html"/>
+      <url>/2020/081360887.html</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>使用 <code>-[你自己可以取名字](#标题名字)</code><br>  比如说  你可以取的名字是 点击  想要跳转到页内的 二级标题名为 arbor<br> 那么 应该写成<code> -[点击](# arbor)</code><br>无论是 h1~h6标题 (都只有一个#) </p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> Makedown </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Makedown </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>background</title>
       <link href="/2020/081317546.html"/>
       <url>/2020/081317546.html</url>
