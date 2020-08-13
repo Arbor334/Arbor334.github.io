@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="树的直径, Arbor1&#39;s CodeHome">
+    <meta name="keywords" content="background, Arbor1&#39;s CodeHome">
     <meta name="description" content="个人博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>树的直径 | Arbor1&#39;s CodeHome</title>
+    <title>background | Arbor1&#39;s CodeHome</title>
     <link rel="icon" type="image/jpeg" href="/medias/header.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -224,12 +224,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">树的直径</h1>
+                    <h1 class="description center-align post-title">background</h1>
                 </div>
             </div>
         </div>
@@ -350,8 +350,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84/">
-                                <span class="chip bg-color">树的直径</span>
+                            <a href="/tags/Hexo/">
+                                <span class="chip bg-color">Hexo</span>
                             </a>
                         
                     </div>
@@ -362,8 +362,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/algorithm/" class="post-category">
-                                algorithm
+                            <a href="/categories/Hexo/" class="post-category">
+                                Hexo
                             </a>
                         
                     </div>
@@ -375,7 +375,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-08-12
+                    2020-08-13
                 </div>
                 
 
@@ -384,7 +384,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    93
                 </div>
                 
 
@@ -401,138 +401,19 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="树的直径"><a href="#树的直径" class="headerlink" title="树的直径"></a>树的直径</h1><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/U81904">模板题目链接</a></p>
-<h2 id="哲学三问"><a href="#哲学三问" class="headerlink" title="哲学三问"></a>哲学三问</h2><ul>
-<li>【1】、what ?  (什么是树的直径 )</li>
-</ul>
-<blockquote>
-<p>简单来说，树上的任意两点之间的最长距离就是树的直径</p>
+                <h2 id="修改背景"><a href="#修改背景" class="headerlink" title="修改背景"></a>修改背景</h2><blockquote>
+<p>我的主题是Matery </p>
+<p>找到 themes\Matery\source\css\matery.css</p>
+<p>搜索(ctrl+F)找到  body</p>
+<p>修改为如下样式</p>
 </blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/Arbor334/img/algorithm/longest_path_of_tree.jpg"></p>
-<ul>
-<li>【2】、why ？（为什么学习这个东西）</li>
-</ul>
-<blockquote>
-<p><del>提高自己的算法能力</del>  出题会遇到，遇到了就要解决，不解决就会丢分</p>
-</blockquote>
-<ul>
-<li>【3】、how ？ （怎么实现）</li>
-</ul>
-<blockquote>
-<p>第一种方案 Dp：</p>
-<blockquote>
-<p>优点：可以处理负权边的问题</p>
-<p>缺点：记录卡路径的信息效率低</p>
-<p>实现过程：</p>
-<p> 我们假设一号节点为根，“N个点N-1条边的无向图”可以看成有根树。</p>
-<p>设d[x]表示从节点x出发走向以x为根的子树，能够到达的最远节点的距离。</p>
-<p>设x的子节点为y1,y2,y3…, e(x,y)表示边权有</p>
-<p>d[x]=max(d[yi]+e(x,y))</p>
-<p>考虑对每个点x 求出经过x节点的最长链的长度F[x]，</p>
-<p>直径就是max 1≤x≤n（F[x]）</p>
-<p>求 F[x]: 对于x的任意两个节点 yi和yj 经过节点x的最长链的长度分四个部分： 边 (x,yi) 边 (x,yj)  yi到yi子树的最远距离 yj到yj子树的最远距离</p>
-<p>   F[x]=max（d[yi]+d[yj]+e(x,yi)+e(x,yj)）</p>
-<p>因为子节点将要循环到i时，d[x]存的就是从节点x出发走向</p>
-<p>以 yj（j&lt;i）为根的子树能够到达的最远节点的距离， 就是</p>
-<p>max（d[yj]+e(x,yj)）</p>
-<p>我们先用 d[x]+d[yi]+e(x,yi)更新F[x]，</p>
-<p>再用d[yi]+e(x,yi) 更新d[x]</p>
-</blockquote>
-<p>第二种方案 ：两次bfs</p>
-<blockquote>
-<p>优点：可以通过一个新的数组记录路径信息</p>
-<p>缺点：无法处理负边权</p>
-<p>实现流程：</p>
-<p>【1】、从任意节点出发，通过BFS对树进行一次遍历求出与出发点距离最远的节点,记为 p</p>
-<p>【2】、从节点 p 出发,通过 BFS 再进行一次遍历,求出与 p 距离最远的节点,记为 q。</p>
-<p>p 是一个节点的最远的一个端点，那么从 p 出发的最远的端点就是直径的另一个端点)</p>
-</blockquote>
-</blockquote>
-<h2 id="第一种解决方案-Dp"><a href="#第一种解决方案-Dp" class="headerlink" title="第一种解决方案 Dp"></a>第一种解决方案 Dp</h2><pre class=" language-c++"><code class="language-c++">#include<iostream>
-#include<stdio.h>
-#include<algorithm>
-using namespace std;
-const int N=5e6+10,M=2*N;
-int h[N],ver[N],ne[M],e[M],idx;
-bool st[N];
-int d[N],ans,n,x,y,z;
-void add(int x,int y,int z)&#123;
-    ver[++idx]=y,e[idx]=z,ne[idx]=h[x],h[x]=idx;
-&#125;
-void dp(int x)&#123;
-    st[x]=1;
-    for(int i=h[x];i;i=ne[i])&#123;
-        int y=ver[i];
-        if(st[y])continue; //判断是否已经经过该节点
-        dp(y); //继续向下寻找子节点
-        ans=max(ans,d[x]+d[y]+e[i]); //枚举从x节点出发的所有边，找到最远的内个
-        d[x]=max(d[x],d[y]+e[i]);//经过枚举后 d[x]就不一定是最长的了，要更新一下
-    &#125;
-&#125;
-int main()&#123;
-    cin>>n;
-    for(int i=0;i<n-1;i++)
-    &#123;
-        cin>>x>>y>>z;
-        add(x,y,z);
-        add(y,x,z);
-    &#125;
-    dp(1);
-    printf("%d\n",ans);
-&#125;</code></pre>
-<h2 id="第二种解决方案-bfs"><a href="#第二种解决方案-bfs" class="headerlink" title="第二种解决方案 bfs"></a>第二种解决方案 bfs</h2><pre class=" language-c++"><code class="language-c++">#include<iostream>
-#include<stdio.h>
-#include<cstring>
-#include<queue>
-#include<algorithm>
-using namespace std;
-const int N=1e6+10;
-int h[N],dist[N],ne[N*2],e[N*2],idx,ver[N*2];
-int n,p,q,d,maxd;
-bool st[N];
-void add(int a,int b,int c)&#123;
-    ver[++idx]=b,e[idx]=c,ne[idx]=h[a],h[a]=idx;
-&#125;
-int bfs(int u)&#123;
-    queue<int>q;
-    while(!q.empty())q.pop(); //注意每次都要清空
-    memset(st,0,sizeof st);
-    memset(dist,0,sizeof dist);
-    q.push(u);              //把根节点推进去
-    int x,max_num=0;       //max_num 找到最远的节点
-    while(!q.empty())&#123;
-        x=q.front();      //取出队首
-        q.pop();          //抛出队首
-        st[x]=1;       // 这个点我走过了
-        for(int i=h[x];i;i=ne[i])&#123;
-            int y=ver[i];    //子节点
-            if(st[y])continue;
-            st[y]=1;         //没走过 就修改为走过
-            dist[y]=dist[x]+e[i];  //从上往下走 就要进行累加 和dp不同
-            if(dist[y]>maxd)&#123;   //更新最大值 和最远点
-                maxd=dist[y];
-                max_num=y;
-            &#125;
-            q.push(y);  // 每个新的节点都要加入到队列中,有可能与该节点相连的路径是比较长的
-        &#125;
-    &#125;
-    return max_num;  //返回最远的点
-&#125;
-int main()&#123;
-    scanf("%d",&n);
-    for(int i=1;i<n;i++)&#123;
-        cin>>p>>q>>d;
-        add(p,q,d);
-        add(q,p,d);
-    &#125;
-    int u=bfs(1);
-    int s=bfs(u);
-//   printf("第一次遍历得到的节点 : %d\n",u);
-//     printf("第二次遍历得到的节点 : %d\n",s);
-//     printf("最长的距离是 %d\n",maxd);
-    printf("%d\n",maxd);
-    return 0;
-&#125;
+<pre class=" language-css"><code class="language-css">body &amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/* background-color: #eaeaea; */</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span><span class="token number">60</span>deg, <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">255</span>, <span class="token number">165</span>, <span class="token number">150</span>, <span class="token number">0.5</span><span class="token punctuation">)</span> <span class="token number">5%</span>, <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">0</span>, <span class="token number">228</span>, <span class="token number">255</span>, <span class="token number">0.35</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token number">0%</span> <span class="token number">0%</span> / cover, <span class="token url">url("")</span>, <span class="token url">url("")</span> <span class="token number">0</span>px <span class="token number">0</span>px<span class="token punctuation">;</span>// url 中最好是添加在网上有的图片弄到自己的图床上
+    <span class="token property">background-attachment</span><span class="token punctuation">:</span> fixed<span class="token punctuation">;</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#7F95D1</span><span class="token punctuation">;</span>
+&amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span>
 </code></pre>
 
             </div>
@@ -559,7 +440,7 @@ int main()&#123;
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://arbor334.github.io/2020/081227720.html">https://arbor334.github.io/2020/081227720.html</a>
+                    <a href="https://arbor334.github.io/2020/081317546.html">https://arbor334.github.io/2020/081317546.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -597,8 +478,8 @@ int main()&#123;
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84/">
-                                    <span class="chip bg-color">树的直径</span>
+                                <a href="/tags/Hexo/">
+                                    <span class="chip bg-color">Hexo</span>
                                 </a>
                             
                         </div>
@@ -1032,9 +913,10 @@ int main()&#123;
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/081317546.html">
                     <div class="card-image">
@@ -1059,9 +941,9 @@ body &amp;#123;
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1074,6 +956,7 @@ body &amp;#123;
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1092,24 +975,31 @@ body &amp;#123;
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/081217683.html">
+                <a href="/2020/081227720.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Markdown">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="树的直径">
                         
-                        <span class="card-title">Markdown</span>
+                        <span class="card-title">树的直径</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            标题井号 “#” 加 一个空格” “
-一直可以到6级标题
-字体hello，world    变成粗体 两边各加两个*号
-hello,world     变成斜体 两边各加一个*号
-hello,world   加粗斜体 两边各加上 ***号
+                            树的直径模板题目链接
+哲学三问
+【1】、what ?  (什么是树的直径 )
 
+
+简单来说，树上的任意两点之间的最长距离就是树的直径
+
+
+
+【2】、why ？（为什么学习这个东西）
+
+
+提高自己的算法能力  出题会遇到，遇到了就要解决，不解
                         
                     </div>
                     <div class="publish-info">
@@ -1120,8 +1010,8 @@ hello,world   加粗斜体 两边各加上 ***号
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Markdown/" class="post-category">
-                                    Markdown
+                            <a href="/categories/algorithm/" class="post-category">
+                                    algorithm
                                 </a>
                             
                             
@@ -1131,8 +1021,8 @@ hello,world   加粗斜体 两边各加上 ***号
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Markdown/">
-                        <span class="chip bg-color">Markdown</span>
+                    <a href="/tags/%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84/">
+                        <span class="chip bg-color">树的直径</span>
                     </a>
                     
                 </div>

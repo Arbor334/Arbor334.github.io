@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>background</title>
+      <link href="/2020/081317546.html"/>
+      <url>/2020/081317546.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="修改背景"><a href="#修改背景" class="headerlink" title="修改背景"></a>修改背景</h2><blockquote><p>我的主题是Matery </p><p>找到 themes\Matery\source\css\matery.css</p><p>搜索(ctrl+F)找到  body</p><p>修改为如下样式</p></blockquote><pre class=" language-css"><code class="language-css">body &amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">/* background-color: #eaeaea; */</span>    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">linear-gradient</span><span class="token punctuation">(</span><span class="token number">60</span>deg, <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">255</span>, <span class="token number">165</span>, <span class="token number">150</span>, <span class="token number">0.5</span><span class="token punctuation">)</span> <span class="token number">5%</span>, <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">0</span>, <span class="token number">228</span>, <span class="token number">255</span>, <span class="token number">0.35</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token number">0%</span> <span class="token number">0%</span> / cover, <span class="token url">url("")</span>, <span class="token url">url("")</span> <span class="token number">0</span>px <span class="token number">0</span>px<span class="token punctuation">;</span>// url 中最好是添加在网上有的图片弄到自己的图床上    <span class="token property">background-attachment</span><span class="token punctuation">:</span> fixed<span class="token punctuation">;</span>    <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>    <span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#7F95D1</span><span class="token punctuation">;</span>&amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>树的直径</title>
       <link href="/2020/081227720.html"/>
       <url>/2020/081227720.html</url>
