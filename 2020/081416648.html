@@ -384,7 +384,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    737
+                    151
                 </div>
                 
 
@@ -401,50 +401,62 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="质数"><a href="#质数" class="headerlink" title="质数"></a>质数</h1><h2 id="1、定义"><a href="#1、定义" class="headerlink" title="1、定义"></a>1、定义</h2><blockquote>
+                <h1>质数</h1>
+<h2 id="1、定义">1、定义</h2>
+<blockquote>
 <p>若一个正整数无法被除了1和他自身之外的任何自然数整除，则称该数为质数（也叫素数）否则成这个数为合数</p>
 <p><code>0和1 既不是质数也不是合数</code></p>
 </blockquote>
 <ul>
 <li>在整个自然数集中，质数的数量不多，分布比较稀疏，对于一个足够大的整数N，不超过N的质数大约有N/lgN个，即每lgN中大约只有一个质数</li>
 </ul>
-<h2 id="2、质数的判定"><a href="#2、质数的判定" class="headerlink" title="2、质数的判定"></a>2、质数的判定</h2><h3 id="【1】、试除法"><a href="#【1】、试除法" class="headerlink" title="【1】、试除法"></a>【1】、试除法</h3><p><a href="https://www.acwing.com/problem/content/868/" target="_blank" rel="noopener">Acwing题目链接</a></p>
+<h2 id="2、质数的判定">2、质数的判定</h2>
+<h3 id="【1】、试除法">【1】、试除法</h3>
+<p><a href="https://www.acwing.com/problem/content/868/" target="_blank" rel="noopener">Acwing题目链接</a></p>
 <p><code>时间复杂度为O(根号N)</code></p>
-<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cmath></span></span>
-bool <span class="token function">is_prime</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span>
-   <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">&lt;</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token keyword">return</span> false<span class="token punctuation">;</span>
-  <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span><span class="token function">sqrt</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
-       <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">%</span>i<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span>
-       <span class="token keyword">return</span> false<span class="token punctuation">;</span>
-  <span class="token keyword">return</span> true<span class="token punctuation">;</span>                      <span class="token comment" spellcheck="true">//返回true  说明 n 是质数</span>
-<span class="token punctuation">}</span></code></pre>
-<h2 id="3、质数的筛选"><a href="#3、质数的筛选" class="headerlink" title="3、质数的筛选"></a>3、质数的筛选</h2><blockquote>
+<pre class=" language-language-c"><code class="language-language-c">#include<cmath>
+bool is_prime(int n){
+   if(n<2) return false;
+  for(int i=2;i<=sqrt(n);i++)
+       if(n%i==0)
+       return false;
+  return true;                      //返回true  说明 n 是质数
+}
+</code></pre>
+<h2 id="3、质数的筛选">3、质数的筛选</h2>
+<blockquote>
 <p>给定一个整数N，求出1~N之间的所有质数，就是质数的筛选问题</p>
 </blockquote>
-<h3 id="1-、埃拉托色尼筛选法（Eratosthenes）"><a href="#1-、埃拉托色尼筛选法（Eratosthenes）" class="headerlink" title="[1]、埃拉托色尼筛选法（Eratosthenes）"></a>[1]、埃拉托色尼筛选法（Eratosthenes）</h3><p><a href="https://www.acwing.com/problem/content/description/870/" target="_blank" rel="noopener">Acwing题目链接</a></p>
+<h3 id="1-、埃拉托色尼筛选法（Eratosthenes）">[1]、埃拉托色尼筛选法（Eratosthenes）</h3>
+<p><a href="https://www.acwing.com/problem/content/description/870/" target="_blank" rel="noopener">Acwing题目链接</a></p>
 <blockquote>
-<p>埃拉托色尼筛法基于这样的思想，任意整数x的倍数 2x,3x…. 都不是质数</p>
+<p>埃拉托色尼筛法基于这样的思想，任意整数x的倍数 2x,3x… 都不是质数</p>
 <p>我们可以从2开始，由小到大扫描每个数x，把它的倍数2x,3x,.[N/x]*x标记为合数。</p>
 <p>当扫描到一个数时，若他尚未被标记，则它不能被2~x-1之间的任何数整除，该数就是质数。</p>
 </blockquote>
 <ul>
 <li>【1】、小于x^2的 x的倍数在扫描更小的数的时候已经标记过了。所以我们对于每个数x，只需要从x^2开始  把x^2，(x+1)乘x ,…  [N/x]乘x标记为合数即可</li>
 </ul>
-<p>$$<br>筛法的时间复杂度为  O(\sum质数p\leq N\frac{N}{p})=O(NloglogN)<br>$$</p>
-<pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> primes<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span>cnt<span class="token punctuation">;</span>
-bool v<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token keyword">void</span> <span class="token function">primes</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span>
-  <span class="token function">memset</span><span class="token punctuation">(</span>v<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token keyword">sizeof</span> v<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
-  <span class="token punctuation">{</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>v<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">continue</span><span class="token punctuation">;</span>
-    primes<span class="token punctuation">[</span>cnt<span class="token operator">++</span><span class="token punctuation">]</span><span class="token operator">=</span>i<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//存到数组里去</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span>i<span class="token operator">+</span>i<span class="token punctuation">;</span>j<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span>j<span class="token operator">+</span><span class="token operator">=</span>i<span class="token punctuation">)</span> v<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>true<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//【1】、</span>
-   <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<h3 id="【2】、线性筛法"><a href="#【2】、线性筛法" class="headerlink" title="【2】、线性筛法"></a>【2】、线性筛法</h3><p><a href="https://www.acwing.com/problem/content/description/870/" target="_blank" rel="noopener">Acwing题目链接</a></p>
+<p>$$<br>
+筛法的时间复杂度为  O(\sum质数p\leq N\frac{N}{p})=O(NloglogN)<br>
+$$</p>
+<pre class=" language-language-c"><code class="language-language-c">int primes[N],cnt;
+bool v[N];
+void primes(int n){
+  memset(v,0,sizeof v);
+  for(int i=2;i<=n;i++)
+  {
+    if(v[i]) continue;
+    primes[cnt++]=i; //存到数组里去
+    for(int j=i+i;j<=n;j+=i) v[j]=true; //【1】、
+   }
+}
+</code></pre>
+<h3 id="【2】、线性筛法">【2】、线性筛法</h3>
+<p><a href="https://www.acwing.com/problem/content/description/870/" target="_blank" rel="noopener">Acwing题目链接</a></p>
 <ul>
-<li><p>核心：n 只会被自己的最小质因子筛掉</p>
+<li>
+<p>核心：n 只会被自己的最小质因子筛掉</p>
 <blockquote>
 <p>埃拉托色尼筛法 有的时候实惠重复标记合数。</p>
 <p>线性筛法通过<code>从小到大累积质因子</code>的方式标记每个合数，让一个合数 只能从 最小质因子的乘积得出。</p>
@@ -460,7 +472,7 @@ bool v<span class="token punctuation">[</span>N<span class="token punctuation">]
 </li>
 </ul>
 <p><code>时间复杂度O(n)</code></p>
-<pre class=" language-c++"><code class="language-c++">int primes[N],cnt;
+<pre class=" language-language-c++"><code class="language-language-c++">int primes[N],cnt;
 bool v[N];
 void get_primes(int n){
 for(int i=2;i<=n;i++){
@@ -472,6 +484,7 @@ for(int i=2;i<=n;i++){
 }
 
 }
+
 </code></pre>
 
             </div>
@@ -987,13 +1000,14 @@ for(int i=2;i<=n;i++){
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            费马小定理乘法逆元
+                            乘法逆元
+
 加法 减法 乘法 满足分配率  而 除法不满足
 
-(a+b)%p=(a%p+b%p)%p      √
+(a+b)%p=(a%p+b%p)%p  	√
 (a-b)%p=(a%p-b%p)%p        √
 (a×b)%p=(a%p×b%p)%p       √
-(
+(a/b)%p=
                         
                     </div>
                     <div class="publish-info">
@@ -1042,11 +1056,13 @@ for(int i=2;i<=n;i++){
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            最近公共祖先（LCA）哲学三问1、what ？（ LCA是什么）
+                            最近公共祖先（LCA）
+哲学三问
+1、what ？（ LCA是什么）
+
 
 Least Common Ancestors （LCA 最近公共祖先）
-如上图所示 ，在X Y的所有公共祖先中，深度最大的一个称为x,y的最近公共祖先，即LCA(X,Y)
-
+如上图所示 ，在X Y的所有公共祖先中，深度最大的一个称为x,y的最近公共祖先，即LCA(X,
                         
                     </div>
                     <div class="publish-info">
