@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>二次探测定理</title>
+      <link href="/2020/081461991.html"/>
+      <url>/2020/081461991.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="二次探测定理"><a href="#二次探测定理" class="headerlink" title="二次探测定理"></a>二次探测定理</h1><h2 id="定理"><a href="#定理" class="headerlink" title="定理"></a>定理</h2><blockquote><p>如果p为一个质数，则 x^2≡1（mod）p的解为</p><p>x1=1,x2=p-1</p></blockquote><h2 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h2><p>$$<br>x^2≡1（mod）p→x^2-1=0（mod）p→（x-1）×（x+1）=0（mod）p→<br>p|（x-1）×（x+1）<br>$$</p><p>由p为一个质数可以推出x1=1,x2=p-1</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 二次探测定理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>费马小定理</title>
       <link href="/2020/081419332.html"/>
       <url>/2020/081419332.html</url>
