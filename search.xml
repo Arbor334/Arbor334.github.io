@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>费马小定理</title>
+      <link href="/2020/081419332.html"/>
+      <url>/2020/081419332.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="费马小定理"><a href="#费马小定理" class="headerlink" title="费马小定理"></a>费马小定理</h1><h2 id="乘法逆元"><a href="#乘法逆元" class="headerlink" title="乘法逆元"></a>乘法逆元</h2><blockquote><p>加法 减法 乘法 满足分配率  而 除法不满足</p></blockquote><ul><li>(a+b)%p=(a%p+b%p)%p      √</li><li>(a-b)%p=(a%p-b%p)%p        √</li><li>(a×b)%p=(a%p×b%p)%p       √</li><li>(a/b)%p=(a%p/b%p)%p          ×</li></ul><h3 id="定义-："><a href="#定义-：" class="headerlink" title="定义 ："></a>定义 ：</h3><blockquote><p>若在 mod p意义下，对于一个整数a，有a×x≡1(mod p)  那么x就是a的乘法逆元，同时a也是x的乘法逆元</p><p>同余式<code>≡</code> ：a≡b(mod)p表示 a和b对p取模同余，及正整数a-b   能被p整除</p><blockquote><p>很简单   设 a=19  b=10  p=3</p><p>​                  a(mod)p=1              ①</p><p>​                   b(mod)p=1            ②</p><p>​                    (a-b)(mod)p=0      因为 ①中的a 也剪掉了② b中的 余数 1啊</p></blockquote></blockquote><h3 id="充要条件"><a href="#充要条件" class="headerlink" title="充要条件"></a>充要条件</h3><blockquote><p>a存在模p的乘法逆元的充要条件是gcd(a,p)=1 ，即a与p互质 <del>这里先留出来空地 补上gcd</del></p></blockquote><h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><p><a href="https://www.acwing.com/problem/content/description/878/" target="_blank" rel="noopener">Acwing题目链接:求逆元</a></p><blockquote><p>求取(a/b)%p等同于 a×(b的逆元)%p</p><p>我们不妨设b的逆元是 x    即   <code>b × x ≡ 1 （mod）p</code>   x= 1/b</p><p>那么                                  <code>(a/b)%p     ——&gt;  (a × x)  %p</code></p><p>​    <code>证明 </code></p><blockquote><p>设     (a/b)%p= m                                ①</p><p>① 两边都乘以b    -&gt;   a%p≡ m*b%p    ②</p><p>②两边都乘以上面的x  -&gt;  a × x ≡ m × b × x</p><p>​                                           a × x ≡ m</p></blockquote><p>上面已经证明了 这样做是正确的</p><p>但是 怎么求b的逆元，即 怎么求x呢？</p><p>这就是下面要讲的费马小定理</p></blockquote><h2 id="费马小定理（p为质数）"><a href="#费马小定理（p为质数）" class="headerlink" title="费马小定理（p为质数）"></a>费马小定理（p为质数）</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>假如a是一个整数，p是一个质数，那么</p><p>1、如果a是p的倍数，a^p≡a(mod)p<br>$$<br>a^{p-1} ==  a^p -a<br>$$</p><blockquote><p>a又是p的倍数  所以有</p></blockquote><p>$$<br>(a^p-a)(mod)p ==0  &gt;&gt;a^p(mod)p=a(mod)p &gt;&gt;a^p≡a(mod)p<br>$$</p><p>2、如果a不是p的倍数  a^(p-1)≡1(mod)p<br>$$<br>a^{p-1}≡ 1 (mod)p &gt;&gt; a×a^{p-2}≡1(mod)p<br>$$</p><blockquote><p>对比一下  a × x ≡1（mod）p</p></blockquote><p>那么 是不是 a^(p-2)就是a的逆元了呢？  <code>并不是</code><br>$$<br>a×a^{p-2}≡1(mod)p写成等式应该是 a(mod)p×((a^{p-2})(mod)p)=1(mod)p<br>$$<br>所以真正的逆元值为<br>$$<br>(a^{p-2})(mod)p<br>$$</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> math </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 费马小定理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>质数</title>
       <link href="/2020/081416648.html"/>
       <url>/2020/081416648.html</url>

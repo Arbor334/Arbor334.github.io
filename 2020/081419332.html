@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="质数, Arbor1&#39;s CodeHome">
+    <meta name="keywords" content="费马小定理, Arbor1&#39;s CodeHome">
     <meta name="description" content="个人博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>质数 | Arbor1&#39;s CodeHome</title>
+    <title>费马小定理 | Arbor1&#39;s CodeHome</title>
     <link rel="icon" type="image/jpeg" href="/medias/header.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -224,12 +224,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">质数</h1>
+                    <h1 class="description center-align post-title">费马小定理</h1>
                 </div>
             </div>
         </div>
@@ -350,8 +350,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/algorithm/">
-                                <span class="chip bg-color">algorithm</span>
+                            <a href="/tags/%E8%B4%B9%E9%A9%AC%E5%B0%8F%E5%AE%9A%E7%90%86/">
+                                <span class="chip bg-color">费马小定理</span>
                             </a>
                         
                     </div>
@@ -362,8 +362,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/algorithm/" class="post-category">
-                                algorithm
+                            <a href="/categories/math/" class="post-category">
+                                math
                             </a>
                         
                     </div>
@@ -384,7 +384,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    737
+                    510
                 </div>
                 
 
@@ -401,78 +401,55 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="质数"><a href="#质数" class="headerlink" title="质数"></a>质数</h1><h2 id="1、定义"><a href="#1、定义" class="headerlink" title="1、定义"></a>1、定义</h2><blockquote>
-<p>若一个正整数无法被除了1和他自身之外的任何自然数整除，则称该数为质数（也叫素数）否则成这个数为合数</p>
-<p><code>0和1 既不是质数也不是合数</code></p>
+                <h1 id="费马小定理"><a href="#费马小定理" class="headerlink" title="费马小定理"></a>费马小定理</h1><h2 id="乘法逆元"><a href="#乘法逆元" class="headerlink" title="乘法逆元"></a>乘法逆元</h2><blockquote>
+<p>加法 减法 乘法 满足分配率  而 除法不满足</p>
 </blockquote>
 <ul>
-<li>在整个自然数集中，质数的数量不多，分布比较稀疏，对于一个足够大的整数N，不超过N的质数大约有N/lgN个，即每lgN中大约只有一个质数</li>
+<li>(a+b)%p=(a%p+b%p)%p      √</li>
+<li>(a-b)%p=(a%p-b%p)%p        √</li>
+<li>(a×b)%p=(a%p×b%p)%p       √</li>
+<li>(a/b)%p=(a%p/b%p)%p          ×</li>
 </ul>
-<h2 id="2、质数的判定"><a href="#2、质数的判定" class="headerlink" title="2、质数的判定"></a>2、质数的判定</h2><h3 id="【1】、试除法"><a href="#【1】、试除法" class="headerlink" title="【1】、试除法"></a>【1】、试除法</h3><p><a href="https://www.acwing.com/problem/content/868/" target="_blank" rel="noopener">Acwing题目链接</a></p>
-<p><code>时间复杂度为O(根号N)</code></p>
-<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cmath></span></span>
-bool <span class="token function">is_prime</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span>
-   <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">&lt;</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token keyword">return</span> false<span class="token punctuation">;</span>
-  <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span><span class="token function">sqrt</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
-       <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">%</span>i<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span>
-       <span class="token keyword">return</span> false<span class="token punctuation">;</span>
-  <span class="token keyword">return</span> true<span class="token punctuation">;</span>                      <span class="token comment" spellcheck="true">//返回true  说明 n 是质数</span>
-<span class="token punctuation">}</span></code></pre>
-<h2 id="3、质数的筛选"><a href="#3、质数的筛选" class="headerlink" title="3、质数的筛选"></a>3、质数的筛选</h2><blockquote>
-<p>给定一个整数N，求出1~N之间的所有质数，就是质数的筛选问题</p>
-</blockquote>
-<h3 id="1-、埃拉托色尼筛选法（Eratosthenes）"><a href="#1-、埃拉托色尼筛选法（Eratosthenes）" class="headerlink" title="[1]、埃拉托色尼筛选法（Eratosthenes）"></a>[1]、埃拉托色尼筛选法（Eratosthenes）</h3><p><a href="https://www.acwing.com/problem/content/description/870/" target="_blank" rel="noopener">Acwing题目链接</a></p>
+<h3 id="定义-："><a href="#定义-：" class="headerlink" title="定义 ："></a>定义 ：</h3><blockquote>
+<p>若在 mod p意义下，对于一个整数a，有a×x≡1(mod p)  那么x就是a的乘法逆元，同时a也是x的乘法逆元</p>
+<p>同余式<code>≡</code> ：a≡b(mod)p表示 a和b对p取模同余，及正整数a-b   能被p整除</p>
 <blockquote>
-<p>埃拉托色尼筛法基于这样的思想，任意整数x的倍数 2x,3x…. 都不是质数</p>
-<p>我们可以从2开始，由小到大扫描每个数x，把它的倍数2x,3x,.[N/x]*x标记为合数。</p>
-<p>当扫描到一个数时，若他尚未被标记，则它不能被2~x-1之间的任何数整除，该数就是质数。</p>
+<p>很简单   设 a=19  b=10  p=3</p>
+<p>​                  a(mod)p=1              ①</p>
+<p>​                   b(mod)p=1            ②</p>
+<p>​                    (a-b)(mod)p=0      因为 ①中的a 也剪掉了② b中的 余数 1啊</p>
 </blockquote>
-<ul>
-<li>【1】、小于x^2的 x的倍数在扫描更小的数的时候已经标记过了。所以我们对于每个数x，只需要从x^2开始  把x^2，(x+1)乘x ,…  [N/x]乘x标记为合数即可</li>
-</ul>
-<p>$$<br>筛法的时间复杂度为  O(\sum质数p\leq N\frac{N}{p})=O(NloglogN)<br>$$</p>
-<pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> primes<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span>cnt<span class="token punctuation">;</span>
-bool v<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token keyword">void</span> <span class="token function">primes</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span>
-  <span class="token function">memset</span><span class="token punctuation">(</span>v<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token keyword">sizeof</span> v<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
-  <span class="token punctuation">{</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>v<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">continue</span><span class="token punctuation">;</span>
-    primes<span class="token punctuation">[</span>cnt<span class="token operator">++</span><span class="token punctuation">]</span><span class="token operator">=</span>i<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//存到数组里去</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span>i<span class="token operator">+</span>i<span class="token punctuation">;</span>j<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span>j<span class="token operator">+</span><span class="token operator">=</span>i<span class="token punctuation">)</span> v<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>true<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//【1】、</span>
-   <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<h3 id="【2】、线性筛法"><a href="#【2】、线性筛法" class="headerlink" title="【2】、线性筛法"></a>【2】、线性筛法</h3><p><a href="https://www.acwing.com/problem/content/description/870/" target="_blank" rel="noopener">Acwing题目链接</a></p>
-<ul>
-<li><p>核心：n 只会被自己的最小质因子筛掉</p>
+</blockquote>
+<h3 id="充要条件"><a href="#充要条件" class="headerlink" title="充要条件"></a>充要条件</h3><blockquote>
+<p>a存在模p的乘法逆元的充要条件是gcd(a,p)=1 ，即a与p互质 <del>这里先留出来空地 补上gcd</del></p>
+</blockquote>
+<h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><p><a href="https://www.acwing.com/problem/content/description/878/" target="_blank" rel="noopener">Acwing题目链接:求逆元</a></p>
 <blockquote>
-<p>埃拉托色尼筛法 有的时候实惠重复标记合数。</p>
-<p>线性筛法通过<code>从小到大累积质因子</code>的方式标记每个合数，让一个合数 只能从 最小质因子的乘积得出。</p>
-<p>【1】、依次考虑2~N之间的数</p>
-<p>【2】、若v[i]=true，说明它的最小质因子已经把它筛掉了，反之，就加入到primes数组中</p>
-<p>【3】、扫描不大于n/i的每个质数  令v[primes[j]*i]=true</p>
+<p>求取(a/b)%p等同于 a×(b的逆元)%p</p>
+<p>我们不妨设b的逆元是 x    即   <code>b × x ≡ 1 （mod）p</code>   x= 1/b</p>
+<p>那么                                  <code>(a/b)%p     ——&gt;  (a × x)  %p</code></p>
+<p>​    <code>证明 </code></p>
 <blockquote>
-<p>为什么要v[primes[j]*i]=true呢 ?</p>
-<p>[1]、 i%primes[j]==0 说明primes[j]是i的最小质因子，那么primes[j]也一定是primes[j]*i 的最小质因子</p>
-<p>[2]、i %primes[j]!=0  由于我们是从小到大枚举的，并且没有枚举到i的质因子，所以 primes[j] 一定小于i的所有质因子，  primes[j]也一定是primes[j]*i 的最小质因子</p>
+<p>设     (a/b)%p= m                                ①</p>
+<p>① 两边都乘以b    -&gt;   a%p≡ m*b%p    ②</p>
+<p>②两边都乘以上面的x  -&gt;  a × x ≡ m × b × x</p>
+<p>​                                           a × x ≡ m</p>
 </blockquote>
+<p>上面已经证明了 这样做是正确的</p>
+<p>但是 怎么求b的逆元，即 怎么求x呢？</p>
+<p>这就是下面要讲的费马小定理</p>
 </blockquote>
-</li>
-</ul>
-<p><code>时间复杂度O(n)</code></p>
-<pre class=" language-c++"><code class="language-c++">int primes[N],cnt;
-bool v[N];
-void get_primes(int n){
-for(int i=2;i<=n;i++){
-  if(!v[i])primes[cnt++]=i;
-  for(int j=0;primes[j]<=n/i;j++){ //从小到大枚举质数
-     v[primes[j]*i]=true; //每次把质数和i的乘积筛掉
-      if(i%primes[j]==0) break;//primes[j]一定是i的最小质因子
-    }
-}
-
-}
-</code></pre>
+<h2 id="费马小定理（p为质数）"><a href="#费马小定理（p为质数）" class="headerlink" title="费马小定理（p为质数）"></a>费马小定理（p为质数）</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>假如a是一个整数，p是一个质数，那么</p>
+<p>1、如果a是p的倍数，a^p≡a(mod)p<br>$$<br>a^{p-1} ==  a^p -a<br>$$</p>
+<blockquote>
+<p>a又是p的倍数  所以有</p>
+</blockquote>
+<p>$$<br>(a^p-a)(mod)p ==0  &gt;&gt;a^p(mod)p=a(mod)p &gt;&gt;a^p≡a(mod)p<br>$$</p>
+<p>2、如果a不是p的倍数  a^(p-1)≡1(mod)p<br>$$<br>a^{p-1}≡ 1 (mod)p &gt;&gt; a×a^{p-2}≡1(mod)p<br>$$</p>
+<blockquote>
+<p>对比一下  a × x ≡1（mod）p</p>
+</blockquote>
+<p>那么 是不是 a^(p-2)就是a的逆元了呢？  <code>并不是</code><br>$$<br>a×a^{p-2}≡1(mod)p写成等式应该是 a(mod)p×((a^{p-2})(mod)p)=1(mod)p<br>$$<br>所以真正的逆元值为<br>$$<br>(a^{p-2})(mod)p<br>$$</p>
 
             </div>
             <hr/>
@@ -498,7 +475,7 @@ for(int i=2;i<=n;i++){
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://arbor334.github.io/2020/081416648.html">https://arbor334.github.io/2020/081416648.html</a>
+                    <a href="https://arbor334.github.io/2020/081419332.html">https://arbor334.github.io/2020/081419332.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -536,8 +513,8 @@ for(int i=2;i<=n;i++){
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/algorithm/">
-                                    <span class="chip bg-color">algorithm</span>
+                                <a href="/tags/%E8%B4%B9%E9%A9%AC%E5%B0%8F%E5%AE%9A%E7%90%86/">
+                                    <span class="chip bg-color">费马小定理</span>
                                 </a>
                             
                         </div>
@@ -971,9 +948,10 @@ for(int i=2;i<=n;i++){
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/081419332.html">
                     <div class="card-image">
@@ -998,9 +976,9 @@ for(int i=2;i<=n;i++){
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1013,6 +991,7 @@ for(int i=2;i<=n;i++){
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1031,28 +1010,29 @@ for(int i=2;i<=n;i++){
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/081355088.html">
+                <a href="/2020/081416648.html">
                     <div class="card-image">
                         
                         
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="/medias/featureimages/10.jpg" class="responsive-img" alt="LCA">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="/medias/featureimages/16.jpg" class="responsive-img" alt="质数">
                         
-                        <span class="card-title">LCA</span>
+                        <span class="card-title">质数</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            最近公共祖先（LCA）哲学三问1、what ？（ LCA是什么）
+                            质数1、定义
+若一个正整数无法被除了1和他自身之外的任何自然数整除，则称该数为质数（也叫素数）否则成这个数为合数
+0和1 既不是质数也不是合数
 
-Least Common Ancestors （LCA 最近公共祖先）
-如上图所示 ，在X Y的所有公共祖先中，深度最大的一个称为x,y的最近公共祖先，即LCA(X,Y)
 
+在整个自然数集中，质数的数量不多，分布比较稀疏，对于一个足够大的整数N，不超过N的质数大约有
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-14
                             </span>
                         <span class="publish-author">
                             
@@ -1069,8 +1049,8 @@ Least Common Ancestors （LCA 最近公共祖先）
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/LCA/">
-                        <span class="chip bg-color">LCA</span>
+                    <a href="/tags/algorithm/">
+                        <span class="chip bg-color">algorithm</span>
                     </a>
                     
                 </div>
@@ -1245,6 +1225,13 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
 
 
