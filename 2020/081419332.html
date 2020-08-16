@@ -401,16 +401,14 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="乘法逆元">乘法逆元</h2>
-<blockquote>
+                <h2 id="乘法逆元"><a href="#乘法逆元" class="headerlink" title="乘法逆元"></a>乘法逆元</h2><blockquote>
 <p>加法 减法 乘法 满足分配率  而 除法不满足</p>
 </blockquote>
-<p>(a+b)%p=(a%p+b%p)%p  	√</p>
+<p>(a+b)%p=(a%p+b%p)%p      √</p>
 <p>(a-b)%p=(a%p-b%p)%p        √</p>
 <p>(a×b)%p=(a%p×b%p)%p       √</p>
 <p>(a/b)%p=(a%p/b%p)%p          ×</p>
-<h3 id="定义-：">定义 ：</h3>
-<blockquote>
+<h3 id="定义-："><a href="#定义-：" class="headerlink" title="定义 ："></a>定义 ：</h3><blockquote>
 <p>若在 mod p意义下，对于一个整数a，有a×x≡1(mod p)  那么x就是a的乘法逆元，同时a也是x的乘法逆元</p>
 <p>同余式<code>≡</code> ：a≡b(mod)p表示 a和b对p取模同余，及正整数a-b   能被p整除</p>
 <blockquote>
@@ -420,12 +418,10 @@
 <p>​                    (a-b)(mod)p=0      因为 ①中的a 也剪掉了② b中的 余数 1啊</p>
 </blockquote>
 </blockquote>
-<h3 id="充要条件">充要条件</h3>
-<blockquote>
-<p>a存在模p的乘法逆元的充要条件是gcd(a,p)=1 ，即a与p互质 <s>这里先留出来空地 补上gcd</s></p>
+<h3 id="充要条件"><a href="#充要条件" class="headerlink" title="充要条件"></a>充要条件</h3><blockquote>
+<p>a存在模p的乘法逆元的充要条件是gcd(a,p)=1 ，即a与p互质 <del>这里先留出来空地 补上gcd</del></p>
 </blockquote>
-<h3 id="应用">应用</h3>
-<p><a href="https://www.acwing.com/problem/content/description/878/" target="_blank" rel="noopener">Acwing题目链接:求逆元</a></p>
+<h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><p><a href="https://www.acwing.com/problem/content/description/878/" target="_blank" rel="noopener">Acwing题目链接:求逆元</a></p>
 <blockquote>
 <p>求取(a/b)%p等同于 a×(b的逆元)%p</p>
 <p>我们不妨设b的逆元是 x    即   <code>b × x ≡ 1 （mod）p</code>   x= 1/b</p>
@@ -441,34 +437,17 @@
 <p>但是 怎么求b的逆元，即 怎么求x呢？</p>
 <p>这就是下面要讲的费马小定理</p>
 </blockquote>
-<h2 id="费马小定理（p为质数）">费马小定理（p为质数）</h2>
-<h3 id="定义">定义</h3>
-<p>假如a是一个整数，p是一个质数，那么</p>
-<p>1、如果a是p的倍数，a^p≡a(mod)p<br>
-$$<br>
-a^{p-1} ==  a^p -a<br>
-$$</p>
+<h2 id="费马小定理（p为质数）"><a href="#费马小定理（p为质数）" class="headerlink" title="费马小定理（p为质数）"></a>费马小定理（p为质数）</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>假如a是一个整数，p是一个质数，那么</p>
+<p>1、如果a是p的倍数，a^p≡a(mod)p<br>$$<br>a^{p-1} ==  a^p -a<br>$$</p>
 <blockquote>
 <p>a又是p的倍数  所以有</p>
 </blockquote>
-<p>$$<br>
-(a^p-a)(mod)p ==0  &gt;&gt;a^p(mod)p=a(mod)p &gt;&gt;a^p≡a(mod)p<br>
-$$</p>
-<p>2、如果a不是p的倍数  a^(p-1)≡1(mod)p<br>
-$$<br>
-a^{p-1}≡ 1 (mod)p &gt;&gt; a×a^{p-2}≡1(mod)p<br>
-$$</p>
+<p>$$<br>(a^p-a)(mod)p ==0  &gt;&gt;a^p(mod)p=a(mod)p &gt;&gt;a^p≡a(mod)p<br>$$</p>
+<p>2、如果a不是p的倍数  a^(p-1)≡1(mod)p<br>$$<br>a^{p-1}≡ 1 (mod)p &gt;&gt; a×a^{p-2}≡1(mod)p<br>$$</p>
 <blockquote>
 <p>对比一下  a × x ≡1（mod）p</p>
 </blockquote>
-<p>那么 是不是 a^(p-2)就是a的逆元了呢？  <code>并不是</code><br>
-$$<br>
-a×a^{p-2}≡1(mod)p写成等式应该是 a(mod)p×((a^{p-2})(mod)p)=1(mod)p<br>
-$$<br>
-所以真正的逆元值为<br>
-$$<br>
-(a^{p-2})(mod)p<br>
-$$</p>
+<p>那么 是不是 a^(p-2)就是a的逆元了呢？  <code>并不是</code><br>$$<br>a×a^{p-2}≡1(mod)p写成等式应该是 a(mod)p×((a^{p-2})(mod)p)=1(mod)p<br>$$<br>所以真正的逆元值为<br>$$<br>(a^{p-2})(mod)p<br>$$</p>
 
             </div>
             <hr/>
@@ -494,7 +473,7 @@ $$</p>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://arbor334.github.io/2020/081419332.html">https://arbor334.github.io/2020/081419332.html</a>
+                    <a href="https://arbor1.gitee.io/2020/081419332.html">https://arbor1.gitee.io/2020/081419332.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -983,18 +962,12 @@ $$</p>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            二次探测定理
-定理
-
+                            二次探测定理定理
 如果p为一个质数，则 x^2≡1（mod）p的解为
 x1=1,x2=p-1
 
-证明
-$$
-x^2≡1（mod）p→x^2-1=0（mod）p→（x-1）×（x+1）=0（mod）p→
-p|（x-1）×（x+1）
-$$
-
+证明$$x^2≡1（mod）p→x^2-1=0（mod）p→（x-1）×（x+1）=0（mod）p→p|（x-1）×（x+1）$$
+由p为一个质
                         
                     </div>
                     <div class="publish-info">
@@ -1039,14 +1012,12 @@ $$
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            质数
-1、定义
-
+                            质数1、定义
 若一个正整数无法被除了1和他自身之外的任何自然数整除，则称该数为质数（也叫素数）否则成这个数为合数
 0和1 既不是质数也不是合数
 
 
-在整个自然数集中，质数的数量不多，分布比较稀疏，对于一个足够大的整数N，不超过N的质数大
+在整个自然数集中，质数的数量不多，分布比较稀疏，对于一个足够大的整数N，不超过N的质数大约有
                         
                     </div>
                     <div class="publish-info">
