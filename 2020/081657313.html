@@ -384,7 +384,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    235
+                    265
                 </div>
                 
 
@@ -425,7 +425,7 @@ struct rec{
 
 }e[M];
 bool cmp(rec a,rec b){
-return a.z<b.z
+return b.z>a.z;
 }
 int get(int x){
     if(x==fa[x])return x;
