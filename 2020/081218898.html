@@ -384,7 +384,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    1.4k
                 </div>
                 
 
@@ -401,8 +401,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>bfs模板</h1>
-<pre class=" language-language-c++"><code class="language-language-c++">const int N=10010;//看数据多大
+                <h1 id="bfs模板"><a href="#bfs模板" class="headerlink" title="bfs模板"></a>bfs模板</h1><pre class=" language-c++"><code class="language-c++">const int N=10010;//看数据多大
 pair<int,int> q[N];
 #define x first
 #define y first
@@ -429,11 +428,9 @@ pair<int,int> t=q[hh++];
 int main(){
 
 
-}
-</code></pre>
-<h2 id="抓住那头牛">抓住那头牛</h2>
-<p><a href="https://www.acwing.com/problem/content/1102/" target="_blank" rel="noopener">题目链接</a></p>
-<pre class=" language-language-c++"><code class="language-language-c++">农夫知道一头牛的位置，想要抓住它。
+}</code></pre>
+<h2 id="抓住那头牛"><a href="#抓住那头牛" class="headerlink" title="抓住那头牛"></a>抓住那头牛</h2><p><a href="https://www.acwing.com/problem/content/1102/" target="_blank" rel="noopener">题目链接</a></p>
+<pre class=" language-c++"><code class="language-c++">农夫知道一头牛的位置，想要抓住它。
 
 农夫和牛都位于数轴上，农夫起始位于点 N，牛位于点 K。
 
@@ -456,9 +453,8 @@ int main(){
 输入样例：
 5 17
 输出样例：
-4
-</code></pre>
-<pre class=" language-language-c++"><code class="language-language-c++">#include<iostream>
+4</code></pre>
+<pre class=" language-c++"><code class="language-c++">#include<iostream>
 #include<stdio.h>
 #include<cstring>
 using namespace std;
@@ -499,39 +495,36 @@ int main(){
     cin>>n>>k;
  printf("%d\n",bfs());
 
-}
-</code></pre>
-<h2 id="走迷宫">走迷宫</h2>
-<p><a href="https://www.acwing.com/problem/content/846/" target="_blank" rel="noopener">题目链接</a></p>
-<pre class=" language-language-c"><code class="language-language-c">给定一个n*m的二维整数数组，用来表示一个迷宫，数组中只包含0或1，其中0表示可以走的路，1表示不可通过的墙壁。
+}</code></pre>
+<h2 id="走迷宫"><a href="#走迷宫" class="headerlink" title="走迷宫"></a>走迷宫</h2><p><a href="https://www.acwing.com/problem/content/846/" target="_blank" rel="noopener">题目链接</a></p>
+<pre class=" language-c"><code class="language-c">给定一个n<span class="token operator">*</span>m的二维整数数组，用来表示一个迷宫，数组中只包含<span class="token number">0</span>或<span class="token number">1</span>，其中<span class="token number">0</span>表示可以走的路，<span class="token number">1</span>表示不可通过的墙壁。
 
-最初，有一个人位于左上角(1, 1)处，已知该人每次可以向上、下、左、右任意一个方向移动一个位置。
+最初，有一个人位于左上角<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>处，已知该人每次可以向上、下、左、右任意一个方向移动一个位置。
 
-请问，该人从左上角移动至右下角(n, m)处，至少需要移动多少次。
+请问，该人从左上角移动至右下角<span class="token punctuation">(</span>n<span class="token punctuation">,</span> m<span class="token punctuation">)</span>处，至少需要移动多少次。
 
-数据保证(1, 1)处和(n, m)处的数字为0，且一定至少存在一条通路。
+数据保证<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>处和<span class="token punctuation">(</span>n<span class="token punctuation">,</span> m<span class="token punctuation">)</span>处的数字为<span class="token number">0</span>，且一定至少存在一条通路。
 
 输入格式
 第一行包含两个整数n和m。
 
-接下来n行，每行包含m个整数（0或1），表示完整的二维数组迷宫。
+接下来n行，每行包含m个整数（<span class="token number">0</span>或<span class="token number">1</span>），表示完整的二维数组迷宫。
 
 输出格式
 输出一个整数，表示从左上角移动至右下角的最少移动次数。
 
 数据范围
-1≤n,m≤100
+<span class="token number">1</span>≤n<span class="token punctuation">,</span>m≤<span class="token number">100</span>
 输入样例：
-5 5
-0 1 0 0 0
-0 1 0 1 0
-0 0 0 0 0
-0 1 1 1 0
-0 0 0 1 0
+<span class="token number">5</span> <span class="token number">5</span>
+<span class="token number">0</span> <span class="token number">1</span> <span class="token number">0</span> <span class="token number">0</span> <span class="token number">0</span>
+<span class="token number">0</span> <span class="token number">1</span> <span class="token number">0</span> <span class="token number">1</span> <span class="token number">0</span>
+<span class="token number">0</span> <span class="token number">0</span> <span class="token number">0</span> <span class="token number">0</span> <span class="token number">0</span>
+<span class="token number">0</span> <span class="token number">1</span> <span class="token number">1</span> <span class="token number">1</span> <span class="token number">0</span>
+<span class="token number">0</span> <span class="token number">0</span> <span class="token number">0</span> <span class="token number">1</span> <span class="token number">0</span>
 输出样例：
-8
-</code></pre>
-<pre class=" language-language-c++"><code class="language-language-c++">#include<cstdio>
+<span class="token number">8</span></code></pre>
+<pre class=" language-c++"><code class="language-c++">#include<cstdio>
 #include<iostream>
 #include<queue>
 using namespace std;
@@ -565,10 +558,8 @@ int main(){
         }
     }
     printf("%d\n",bfs(n,m));
-}
-</code></pre>
-<h2 id="迷宫问题">迷宫问题</h2>
-<p><a href="https://www.acwing.com/problem/content/1078/" target="_blank" rel="noopener">题目链接</a></p>
+}</code></pre>
+<h2 id="迷宫问题"><a href="#迷宫问题" class="headerlink" title="迷宫问题"></a>迷宫问题</h2><p><a href="https://www.acwing.com/problem/content/1078/" target="_blank" rel="noopener">题目链接</a></p>
 <pre><code>给定一个 n×n 的二维数组，如下所示：
 
 int maze[5][5] = {
@@ -616,9 +607,8 @@ int maze[5][5] = {
 2 3
 2 4
 3 4
-4 4
-</code></pre>
-<pre class=" language-language-c++"><code class="language-language-c++">#include<iostream>
+4 4</code></pre>
+<pre class=" language-c++"><code class="language-c++">#include<iostream>
 #include<stdio.h>
 using namespace std;
 const int N=1010,M=N*N;
@@ -660,11 +650,9 @@ int main(){
 
     }
     return 0;
-}
-</code></pre>
-<h2 id="武士风度的牛">武士风度的牛</h2>
-<p><a href="https://www.acwing.com/problem/content/190/" target="_blank" rel="noopener">题目链接</a></p>
-<pre class=" language-language-c"><code class="language-language-c">农民John有很多牛，他想交易其中一头被Don称为The Knight的牛。
+}</code></pre>
+<h2 id="武士风度的牛"><a href="#武士风度的牛" class="headerlink" title="武士风度的牛"></a>武士风度的牛</h2><p><a href="https://www.acwing.com/problem/content/190/" target="_blank" rel="noopener">题目链接</a></p>
+<pre class=" language-c"><code class="language-c">农民John有很多牛，他想交易其中一头被Don称为The Knight的牛。
 
 这头牛有一个独一无二的超能力，在农场里像Knight一样地跳（就是我们熟悉的象棋中马的走法）。
 
@@ -674,67 +662,66 @@ int main(){
 
 现在你的任务是，确定The Knight要想吃到草，至少需要跳多少次。
 
-The Knight的位置用’K’来标记，障碍的位置用’*’来标记，草的位置用’H’来标记。
+The Knight的位置用’K’来标记，障碍的位置用’<span class="token operator">*</span>’来标记，草的位置用’H’来标记。
 
 这里有一个地图的例子：
 
-             11 | . . . . . . . . . .
-             10 | . . . . * . . . . .
-              9 | . . . . . . . . . .
-              8 | . . . * . * . . . .
-              7 | . . . . . . . * . .
-              6 | . . * . . * . . . H
-              5 | * . . . . . . . . .
-              4 | . . . * . . . * . .
-              3 | . K . . . . . . . .
-              2 | . . . * . . . . . *
-              1 | . . * . . . . * . .
-              0 ----------------------
-                                    1
-                0 1 2 3 4 5 6 7 8 9 0
-The Knight 可以按照下图中的A,B,C,D…这条路径用5次跳到草的地方（有可能其它路线的长度也是5）：
+             <span class="token number">11</span> <span class="token operator">|</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span>
+             <span class="token number">10</span> <span class="token operator">|</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token operator">*</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span>
+              <span class="token number">9</span> <span class="token operator">|</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span>
+              <span class="token number">8</span> <span class="token operator">|</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token operator">*</span> <span class="token punctuation">.</span> <span class="token operator">*</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span>
+              <span class="token number">7</span> <span class="token operator">|</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token operator">*</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span>
+              <span class="token number">6</span> <span class="token operator">|</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token operator">*</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token operator">*</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> H
+              <span class="token number">5</span> <span class="token operator">|</span> <span class="token operator">*</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span>
+              <span class="token number">4</span> <span class="token operator">|</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token operator">*</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token operator">*</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span>
+              <span class="token number">3</span> <span class="token operator">|</span> <span class="token punctuation">.</span> K <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span>
+              <span class="token number">2</span> <span class="token operator">|</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token operator">*</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token operator">*</span>
+              <span class="token number">1</span> <span class="token operator">|</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token operator">*</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token operator">*</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span>
+              <span class="token number">0</span> <span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+                                    <span class="token number">1</span>
+                <span class="token number">0</span> <span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token number">4</span> <span class="token number">5</span> <span class="token number">6</span> <span class="token number">7</span> <span class="token number">8</span> <span class="token number">9</span> <span class="token number">0</span>
+The Knight 可以按照下图中的A<span class="token punctuation">,</span>B<span class="token punctuation">,</span>C<span class="token punctuation">,</span>D…这条路径用<span class="token number">5</span>次跳到草的地方（有可能其它路线的长度也是<span class="token number">5</span>）：
 
-             11 | . . . . . . . . . .
-             10 | . . . . * . . . . .
-              9 | . . . . . . . . . .
-              8 | . . . * . * . . . .
-              7 | . . . . . . . * . .
-              6 | . . * . . * . . . F<
-              5 | * . B . . . . . . .
-              4 | . . . * C . . * E .
-              3 | .>A . . . . D . . .
-              2 | . . . * . . . . . *
-              1 | . . * . . . . * . .
-              0 ----------------------
-                                    1
-                0 1 2 3 4 5 6 7 8 9 0
+             <span class="token number">11</span> <span class="token operator">|</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span>
+             <span class="token number">10</span> <span class="token operator">|</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token operator">*</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span>
+              <span class="token number">9</span> <span class="token operator">|</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span>
+              <span class="token number">8</span> <span class="token operator">|</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token operator">*</span> <span class="token punctuation">.</span> <span class="token operator">*</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span>
+              <span class="token number">7</span> <span class="token operator">|</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token operator">*</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span>
+              <span class="token number">6</span> <span class="token operator">|</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token operator">*</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token operator">*</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> F<span class="token operator">&lt;</span>
+              <span class="token number">5</span> <span class="token operator">|</span> <span class="token operator">*</span> <span class="token punctuation">.</span> B <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span>
+              <span class="token number">4</span> <span class="token operator">|</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token operator">*</span> C <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token operator">*</span> E <span class="token punctuation">.</span>
+              <span class="token number">3</span> <span class="token operator">|</span> <span class="token punctuation">.</span><span class="token operator">></span>A <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> D <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span>
+              <span class="token number">2</span> <span class="token operator">|</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token operator">*</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token operator">*</span>
+              <span class="token number">1</span> <span class="token operator">|</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token operator">*</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token operator">*</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span>
+              <span class="token number">0</span> <span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span><span class="token operator">--</span>
+                                    <span class="token number">1</span>
+                <span class="token number">0</span> <span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token number">4</span> <span class="token number">5</span> <span class="token number">6</span> <span class="token number">7</span> <span class="token number">8</span> <span class="token number">9</span> <span class="token number">0</span>
 注意： 数据保证一定有解。
 
 输入格式
-第1行： 两个数，表示农场的列数C(C<=150)和行数R(R<=150)。
+第<span class="token number">1</span>行： 两个数，表示农场的列数<span class="token function">C</span><span class="token punctuation">(</span>C<span class="token operator">&lt;=</span><span class="token number">150</span><span class="token punctuation">)</span>和行数<span class="token function">R</span><span class="token punctuation">(</span>R<span class="token operator">&lt;=</span><span class="token number">150</span><span class="token punctuation">)</span>。
 
-第2..R+1行: 每行一个由C个字符组成的字符串，共同描绘出牧场地图。
+第<span class="token number">2</span><span class="token punctuation">.</span><span class="token punctuation">.</span>R<span class="token operator">+</span><span class="token number">1</span>行<span class="token punctuation">:</span> 每行一个由C个字符组成的字符串，共同描绘出牧场地图。
 
 输出格式
 一个整数，表示跳跃的最小次数。
 
 输入样例：
-10 11
-..........
-....*.....
-..........
-...*.*....
-.......*..
-..*..*...H
-*.........
-...*...*..
-.K........
-...*.....*
-..*....*..
+<span class="token number">10</span> <span class="token number">11</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token operator">*</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token operator">*</span><span class="token punctuation">.</span><span class="token operator">*</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token operator">*</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token operator">*</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token operator">*</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>H
+<span class="token operator">*</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token operator">*</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token operator">*</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">.</span>K<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token operator">*</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token operator">*</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token operator">*</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token operator">*</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 输出样例：
-5
-</code></pre>
-<pre class=" language-language-c++"><code class="language-language-c++">#include<iostream>
+<span class="token number">5</span></code></pre>
+<pre class=" language-c++"><code class="language-c++">#include<iostream>
 #include<algorithm>
 #include<stdio.h>
 #include<cstring>
@@ -779,8 +766,7 @@ int main(){
 
    printf("%d\n",bfs());
 
-}
-</code></pre>
+}</code></pre>
 
             </div>
             <hr/>
@@ -1295,13 +1281,12 @@ int main(){
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            标题
-井号 “#” 加 一个空格&quot; &quot;
+                            标题井号 “#” 加 一个空格” “
 一直可以到6级标题
-字体
-hello，world    变成粗体 两边各加两个*号
+字体hello，world    变成粗体 两边各加两个*号
 hello,world     变成斜体 两边各加一个*号
-hello,world   加粗斜体
+hello,world   加粗斜体 两边各加上 ***号
+
                         
                     </div>
                     <div class="publish-info">
@@ -1350,14 +1335,13 @@ hello,world   加粗斜体
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            bfs模板
-const int N=10010;//看数据多大
+                            bfs模板const int N=10010;//看数据多大
 pair q[N];
 #define x first
 #define y first
 bool st[N][N];
 int g[N][N];
-int dx[4]={},dy[4
+int dx[4]={},dy[4]
                         
                     </div>
                     <div class="publish-info">
