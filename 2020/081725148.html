@@ -384,7 +384,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    101
+                    759
                 </div>
                 
 
@@ -401,165 +401,155 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>递归枚举</h1>
-<h2 id="递归实现指数型枚举">递归实现指数型枚举</h2>
-<p><a href="https://www.acwing.com/problem/content/description/94/" target="_blank" rel="noopener">Acwing题目链接</a></p>
-<pre class=" language-language-c"><code class="language-language-c">const int N=16;
-vector<int> ch;
-int n;
-void dfs(int x){
-    if(x==n+1){
-        for(int i=0;i<ch.size();i++){
-            printf("%d ",ch[i]);
-        }
-        printf("\n");
-        return ;
-    }
-    dfs(x+1); \\不选这个数 进行递归
-    ch.push_back(x);\\选择了这个数
-      dfs(x+1); \\ 这个是选择了数进行递归
-      ch.pop_back(); \\排出去
+                <h1 id="递归枚举"><a href="#递归枚举" class="headerlink" title="递归枚举"></a>递归枚举</h1><h2 id="递归实现指数型枚举"><a href="#递归实现指数型枚举" class="headerlink" title="递归实现指数型枚举"></a>递归实现指数型枚举</h2><p><a href="https://www.acwing.com/problem/content/description/94/" target="_blank" rel="noopener">Acwing题目链接</a></p>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">const</span> <span class="token keyword">int</span> N<span class="token operator">=</span><span class="token number">16</span><span class="token punctuation">;</span>
+vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> ch<span class="token punctuation">;</span>
+<span class="token keyword">int</span> n<span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">dfs</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>x<span class="token operator">==</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>ch<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d "</span><span class="token punctuation">,</span>ch<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">dfs</span><span class="token punctuation">(</span>x<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> \\不选这个数 进行递归
+    ch<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>\\选择了这个数
+      <span class="token function">dfs</span><span class="token punctuation">(</span>x<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> \\ 这个是选择了数进行递归
+      ch<span class="token punctuation">.</span><span class="token function">pop_back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> \\排出去
 
-}
-int main(){
-    cin>>n;
-    dfs(1);//先选择1个的  注意  dfs x==n+1 会判别出空集  空集也是一个集合
-    return 0;
-}
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    cin<span class="token operator">>></span>n<span class="token punctuation">;</span>
+    <span class="token function">dfs</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//先选择1个的  注意  dfs x==n+1 会判别出空集  空集也是一个集合</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="递归实现组合型枚举"><a href="#递归实现组合型枚举" class="headerlink" title="递归实现组合型枚举"></a>递归实现组合型枚举</h2><p><a href="https://www.acwing.com/problem/content/95/" target="_blank" rel="noopener">Acwing题目链接</a></p>
+<pre class=" language-c"><code class="language-c">vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span>ch<span class="token punctuation">;</span>
+<span class="token keyword">int</span> n<span class="token punctuation">,</span>m<span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">dfs</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span><span class="token punctuation">{</span>
+ <span class="token keyword">if</span><span class="token punctuation">(</span>ch<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">></span>m<span class="token operator">||</span>ch<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token punctuation">(</span>n<span class="token operator">-</span>x<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span> `<span class="token operator">&lt;</span>` m<span class="token punctuation">)</span><span class="token comment" spellcheck="true">//判定一下 选出的不是m个就直接返回</span>
+     <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>ch<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">==</span>m<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//等于m个 就输出</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i`<span class="token operator">&lt;</span>`ch<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d "</span><span class="token punctuation">,</span>ch<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    ch<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//选择x这个数</span>
+    <span class="token function">dfs</span><span class="token punctuation">(</span>x<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//再继续往下找</span>
+    ch<span class="token punctuation">.</span><span class="token function">pop_back</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//拍出来</span>
+    <span class="token function">dfs</span><span class="token punctuation">(</span>x<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//把x排出去了，在往下找</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>n<span class="token punctuation">,</span><span class="token operator">&amp;</span>m<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">dfs</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span>
 </code></pre>
-<h2 id="递归实现组合型枚举">递归实现组合型枚举</h2>
-<p><a href="https://www.acwing.com/problem/content/95/" target="_blank" rel="noopener">Acwing题目链接</a></p>
-<pre class=" language-language-c"><code class="language-language-c">vector<int>ch;
-int n,m;
-void dfs(int x){
- if(ch.size()>m||ch.size()+(n-x+1) `<` m)//判定一下 选出的不是m个就直接返回
-     return;
-    if(ch.size()==m)
-    { //等于m个 就输出
-        for(int i=0;i`<`ch.size();i++)
-        {
-            printf("%d ",ch[i]);
-        }
-        printf("\n");
-        return ;
-    }
-    ch.push_back(x); //选择x这个数
-    dfs(x+1);//再继续往下找
-    ch.pop_back();//拍出来
-    dfs(x+1);//把x排出去了，在往下找
-}
-int main(){
-    scanf("%d%d",&n,&m);
-    dfs(1);
-    return 0;
+<h2 id="递归实现排列型枚举"><a href="#递归实现排列型枚举" class="headerlink" title="递归实现排列型枚举"></a>递归实现排列型枚举</h2><p><a href="https://www.acwing.com/problem/content/96/" target="_blank" rel="noopener">Acwing题目链接</a></p>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> n<span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token keyword">int</span> N<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> ch<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>
+bool st<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">dfs</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span><span class="token punctuation">{</span>
 
-}
+     <span class="token keyword">if</span><span class="token punctuation">(</span>x<span class="token operator">==</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+         <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+             <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d "</span><span class="token punctuation">,</span>ch<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+         <span class="token punctuation">}</span>
+         <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-</code></pre>
-<h2 id="递归实现排列型枚举">递归实现排列型枚举</h2>
-<p><a href="https://www.acwing.com/problem/content/96/" target="_blank" rel="noopener">Acwing题目链接</a></p>
-<pre class=" language-language-c"><code class="language-language-c">int n;
-const int N=20;
-int ch[N];
-bool st[N];
-void dfs(int x){
-
-     if(x==n+1){
-         for(int i=1;i<=n;i++){
-             printf("%d ",ch[i]);
-         }
-         printf("\n");
-
-     }
-   for(int i=1;i<=n;i++){
-       if(st[i])continue; //这个位置的数选了
-       st[i]=1; //没选过 该选了致1
-       ch[x]=i; //第x为 数i
-       dfs(x+1); //进行第x+1位
-       st[i]=0;
-       ch[x]=0;
-   }
+     <span class="token punctuation">}</span>
+   <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+       <span class="token keyword">if</span><span class="token punctuation">(</span>st<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token keyword">continue</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//这个位置的数选了</span>
+       st<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//没选过 该选了致1</span>
+       ch<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token operator">=</span>i<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//第x为 数i</span>
+       <span class="token function">dfs</span><span class="token punctuation">(</span>x<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//进行第x+1位</span>
+       st<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+       ch<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
 
 
-}
-int main(){
-    scanf("%d",&n);
-    dfs(1);
-    return 0;
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">dfs</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
 
-}
-</code></pre>
-<h2 id="n-皇后问题">n-皇后问题</h2>
-<p><a href="https://www.acwing.com/problem/content/description/845/" target="_blank" rel="noopener">Acwing题目链接</a></p>
-<pre class=" language-language-c"><code class="language-language-c">//这种解法是按照全排列的顺序来做的
-using namespace std;
-const int N=20;
-char g[N][N];
-int n;
-bool dg[N],udg[N],col[N]; //dg 存的是由右上向左下方向的对角线 udg存的是 由左上向右下的对角线 col存的是列
-void dfs(int x){
-    if(x==n){ //拍好了以后 输出
-        for(int i=0;i<n;i++)puts(g[i]);
-        puts("");
-        return ;
-    }
-    for(int i =0;i<n;i++){
-        if(!col[i]&&!dg[x+i]&&!udg[n-x+i]){ //都没有皇后 才能放皇后
-        g[x][i]='Q'; //更新
-        col[i]=dg[x+i]=udg[n-x+i]=true; //更新
-        dfs(x+1);//更深一层
-          col[i]=dg[x+i]=udg[n-x+i]=false; //恢复现场
-          g[x][i]='.';
-    }
-    }
-}
-int main(){
-    scanf("%d",&n);
-    for(int i=0;i<n;i++) //初始化
-    for(int j=0;j<n;j++)
-    g[i][j]='.';
-    dfs(0);//从第0层开始排   实际中的第一层
-    return 0;
-}
-
+<span class="token punctuation">}</span></code></pre>
+<h2 id="n-皇后问题"><a href="#n-皇后问题" class="headerlink" title="n-皇后问题"></a>n-皇后问题</h2><p><a href="https://www.acwing.com/problem/content/description/845/" target="_blank" rel="noopener">Acwing题目链接</a></p>
+<pre class=" language-c"><code class="language-c"><span class="token comment" spellcheck="true">//这种解法是按照全排列的顺序来做的</span>
+using namespace std<span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token keyword">int</span> N<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">;</span>
+<span class="token keyword">char</span> g<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> n<span class="token punctuation">;</span>
+bool dg<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span>udg<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span>col<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//dg 存的是由右上向左下方向的对角线 udg存的是 由左上向右下的对角线 col存的是列</span>
+<span class="token keyword">void</span> <span class="token function">dfs</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>x<span class="token operator">==</span>n<span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//拍好了以后 输出</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i `<span class="token operator">&lt;</span>` n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token function">puts</span><span class="token punctuation">(</span>g<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>col<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&amp;&amp;</span><span class="token operator">!</span>dg<span class="token punctuation">[</span>x<span class="token operator">+</span>i<span class="token punctuation">]</span><span class="token operator">&amp;&amp;</span><span class="token operator">!</span>udg<span class="token punctuation">[</span>n<span class="token operator">-</span>x<span class="token operator">+</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//都没有皇后 才能放皇后</span>
+        g<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">'Q'</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//更新</span>
+        col<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>dg<span class="token punctuation">[</span>x<span class="token operator">+</span>i<span class="token punctuation">]</span><span class="token operator">=</span>udg<span class="token punctuation">[</span>n<span class="token operator">-</span>x<span class="token operator">+</span>i<span class="token punctuation">]</span><span class="token operator">=</span>true<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//更新</span>
+        <span class="token function">dfs</span><span class="token punctuation">(</span>x<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//更深一层</span>
+          col<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span>dg<span class="token punctuation">[</span>x<span class="token operator">+</span>i<span class="token punctuation">]</span><span class="token operator">=</span>udg<span class="token punctuation">[</span>n<span class="token operator">-</span>x<span class="token operator">+</span>i<span class="token punctuation">]</span><span class="token operator">=</span>false<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//恢复现场</span>
+          g<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">'.'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//初始化</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span>
+    g<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">'.'</span><span class="token punctuation">;</span>
+    <span class="token function">dfs</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//从第0层开始排   实际中的第一层</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
 </code></pre>
-<p>第二种解法</p>
-<pre class=" language-language-c"><code class="language-language-c">const int N=20;
-char g[N][N];
-int n;
-bool dg[N],udg[N],col[N],row[N];
-void dfs(int x,int y,int s){ //x 行 y 列 s个
-    if(y==n)y=0,x++; //这一行
-    if(x==n){
-        if(s==n){
-        for(int i=0;i<n;i++)puts(g[i]);
-        puts("");
+<p> 第二种解法</p>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">const</span> <span class="token keyword">int</span> N<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">;</span>
+<span class="token keyword">char</span> g<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> n<span class="token punctuation">;</span>
+bool dg<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span>udg<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span>col<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span>row<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">dfs</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span><span class="token keyword">int</span> y<span class="token punctuation">,</span><span class="token keyword">int</span> s<span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//x 行 y 列 s个</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>y<span class="token operator">==</span>n<span class="token punctuation">)</span>y<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>x<span class="token operator">++</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//这一行</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>x<span class="token operator">==</span>n<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>s<span class="token operator">==</span>n<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token function">puts</span><span class="token punctuation">(</span>g<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-      } return ;
-    }
-  //不放皇后
-    dfs(x,y+1,s);
-  //放皇后
-    if(!row[x]&&!col[y]&&!dg[x+y]&&!udg[x-y+n]){
-        row[x]=col[y]=dg[x+y]=udg[x-y+n]=true;
-        g[x][y]='Q';
-        dfs(x,y+1,s+1);
-         row[x]=col[y]=dg[x+y]=udg[x-y+n]=false;
-         g[x][y]='.';
-    }
+      <span class="token punctuation">}</span> <span class="token keyword">return</span> <span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token comment" spellcheck="true">//不放皇后</span>
+    <span class="token function">dfs</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">//放皇后</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>row<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token operator">&amp;&amp;</span><span class="token operator">!</span>col<span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token operator">&amp;&amp;</span><span class="token operator">!</span>dg<span class="token punctuation">[</span>x<span class="token operator">+</span>y<span class="token punctuation">]</span><span class="token operator">&amp;&amp;</span><span class="token operator">!</span>udg<span class="token punctuation">[</span>x<span class="token operator">-</span>y<span class="token operator">+</span>n<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        row<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token operator">=</span>col<span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token operator">=</span>dg<span class="token punctuation">[</span>x<span class="token operator">+</span>y<span class="token punctuation">]</span><span class="token operator">=</span>udg<span class="token punctuation">[</span>x<span class="token operator">-</span>y<span class="token operator">+</span>n<span class="token punctuation">]</span><span class="token operator">=</span>true<span class="token punctuation">;</span>
+        g<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">'Q'</span><span class="token punctuation">;</span>
+        <span class="token function">dfs</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>s<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+         row<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token operator">=</span>col<span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token operator">=</span>dg<span class="token punctuation">[</span>x<span class="token operator">+</span>y<span class="token punctuation">]</span><span class="token operator">=</span>udg<span class="token punctuation">[</span>x<span class="token operator">-</span>y<span class="token operator">+</span>n<span class="token punctuation">]</span><span class="token operator">=</span>false<span class="token punctuation">;</span>
+         g<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">'.'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
 
-}
-int main(){
-    scanf("%d",&n);
-    for(int i=0;i<n;i++)
-    for(int j=0;j<n;j++)
-    g[i][j]='.';
-    dfs(0,0,0);
-    return 0;
-}
-
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>n<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span>
+    g<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">'.'</span><span class="token punctuation">;</span>
+    <span class="token function">dfs</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 
             </div>
@@ -1076,16 +1066,13 @@ int main(){
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            递归枚举
-递归实现指数型枚举
-Acwing题目链接
+                            递归枚举递归实现指数型枚举Acwing题目链接
 const int N=16;
-vector ch;
+vector&lt;int> ch;
 int n;
 void dfs(int x){
     if(x==n+1){
-        for(int i=0;i>n;
-  
+        for(int i=0;i
                         
                     </div>
                     <div class="publish-info">
@@ -1135,32 +1122,26 @@ void dfs(int x){
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            图论
-孤立节点
-
+                            图论孤立节点
 不与任何节点相邻接的结点
 
 零图
-
 仅由孤立节点构成的图
 
 平凡图
-
 仅有一个孤立结点构成的图
 
 邻接边
-
 关联于同一节点的两条边
 
 自回路/环
-
 关联于同一节点的一条边
 
 度数
-
 与节点关联的边数，成为结点的度数
 
-多重
+多重图
+含有平行边
                         
                     </div>
                     <div class="publish-info">
