@@ -384,7 +384,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    799
+                    826
                 </div>
                 
 
@@ -410,13 +410,13 @@
 </ul>
 <h2 id="2、质数的判定"><a href="#2、质数的判定" class="headerlink" title="2、质数的判定"></a>2、质数的判定</h2><h3 id="【1】、试除法"><a href="#【1】、试除法" class="headerlink" title="【1】、试除法"></a>【1】、试除法</h3><p><a href="https://www.acwing.com/problem/content/868/" target="_blank" rel="noopener">Acwing题目链接</a></p>
 <p><code>时间复杂度为O(根号N)</code></p>
-<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cmath></span></span>
-bool <span class="token function">is_prime</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span>
-   <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">&lt;</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token keyword">return</span> false<span class="token punctuation">;</span>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cmath></span></span>
+<span class="token keyword">bool</span> <span class="token function">is_prime</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span>
+   <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">&lt;</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
   <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span><span class="token function">sqrt</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
        <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">%</span>i<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span>
-       <span class="token keyword">return</span> false<span class="token punctuation">;</span>
-  <span class="token keyword">return</span> true<span class="token punctuation">;</span>                      <span class="token comment" spellcheck="true">//返回true  说明 n 是质数</span>
+       <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>                      <span class="token comment" spellcheck="true">//返回true  说明 n 是质数</span>
 <span class="token punctuation">}</span></code></pre>
 <h2 id="3、质数的筛选"><a href="#3、质数的筛选" class="headerlink" title="3、质数的筛选"></a>3、质数的筛选</h2><blockquote>
 <p>给定一个整数N，求出1~N之间的所有质数，就是质数的筛选问题</p>
@@ -431,15 +431,15 @@ bool <span class="token function">is_prime</span><span class="token punctuation"
 <li>【1】、小于x^2的 x的倍数在扫描更小的数的时候已经标记过了。所以我们对于每个数x，只需要从x^2开始  把x^2，(x+1)乘x ,…  [N/x]乘x标记为合数即可</li>
 </ul>
 <p>$$<br>筛法的时间复杂度为  O(\sum质数p\leq N\frac{N}{p})=O(NloglogN)<br>$$</p>
-<pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> primes<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span>cnt<span class="token punctuation">;</span>
-bool v<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">int</span> primes<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span>cnt<span class="token punctuation">;</span>
+<span class="token keyword">bool</span> v<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token keyword">void</span> <span class="token function">primes</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span>
   <span class="token function">memset</span><span class="token punctuation">(</span>v<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token keyword">sizeof</span> v<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
   <span class="token punctuation">{</span>
     <span class="token keyword">if</span><span class="token punctuation">(</span>v<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">continue</span><span class="token punctuation">;</span>
     primes<span class="token punctuation">[</span>cnt<span class="token operator">++</span><span class="token punctuation">]</span><span class="token operator">=</span>i<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//存到数组里去</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span>i<span class="token operator">+</span>i<span class="token punctuation">;</span>j<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span>j<span class="token operator">+</span><span class="token operator">=</span>i<span class="token punctuation">)</span> v<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>true<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//【1】、</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span>i<span class="token operator">+</span>i<span class="token punctuation">;</span>j<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span>j<span class="token operator">+</span><span class="token operator">=</span>i<span class="token punctuation">)</span> v<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span><span class="token boolean">true</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//【1】、</span>
    <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 <h3 id="【2】、线性筛法"><a href="#【2】、线性筛法" class="headerlink" title="【2】、线性筛法"></a>【2】、线性筛法</h3><p><a href="https://www.acwing.com/problem/content/description/870/" target="_blank" rel="noopener">Acwing题目链接</a></p>
@@ -460,13 +460,13 @@ bool v<span class="token punctuation">[</span>N<span class="token punctuation">]
 </li>
 </ul>
 <p><code>时间复杂度O(n)</code></p>
-<pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> primes<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span>cnt<span class="token punctuation">;</span>
-bool v<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">int</span> primes<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">,</span>cnt<span class="token punctuation">;</span>
+<span class="token keyword">bool</span> v<span class="token punctuation">[</span>N<span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token keyword">void</span> <span class="token function">get_primes</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span>
 <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-  <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>v<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>primes<span class="token punctuation">[</span>cnt<span class="token operator">++</span><span class="token punctuation">]</span><span class="token operator">=</span>i<span class="token punctuation">;</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>v<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>primes<span class="token punctuation">[</span>cnt<span class="token operator">++</span><span class="token punctuation">]</span><span class="token operator">=</span>i<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//没有筛掉就是质数</span>
   <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>primes<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">&lt;=</span>n<span class="token operator">/</span>i<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//从小到大枚举质数</span>
-     v<span class="token punctuation">[</span>primes<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">*</span>i<span class="token punctuation">]</span><span class="token operator">=</span>true<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//每次把质数和i的乘积筛掉</span>
+     v<span class="token punctuation">[</span>primes<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">*</span>i<span class="token punctuation">]</span><span class="token operator">=</span><span class="token boolean">true</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//每次把质数和i的乘积筛掉  保留的是合数  即 v[i]=0 是质数  v[i]=1是合数</span>
       <span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">%</span>primes<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">break</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//primes[j]一定是i的最小质因子</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
