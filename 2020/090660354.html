@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="树的直径, Arbor1&#39;s CodeHome">
+    <meta name="keywords" content="背包问题, Arbor1&#39;s CodeHome">
     <meta name="description" content="个人博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>树的直径 | Arbor1&#39;s CodeHome</title>
+    <title>背包问题 | Arbor1&#39;s CodeHome</title>
     <link rel="icon" type="image/jpeg" href="/medias/header.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -224,12 +224,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">树的直径</h1>
+                    <h1 class="description center-align post-title">背包问题</h1>
                 </div>
             </div>
         </div>
@@ -350,8 +350,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84/">
-                                <span class="chip bg-color">树的直径</span>
+                            <a href="/tags/%E8%83%8C%E5%8C%85/">
+                                <span class="chip bg-color">背包</span>
                             </a>
                         
                     </div>
@@ -375,7 +375,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-08-12
+                    2020-09-06
                 </div>
                 
 
@@ -384,7 +384,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    661
                 </div>
                 
 
@@ -401,141 +401,369 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>树的直径</h1>
-<p><a href="https://www.luogu.com.cn/problem/U81904" target="_blank" rel="noopener">模板题目链接</a></p>
-<h2 id="哲学三问">哲学三问</h2>
-<ul>
-<li>【1】、what ?  (什么是树的直径 )</li>
-</ul>
+                <h1>背包问题</h1>
+<h2 id="01背包">01背包</h2>
+<p><a href="https://www.acwing.com/problem/content/description/2/" target="_blank" rel="noopener">联系题目链接</a></p>
 <blockquote>
-<p>简单来说，树上的任意两点之间的最长距离就是树的直径</p>
+<p>什么是01背包问题呢？</p>
+<blockquote>
+<p>给定n件物品 还有一个容量为V的背包，</p>
+<p>再给出  n件物品的体积和价值 每件物品只能选一次</p>
+<p>求出背包的最大价值</p>
 </blockquote>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://cdn.jsdelivr.net/gh/Arbor334/img/algorithm/longest_path_of_tree.jpg" alt=""></p>
-<ul>
-<li>【2】、why ？（为什么学习这个东西）</li>
-</ul>
-<blockquote>
-<p><s>提高自己的算法能力</s>  出题会遇到，遇到了就要解决，不解决就会丢分</p>
 </blockquote>
 <ul>
-<li>【3】、how ？ （怎么实现）</li>
+<li>二维做法</li>
 </ul>
-<blockquote>
-<p>第一种方案 Dp：</p>
-<blockquote>
-<p>优点：可以处理负权边的问题</p>
-<p>缺点：记录卡路径的信息效率低</p>
-<p>实现过程：</p>
-<p>我们假设一号节点为根，“N个点N-1条边的无向图”可以看成有根树。</p>
-<p>设d[x]表示从节点x出发走向以x为根的子树，能够到达的最远节点的距离。</p>
-<p>设x的子节点为y1,y2,y3…, e(x,y)表示边权有</p>
-<p>d[x]=max(d[yi]+e(x,y))</p>
-<p>考虑对每个点x 求出经过x节点的最长链的长度F[x]，</p>
-<p>直径就是max 1≤x≤n（F[x]）</p>
-<p>求 F[x]: 对于x的任意两个节点 yi和yj 经过节点x的最长链的长度分四个部分： 边 (x,yi) 边 (x,yj)  yi到yi子树的最远距离 yj到yj子树的最远距离</p>
-<p>F[x]=max（d[yi]+d[yj]+e(x,yi)+e(x,yj)）</p>
-<p>因为子节点将要循环到i时，d[x]存的就是从节点x出发走向</p>
-<p>以 yj（j&lt;i）为根的子树能够到达的最远节点的距离， 就是</p>
-<p>max（d[yj]+e(x,yj)）</p>
-<p>我们先用 d[x]+d[yi]+e(x,yi)更新F[x]，</p>
-<p>再用d[yi]+e(x,yi) 更新d[x]</p>
-</blockquote>
-<p>第二种方案 ：两次bfs</p>
-<blockquote>
-<p>优点：可以通过一个新的数组记录路径信息</p>
-<p>缺点：无法处理负边权</p>
-<p>实现流程：</p>
-<p>【1】、从任意节点出发，通过BFS对树进行一次遍历求出与出发点距离最远的节点,记为 p</p>
-<p>【2】、从节点 p 出发,通过 BFS 再进行一次遍历,求出与 p 距离最远的节点,记为 q。</p>
-<p>p 是一个节点的最远的一个端点，那么从 p 出发的最远的端点就是直径的另一个端点)</p>
-</blockquote>
-</blockquote>
-<h2 id="第一种解决方案-Dp">第一种解决方案 Dp</h2>
-<pre class=" language-language-c++"><code class="language-language-c++">#include<iostream>
+<pre class=" language-language-cpp"><code class="language-language-cpp">/*
+用f[i][j]表示前i件物品恰放入容量为j的背包可以获得的最大价值
+ 与f[i][j]状态相关的可以分为两类： 
+【1】、f[i-1][j]  第i件物品没有选，就将前 i-1件物品放入容量为j的背包中
+【2】、f[i-1][j-v[i]]+w[i]  选了，就放入容量为 j-v[i]的背包中
+       这种二维数组 空间，时间复杂度都是 0(n*v) 
+*/
+#include<iostream>
 #include<stdio.h>
 #include<algorithm>
 using namespace std;
-const int N=5e6+10,M=2*N;
-int h[N],ver[N],ne[M],e[M],idx;
-bool st[N];
-int d[N],ans,n,x,y,z;
-void add(int x,int y,int z){
-    ver[++idx]=y,e[idx]=z,ne[idx]=h[x],h[x]=idx;
-}
-void dp(int x){
-    st[x]=1;
-    for(int i=h[x];i;i=ne[i]){
-        int y=ver[i];
-        if(st[y])continue; //判断是否已经经过该节点
-        dp(y); //继续向下寻找子节点
-        ans=max(ans,d[x]+d[y]+e[i]); //枚举从x节点出发的所有边，找到最远的内个
-        d[x]=max(d[x],d[y]+e[i]);//经过枚举后 d[x]就不一定是最长的了，要更新一下
-    }
-}
+const int N=2110;
+int n,m,v[N],w[N],dp[N][N];
 int main(){
-    cin>>n;
-    for(int i=0;i<n-1;i++)
-    {
-        cin>>x>>y>>z;
-        add(x,y,z);
-        add(y,x,z);
+    cin>>n>>m;
+    for(int i=1;i<=n;i++)cin>>v[i]>>w[i];
+    dp[0][0]=0; //初始化一下
+    for(int i=1;i<=n;i++)
+    for(int j=1;j<=m;j++)
+    { 
+        dp[i][j]=dp[i-1][j]; // 不选择
+        if(j>=v[i]) // 有地方可以放下这个物品 
+       dp[i][j]=max(dp[i-1][j],dp[i-1][j-v[i]]+w[i]); //取最大值
     }
-    dp(1);
-    printf("%d\n",ans);
+        int ans=0;
+    for(int i=1;i<=m;i++)ans=max(ans,dp[n][i]);//最大值并不是f[n][m] 所以要取f[n][0]~f[n][m]的最大值
+    cout<<ans;
+    }
+</code></pre>
+<ul>
+<li>一维优化</li>
+</ul>
+<pre class=" language-language-cpp"><code class="language-language-cpp">/*
+此优化 让空间复杂度降为 O(V)
+*/
+#include<iostream>
+#include<stdio.h>
+using namespace std;
+const int N=1900;
+int v[N],w[N],n,m,dp[N];
+int main(){
+    cin>>n>>m;
+    for(int i=1;i<=n;i++)cin>>v[i]>>w[i];
+   dp[0]=0;
+   for(int i=1;i<=n;i++)
+   for(int j=m;j>=v[i];j--)//倒叙
+   dp[j]=max(dp[j],dp[j-v[i]]+w[i]);//这里用到的实际是dp[i] 而不是dp[i-1]的状态 为了保证dp[i]已经运行过了 所以 j是倒序 
+   cout<<dp[m];
+  // 这里的dp[m]是容量小于等于m的 最大价值并不是恰好是容量是m的最大价值如果恰好是m的话，初始化的时候，除了dp[0]=0，其他的初始化为-INF  这样最后的需要遍历一遍 找到最大值 这个最大值才是恰好为m时的
 }
 </code></pre>
-<h2 id="第二种解决方案-bfs">第二种解决方案 bfs</h2>
-<pre class=" language-language-c++"><code class="language-language-c++">#include<iostream>
+<h2 id="完全背包">完全背包</h2>
+<p><a href="https://www.acwing.com/problem/content/description/3/" target="_blank" rel="noopener">题目链接</a></p>
+<blockquote>
+<p>什么是完全背包问题?</p>
+<blockquote>
+<p>n件物品和一个容量为V的背包，每件物品可以多次使用。</p>
+<p>第i件物品的容量是C[I],价值是w[i],</p>
+<p>求哪些物品装入背包所占容量不超过V，且价值总和最大。</p>
+</blockquote>
+</blockquote>
+<pre class=" language-language-cpp"><code class="language-language-cpp">/*
+与01背包相比，我们这里需要考虑不是选不选择第i个物品，
+而是 选择第i个物品多少件和其他的物品的价值总和才能达到最大值。
+在01背包的时候，
+
+For(int  i=1;i<=n;i++)
+  f[i][j]=f[i-1][j];//不选
+       if(j>=v[i])//选择
+   f[i][j]=max(f[i-1][j],f[i-1][j-v[i]]+c[i]); //我们这里用到的是f[i-1][j-v[i]] 并不包含第i个物品，因为我们需要的是还没有选择第i件物品的时候的状态
+
+
+For(int i=1;i<=n;i++)
+For(int j=v[i];j<=m;j++)
+ F[j]=max(f[j],f[j-v[i]]+w[i]);//这里我们用到了第i个物品，里面可能包含了若干个第i个物品
+我们需要这样包含第i件物品的状态
+*/
+#include<iostream>
 #include<stdio.h>
-#include<cstring>
-#include<queue>
+using namespace std;
+const int N=10010;
+int v[N],c[N],dp[N],n,V;
+int main(){
+    cin>>n>>V;
+    for(int i=1;i<=n;i++)cin>>v[i]>>c[i];
+    for(int i=1;i<=n;i++)
+    for(int j=v[i];j<=V;j++) //枚举每件物品的体积，开始1个的时候就就撑不下 就不必考虑
+    dp[j]=max(dp[j],dp[j-v[i]]+c[i]);
+    int ans=-1;
+    for(int i=1;i<=V;i++)ans=max(ans,dp[i]);
+    cout<<ans<<endl;
+    
+}
+
+</code></pre>
+<h2 id="多组背包问题">多组背包问题</h2>
+<p><a href="https://www.acwing.com/problem/content/4/" target="_blank" rel="noopener">题目链接</a></p>
+<blockquote>
+<p>什么是多组背包问题</p>
+<blockquote>
+<p>n件物品，一个容量为v的背包，第i件物品最多有n[i]件可用。每件体积是v[i]，价值是w[i]。求解将哪些物品装入背包可使这些物品的费用总和不超过背包容量，且价值总和最大。</p>
+</blockquote>
+</blockquote>
+<pre class=" language-language-cpp"><code class="language-language-cpp">
+
+#include<iostream>
+#include<stdio.h>
 #include<algorithm>
 using namespace std;
-const int N=1e6+10;
-int h[N],dist[N],ne[N*2],e[N*2],idx,ver[N*2];
-int n,p,q,d,maxd;
-bool st[N];
-void add(int a,int b,int c){
-    ver[++idx]=b,e[idx]=c,ne[idx]=h[a],h[a]=idx;
+const int N=10010;
+int v,w,s,n,V,dp[N];
+int main(){
+    cin>>n>>V;
+    for(int i=1;i<=n;i++){
+        cin>>v>>w>>s;
+        for(int j=V;j>=0;j--)
+            for(int k=1;k<=s&&k*v<=j;k++) //只需要在01背包中加入一重循环即可
+            dp[j]=max(dp[j],dp[j-k*v]+w*k);
+    }
+    cout<<dp[V];
 }
-int bfs(int u){
-    queue<int>q;
-    while(!q.empty())q.pop(); //注意每次都要清空
-    memset(st,0,sizeof st);
-    memset(dist,0,sizeof dist);
-    q.push(u);              //把根节点推进去
-    int x,max_num=0;       //max_num 找到最远的节点
-    while(!q.empty()){
-        x=q.front();      //取出队首
-        q.pop();          //抛出队首
-        st[x]=1;       // 这个点我走过了
-        for(int i=h[x];i;i=ne[i]){
-            int y=ver[i];    //子节点
-            if(st[y])continue;
-            st[y]=1;         //没走过 就修改为走过
-            dist[y]=dist[x]+e[i];  //从上往下走 就要进行累加 和dp不同
-            if(dist[y]>maxd){   //更新最大值 和最远点
-                maxd=dist[y];
-                max_num=y;
-            }
-            q.push(y);  // 每个新的节点都要加入到队列中,有可能与该节点相连的路径是比较长的
+</code></pre>
+<blockquote>
+<p>数据范围大的时候用 二进制优化</p>
+<p>时间复杂度是  O(N×log(s)×V)</p>
+</blockquote>
+<pre class=" language-language-cpp"><code class="language-language-cpp">/*
+  多组背包问题的二进制优化方法 
+   就是将 s件物品分成 1 2 4 8... 这样的一组是 1件 一组是2 件 
+   再看成是01背包的问题 
+
+*/
+#include<iostream>
+#include<stdio.h>
+#include<vector>
+using namespace std;
+struct node{
+    int v,w;
+};
+vector<node>goods;
+const int N=2010;
+int n,m,v,w,s,f[N];
+int main(){
+    cin>>n>>m;
+    for(int i=1;i<=n;i++){
+        cin>>v>>w>>s;
+            for(int k=1;k<=s;k*=2){ //这就是分成 1 2 4 8 这样的组
+                s-=k;
+                goods.push_back({k*v,k*w});
+        }
+        if(s) goods.push_back({s*v,s*w});
+    }
+    for(auto good:goods){   //在像01背包一样
+        for(int j=m;j>=good.v;j--){
+            f[j]=max(f[j],f[j-good.v]+good.w);
         }
     }
-    return max_num;  //返回最远的点
+    cout<<f[m]<<endl;
 }
+</code></pre>
+<blockquote>
+<p>还有一种优化是单调队列 优化 不过没有理解  先鸽一段时间</p>
+</blockquote>
+<h2 id="混合背包问题">混合背包问题</h2>
+<p><a href="https://www.acwing.com/problem/content/description/7/" target="_blank" rel="noopener">题目链接</a></p>
+<blockquote>
+<p>什么是混合背包问题？</p>
+<blockquote>
+<p>有 N 种物品和一个容量是 V 的背包。</p>
+<p>物品一共有三类：</p>
+<p>第一类物品只能用1次（01背包）；</p>
+<p>第二类物品可以用无限次（完全背包）；</p>
+<p>第三类物品最多只能用 s[i]次（多重背包）；</p>
+<p>每种体积是 v[i]，价值是 w[i]</p>
+</blockquote>
+<p>分析</p>
+<blockquote>
+<p>多重背包问题我们可以用上面的二进制优化的方法 分成多份  变成 01背包问题</p>
+<p>​     这样就只有 完全背包问题 和 01背包 这两种情况了</p>
+<p>​     01背包问题在一维中  j=m;j&lt;=v;j--        0大到小</p>
+<p>​     完全背包问题 在一维中  j=v;j&lt;=m;j++    完小到大</p>
+</blockquote>
+</blockquote>
+<pre class=" language-language-cpp"><code class="language-language-cpp">#include<iostream>
+#include<stdio.h>
+#include<vector>
+using namespace std;
+const int N=10010;
+int v,n,m,w,s,op,dp[N];
+struct node{
+    int v,w,op;
+};
+vector<node>goods;
 int main(){
-    scanf("%d",&n);
-    for(int i=1;i<n;i++){
-        cin>>p>>q>>d;
-        add(p,q,d);
-        add(q,p,d);
+    cin>>n>>m;
+    for(int i=1;i<=n;i++){
+        cin>>v>>w>>op;
+        if(op==0)    goods.push_back({v,w,0});  //完全背包问题
+        else if(op==-1) goods.push_back({v,w,-1}); //01 背包
+        else {   //多重背包问题化为01背包问题
+            for(int j=1;j<=op;j*=2){
+                op-=j;
+                goods.push_back({v*j,w*j,-1});
+            }
+            if(op>0) goods.push_back({v*op,w*op,-1});
+        }
     }
-    int u=bfs(1);
-    int s=bfs(u);
-//   printf("第一次遍历得到的节点 : %d\n",u);
-//     printf("第二次遍历得到的节点 : %d\n",s);
-//     printf("最长的距离是 %d\n",maxd);
-    printf("%d\n",maxd);
+    for(auto good:goods){
+        if(good.op==0) //完全背包问题
+            for(int j=good.v;j<=m;j++) dp[j]=max(dp[j],dp[j-good.v]+good.w);
+         else     //01背包问题
+          for(int j=m;j>=good.v;j--) dp[j]=max(dp[j],dp[j-good.v]+good.w);
+    }
+    cout<<dp[m]<<endl;
+}
+</code></pre>
+<h2 id="二维费用的背包问题">二维费用的背包问题</h2>
+<blockquote>
+<p>什么是二维费用的背包问题？</p>
+<blockquote>
+<p>有 N 件物品和一个容量是 V的背包，背包能承受的最大重量是 M。</p>
+<p>每件物品只能用一次。体积是 vi，重量是 mi，价值是 wi。</p>
+<p>求解将哪些物品装入背包，可使物品总体积不超过背包容量，总重量不超过背包可承受的最大重量，且价值总和最大。<br>
+输出最大价值</p>
+</blockquote>
+<p>分析</p>
+<blockquote>
+<p>f[i,j,k] 从前i个物品中 选择总i体积不超过j  总重量不超过k的集合</p>
+<p>f[i,j,k]=max(f[i-1,j,k],f[i-1,j-v[i],k-w[i]]);</p>
+<p>可以只使用二维的数组：</p>
+<p>当每件物品只可以取一次时变量V和M采用顺序的循环，</p>
+<p>当物品有如完全背包问题时采用逆序的循环。</p>
+<p>当物品有如多重背包问题时拆分物品。</p>
+</blockquote>
+</blockquote>
+<pre class=" language-language-cpp"><code class="language-language-cpp">#include<iostream>
+#include<stdio.h>
+using namespace std;
+const int N=1010;
+int T,V,M,m,v,w;
+int f[N][N];
+int main(){
+    cin>>T>>V>>M;//输入物品件数 最大体积 最大重量
+    for(int i=1;i<=T;i++){
+        cin>>v>>m>>w; //输入体积 重量 价值 
+        for(int j=V;j>=v;j--)  //
+            for(int k=M;k>=m;k--)
+                f[j][k]=max(f[j][k],f[j-v][k-m]+w);
+            
+    } 
+    cout<<f[V][M]<<endl;
+    
+}
+</code></pre>
+<h2 id="分组背包问题">分组背包问题</h2>
+<blockquote>
+<p>什么是分组背包问题？</p>
+<blockquote>
+<p>有 N 组物品和一个容量是 V的背包。</p>
+<p>每组物品有若干个，同一组内的物品最多只能选一个。<br>
+每件物品的体积是 vij，价值是 wij，其中 i是组号，j是组内编号。</p>
+<p>求解将哪些物品装入背包，可使物品总体积不超过背包容量，且总价值最大。</p>
+<p>输出最大价值。</p>
+</blockquote>
+<p>分析</p>
+<blockquote>
+<p>F[I,J]含义是  只从前i组中选，且体积不大于J的方案集合</p>
+<p>这一组不选 那么F[I,J]=F[I-1,J]</p>
+<p>这一组选了第k个物品 就是 F[I,J]=F[I-1,J-Vik]+Wik</p>
+</blockquote>
+</blockquote>
+<pre class=" language-language-cpp"><code class="language-language-cpp">#include<iostream>
+#include<stdio.h>
+using namespace std;
+const int N=101;
+int f[N],v[N][N],w[N][N],s[N];
+int n,m;
+int main(){
+   cin>>n>>m; //输入物品组数和背包容量
+   for(int i=1;i<=n;i++)
+   {  cin>>s[i]; //记录下来这个物品组有多少个物品
+      for(int j=1;j<=s[i];j++)
+         cin>>v[i][j]>>w[i][j];
+   }
+   int res=0;
+   for(int i=1;i<=n;i++)
+   for(int j=m;j>=0;j--) //枚举体积
+   for(int k=1;k<=s[i];k++) //，枚举物品数
+   {    //只有背包体积大于物品体积时 
+       if(j>=v[i][k]) f[j]=max(f[j],f[j-v[i][k]]+w[i][k]);
+       res=max(res,f[j]);
+   }
+   cout<<res<<endl;
+}
+</code></pre>
+<h2 id="有依赖的背包问题">有依赖的背包问题</h2>
+<p><a href="https://www.acwing.com/problem/content/description/10/" target="_blank" rel="noopener">题目链接</a></p>
+<pre class=" language-language-cpp"><code class="language-language-cpp">#include<iostream>
+#include<cstring>
+#include<algorithm>
+using namespace std;
+
+const int N = 110;
+int n,m;
+int h[N],e[N],ne[N],idx;
+int v[N],w[N],f[N][N]; 
+
+void add(int a,int b){
+    e[idx] = b,ne[idx] = h[a],h[a] = idx++;
+}
+
+void dfs(int u){
+    for(int i = h[u];i!=-1;i = ne[i]){//对当前结点的边进行遍历 
+        int son = e[i];//e数组的值是当前边的终点，即儿子结点 
+        dfs(son); 
+        for(int j = m-v[u];j>=0;j--){
+        //遍历背包的容积，因为我们是要遍历其子节点，所以当前节点我们是默认选择的。
+        //这个时候当前结点我们看成是分组背包中的一个组，子节点的每一种选择我们都看作是组内一种物品，所以是从大到小遍历。
+        //我们每一次都默认选择当前结点，因为到最后根节点是必选的。 
+            for(int k = 0;k<=j;k++){//去遍历子节点的组合 
+                f[u][j] = max(f[u][j],f[u][j-k]+f[son][k]);
+            }
+        }
+    }
+    //加上刚刚默认选择的父节点价值
+    for(int i = m;i>=v[u];i--){
+        f[u][i] = f[u][i-v[u]]+w[u];
+    }
+    //因为我们是从叶子结点开始往上做，所以如果背包容积不如当前物品的体积大，那就不能选择当前结点及其子节点，因此赋值为零 
+    for(int i = 0;i<v[u];i++){
+        f[u][i] = 0;
+    }
+}
+
+int main(){
+    memset(h,-1,sizeof h);
+    cin>>n>>m;
+    int root;
+    for(int i = 1;i<=n;i++){
+        int p;
+        cin>>v[i]>>w[i]>>p;
+        if(p==-1){
+            root = i;
+        }else{
+            add(p,i);//如果不是根节点就加入邻接表,其中p是该节点的父节点，i是当前是第几个节点
+        }
+    }
+    dfs(root);
+    cout<<f[root][m]<<endl;
     return 0;
 }
 
@@ -565,7 +793,7 @@ int main(){
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://arbor1.github.io/2020/081227720.html">https://arbor1.github.io/2020/081227720.html</a>
+                    <a href="https://arbor1.github.io/2020/090660354.html">https://arbor1.github.io/2020/090660354.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -603,8 +831,8 @@ int main(){
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84/">
-                                    <span class="chip bg-color">树的直径</span>
+                                <a href="/tags/%E8%83%8C%E5%8C%85/">
+                                    <span class="chip bg-color">背包</span>
                                 </a>
                             
                         </div>
@@ -1038,54 +1266,63 @@ int main(){
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/081317546.html">
+                <a href="/2020/090660354.html">
                     <div class="card-image">
                         
                         
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="/medias/featureimages/10.jpg" class="responsive-img" alt="background">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="/medias/featureimages/19.jpg" class="responsive-img" alt="背包问题">
                         
-                        <span class="card-title">background</span>
+                        <span class="card-title">背包问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            修改背景
+                            背包问题
+01背包
+联系题目链接
 
-我的主题是Matery
-找到 themes\Matery\source\css\matery.css
-搜索(ctrl+F)找到  body
-修改为如下样式
+什么是01背包问题呢？
 
-body {
-    /* background-color: #ea
+给定n件物品 还有一个容量为V的背包，
+再给出  n件物品的体积和价值 每件物品只能选一次
+求出背包的最大价值
+
+
+
+二维做法
+
+/*
+用f[i][j]表示前i件物品恰放入容量为
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-06
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Hexo/" class="post-category">
-                                    Hexo
+                            <a href="/categories/algorithm/" class="post-category">
+                                    algorithm
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
+                    <a href="/tags/%E8%83%8C%E5%8C%85/">
+                        <span class="chip bg-color">背包</span>
                     </a>
                     
                 </div>
@@ -1099,37 +1336,40 @@ body {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/081217683.html">
+                <a href="/2020/090164192.html">
                     <div class="card-image">
                         
                         
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="/medias/featureimages/15.jpg" class="responsive-img" alt="Markdown">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="/medias/featureimages/16.jpg" class="responsive-img" alt="疯狂A题训训练搜索篇">
                         
-                        <span class="card-title">Markdown</span>
+                        <span class="card-title">疯狂A题训训练搜索篇</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            标题
-井号 “#” 加 一个空格&quot; &quot;
-一直可以到6级标题
-字体
-hello，world    变成粗体 两边各加两个*号
-hello,world     变成斜体 两边各加一个*号
-hello,world   加粗斜体
+                            疯狂A题训练——搜索篇
+P1443 马的遍历
+
+更新步数的时候，是在跳到这一步的那步的基础上  步数+1
+
+const int N=410;
+int g[N][N];
+bool v[N][N];
+int n,m,sx,sy;
+queueq;
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-01
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Markdown/" class="post-category">
-                                    Markdown
+                            <a href="/categories/%E5%88%B7%E9%A2%98/" class="post-category">
+                                    刷题
                                 </a>
                             
                             
@@ -1139,8 +1379,8 @@ hello,world   加粗斜体
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Markdown/">
-                        <span class="chip bg-color">Markdown</span>
+                    <a href="/tags/%E5%88%B7%E9%A2%98/">
+                        <span class="chip bg-color">刷题</span>
                     </a>
                     
                 </div>
