@@ -4,6 +4,119 @@
   
     
     <entry>
+      <title>ctrl快捷键</title>
+      <link href="/2020/090725810.html"/>
+      <url>/2020/090725810.html</url>
+      
+        <content type="html"><![CDATA[<p>ctrl+a: 光标跳到行首。<br>ctrl+b: 光标左移一个字母。<br>ctrl+c: 杀死当前进程。<br>ctrl+d: 删除光标后一个字符或exit、logout。<br>ctrl+e: 光标移到行尾。<br>ctrl+f：向后移一个字符。<br>ctrl+h: 删除光标前一个字符，同backspace键相同。<br>ctrl+k: 剪切光标后至行尾的内容。<br>ctrl+l: 清屏，相当于clear。<br>Ctrl+p：重复上一次命令。<br>ctrl+r: 搜索之前的命令历史。多次ctrl+r 会一直向上搜索。<br>ctrl+u: 删除光标前至行首间的所有内容。<br>ctrl+w: 删除前面的字符至上一个空格处。<br>ctrl+t: 交换光标位置前的两个字符。<br>ctrl+y: 粘贴或者恢复上次的删除。<br>ctrl+z: 把当前进程转到后台运行，使用fg命令恢复。<br>Ctrl+x: 跳回之前移动的原位置。<br>ctrl+m: 等同于回车键<br>ctrl+o: 等同于回车键<br>ctrl+s: 暂时冻结当前shell的输入<br>ctrl+q: 解冻</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 鸟哥的linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>文件查询</title>
+      <link href="/2020/090760773.html"/>
+      <url>/2020/090760773.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="命令与文件的查询"><a href="#命令与文件的查询" class="headerlink" title="命令与文件的查询"></a>命令与文件的查询</h1><h2 id="which"><a href="#which" class="headerlink" title="which"></a>which</h2><blockquote><p>查看命令的路径</p><p>==which   +命令==</p></blockquote><h2 id="whereis"><a href="#whereis" class="headerlink" title="whereis"></a>whereis</h2><blockquote><p>查找文件</p><p>whereis  +目录</p><p>whereis  -b   只查找二进制文件</p><p>whereis -m 只查找说明文件</p></blockquote><h2 id="locate"><a href="#locate" class="headerlink" title="locate"></a>locate</h2><blockquote><p>用于查找符合条件的文档或者目录</p><p>使用locate的时候 他会去数据库（/var/lib/mlocate/mlocate.db）中查找而不是整个磁盘中</p><p>所以当天创建的文件可能当天查不出来(数据库一天会自己更新)</p><p>如果想今天就查找出来 我们可以用==updatedb 命令==</p><p>locate -i 目录  忽略大小写  查找</p></blockquote><h2 id="find"><a href="#find" class="headerlink" title="find"></a>find</h2><blockquote><p>find  目录 -属性 值</p><p>默认是 当前目录</p><p>属性 可以是 名字  大小 用户 UID 权限</p><p>加上属性的值</p><p>find  / -user tom -or -group tom</p><p>表示在根目录下 用户名为tom或者所属组为tom的文件</p><p>==find / -uid 500==</p><p>uid 是500 的</p><p>==find -size +50M== 就是查找大于50M的文件  同理  -50M就是小于</p><p>find  -size +2M -size -5M 大于2m小于5m的 文件</p><p>==find -ctime 1== 一天之前的文件</p><p>find -ctime +1 创建时间超过一天的文件</p><p>==find -cmin 1==刚好一分钟</p><p>find -cmin +1 超过一分钟</p><p>find -cmin -10 少于10分钟</p><p>==find -newer file1== 查找比创建file1要新（在file1之后创建）的文件</p><p>==find -perm 222==  查找权限为222 的文件 必须完全匹配</p><p>==find -perm +222== ugo权限当中只要有一个有w权限就满足  + 是或的关系</p><p>find -perm -222 ugo权限中至少都有w权限才满足</p><p>-是且的关系</p><p>==find -perm -2==  这个2是指的other里面的w权限</p><p>​            -42 是指的group里面的 r权限和other里面的w权限</p><p>-766 指的是user的rwx权限 group的rw权限 other的rw权限</p></blockquote>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>查看文件与权限</title>
+      <link href="/2020/090739275.html"/>
+      <url>/2020/090739275.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="查看文件内容（只能是文本文件）"><a href="#查看文件内容（只能是文本文件）" class="headerlink" title="查看文件内容（只能是文本文件）"></a>查看文件内容（只能是文本文件）</h1><h2 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h2><blockquote><p>cat +文件名  直接显示出文件中的所有内容</p><p>适合查看小的文件  只能看到最后一屏内容</p><p>cat -n  文件名  每一行都加上一个编号  从1开始 算空白行</p></blockquote><h2 id="tac"><a href="#tac" class="headerlink" title="tac"></a>tac</h2><pre class=" language-linux"><code class="language-linux">tac +文件名 从最后一行开始显示 到第一行</code></pre><h2 id="nl"><a href="#nl" class="headerlink" title="nl"></a>nl</h2><pre class=" language-linux"><code class="language-linux">nl +文件名和 cat -n的效果是一样的  前面都会加上数字  但是这样不算空白行的nl -b a +文件名 就是和cat -n一模一样</code></pre><h2 id="more"><a href="#more" class="headerlink" title="more"></a>more</h2><blockquote><p>more +文件名   可以一屏幕一屏幕的显示</p><p>按 ==空格== 是 更新一屏幕</p><p>按 ==回车==  会显示下一行</p><p>但是==只能往后看 不能往前看==</p><p>按 q 或者 CTRL +c 退出</p><p>支持查找关键字 我觉得不好用</p></blockquote><h2 id="less"><a href="#less" class="headerlink" title="less"></a>less</h2><blockquote><p>less +文件名</p><p>按 ==空格== 是 更新一屏幕</p><p>按 ==回车==  会显示下一行</p><p>同时支持  ==Page Up Page Down== 键 一屏幕一屏幕</p><p>==Home== 直接到开头</p><p>==End== 直接到结尾</p><p>还可以查找关键字</p><p>在最底部 ==输入/ 后面加上要查找的关键字==</p><p>==小写的n 往下查找==</p><p>==大写的N 往上查找==     都是直接按 不用到最下面输入</p></blockquote><h2 id="head"><a href="#head" class="headerlink" title="head"></a>head</h2><pre class=" language-linux"><code class="language-linux">查看前几行 默认是前10行的数据head  +文件名字head -n 3 +文件名字 查看的是文件的前3行head -3也是可以的 和 -n 3是一个用法</code></pre><h2 id="tail"><a href="#tail" class="headerlink" title="tail"></a>tail</h2><pre class=" language-linux"><code class="language-linux">默认查看文件的尾5行tail +文件名tail -n 3 +文件名 查看文件的尾3行tail -3 +文件名 也是和上面一样的tail -f +文件名  当文件增长时 输出后续添加的文件 可以监测日志tailf  等同于上面的</code></pre><h1 id="查看二进制文件"><a href="#查看二进制文件" class="headerlink" title="查看二进制文件"></a>查看二进制文件</h1><pre class=" language-linux"><code class="language-linux">    od指令会读取所给予的文件的内容，并将其内容以八进制字码呈现出来。od [-abcdfhilovx][-A <字码基数>][-j <字符数目>][-N <字符数目>][-s <字符串字符数>][-t <输出格式>][-w <每列字符数>][--help][--version][文件...]-a 　此参数的效果和同时指定"-ta"参数相同。-A<字码基数> 　选择要以何种基数计算字码。-b 　此参数的效果和同时指定"-toC"参数相同。-c 　此参数的效果和同时指定"-tC"参数相同。-d 　此参数的效果和同时指定"-tu2"参数相同。-f 　此参数的效果和同时指定"-tfF"参数相同。-h 　此参数的效果和同时指定"-tx2"参数相同。-i 　此参数的效果和同时指定"-td2"参数相同。-j<字符数目>或--skip-bytes=<字符数目> 　略过设置的字符数目。-l 　此参数的效果和同时指定"-td4"参数相同。-N<字符数目>或--read-bytes=<字符数目> 　到设置的字符数目为止。-o 　此参数的效果和同时指定"-to2"参数相同。-s<字符串字符数>或--strings=<字符串字符数> 　只显示符合指定的字符数目的字符串。-t<输出格式>或--format=<输出格式> 　设置输出格式。-v或--output-duplicates 　输出时不省略重复的数据。-w<每列字符数>或--width=<每列字符数> 　设置每列的最大字符数。-x 　此参数的效果和同时指定"-h"参数相同。--help 　在线帮助。--version 　显示版本信息。od</code></pre><h1 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h1><blockquote><p>==touch +文件名==   文件名不存在就是创建新文件</p><p>​                          文件名存在的话就是把文件的创建时间或者修改时间改变为当前</p><p>修改文件时间</p><p>touch -t 时间戳 文件名</p><p>时间戳 年月日时分秒</p></blockquote><h2 id="文件与目录的权限"><a href="#文件与目录的权限" class="headerlink" title="文件与目录的权限"></a>文件与目录的权限</h2><blockquote><p>默认的目录权限是 777  rwxrwxrwx</p><p>默认的文件权限是 666  rw-rw-rw-</p><p>==umask==  可以理解为权限过滤符</p><p>umask  333 表示的是 我要过滤 -wx-wx-wx权限</p><p>umask  -S 显示的是保留的权限 不是过滤的权限</p></blockquote><h2 id="文件隐藏属性（root受到了限制）"><a href="#文件隐藏属性（root受到了限制）" class="headerlink" title="文件隐藏属性（root受到了限制）"></a>文件隐藏属性（root受到了限制）</h2><blockquote><p>==chattr==    +a  目录名  我们只能添加不能删除</p><p>​            +i   目录名  不能添加和删除</p><p>​            -a   -i  就可以恢复</p><p>==lsattr==  会显示出文件的特殊属性</p></blockquote><h2 id="文件特殊权限"><a href="#文件特殊权限" class="headerlink" title="文件特殊权限"></a>文件特殊权限</h2><blockquote><p>==chmod  u+s== 文件名</p><p>chmod  u-s 文件名</p><p>如果在所有者权限里面出现了s 权限 表明其他人在执行这个命令的时候 将具有所有者的权限</p><p>如果是root 的文件里面有 所有者权限中有s 普通用户也有了root的权限  可以使用这个文件</p><p>==chmod  g+s==  目录名  那么每次这个文件下创建的文件都是继承目录名的  组</p><p>==chmod o+t== 目录名  表示在这个目录中创建的文件除了所有者和root之外 ，其他人即使有权限 也是不能删除的</p><p>也可以这样来赋予特殊权限 4644 就代表的是给 user 位 加上一个 S  rwsr–r–</p><p>​                                           2644                        group 位加上一个S rw-r-sr–</p><p>​                                          1644                          other位加上一个T rw-r–r-t</p></blockquote><h2 id="插曲"><a href="#插曲" class="headerlink" title="插曲"></a>插曲</h2><blockquote><p>esc下面的   ==飘键==   按两下 可以在输出语句中执行命令</p><p>echo  “ xxxx <code>  hostname</code>xxxx “</p><p>或者把 飘 键  改为  美元符号和括号结合  $(xxxxx)$</p></blockquote>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>day02</title>
+      <link href="/2020/090714378.html"/>
+      <url>/2020/090714378.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h1><pre class=" language-linux"><code class="language-linux">用户  /etc/passwd用户的密码 /etc/shadow组 /etc/group系统读取的是UID（就像是身份证号一样）用 id 用户名 查找uid gid</code></pre><h1 id="chmod"><a href="#chmod" class="headerlink" title="chmod"></a>chmod</h1><pre class=" language-linux"><code class="language-linux">ls -ldrwxr-x--x 1  root   root 230210个字符 数字 所有者 所在组 数字  时间第一个字符表示 文件类型   "-"普通文件 "d"文件夹                       "b"设备文件（块设备 内存 u盘）                       "c"设备文件 (字符型 鼠标 键盘)                       "l" 软链接（快捷方式） 后面的2~10个字符  每三个分为一组     rwx 就是所有者的权限     r-x 是所在组的权限     --x是其他人的权限     r：读权限     w：写权限     x：执行权限   是文件的时候 我们当做程序运行                  文件夹的时候 我们是不是可以cd进去     -：无权限 改权限：    yy是文件名 chmod  u    所有者  user        g    所在组 group        o    其他人 other        ugo=a   一起改        ug     所有者和所在组        go     所在组和其他人   chmod =wx yy 无论以前是什么权限 改了以后 所有者和所在组 的权限就只有wx   chmod +w  对所有者和所在组修改   chmod +x   对所有的 ugo 都修改   chmod u+x,g+w,o+r yy 逗号之间没有空格 yy   chmod a=r yy  等于ugo 所有的就只有 r 还有一种方式  数字 更改       r:4  w:2 x:1 -:0    chmod 755 yy   等于    chmod u=rwx,g=rx,o=rx yy  当我们改变文件夹的权限的时候，里面文件的权限不变可以用 chmod -R 755 文件夹名用递归的方式把文件夹，文件的权限都改变</code></pre><h1 id="chown"><a href="#chown" class="headerlink" title="chown"></a>chown</h1><pre class=" language-linux"><code class="language-linux">chown 改变文件所有者chown tom yy改变文件所在组chown  tom:tom  yy     所有者:所在组 文件名     : . 都是可以的</code></pre><h1 id="chgrp"><a href="#chgrp" class="headerlink" title="chgrp"></a>chgrp</h1><pre class=" language-linux"><code class="language-linux">改变文件所在组chgrp 组名  文件</code></pre><h1 id="扩展名"><a href="#扩展名" class="headerlink" title="扩展名"></a>扩展名</h1><pre class=" language-linux"><code class="language-linux">在linux中 文件的扩展名 不是很重要 我们可以通过file 文件名   来查看是什么类型的</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 鸟哥的linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>day01</title>
+      <link href="/2020/090714698.html"/>
+      <url>/2020/090714698.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><blockquote><p>linux 每个模式都有7个控制台</p></blockquote><h2 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h2><pre class=" language-linux"><code class="language-linux">ls  -l  查看 有时间 权限等    -1（数字1）一行一个显示文件    -a all    -s size 显示出大小    -h human 以人类更容易看到的来显示    -d 目录本身的信息    -ld --time=atime  //查看文件访问时间    -ld --time=ctime  //查看文件的创建时间 ls -l -a -1  -> ls -la1</code></pre><h2 id="clear"><a href="#clear" class="headerlink" title="clear"></a>clear</h2><blockquote><p>清空屏幕   ctrl+L 是它的快捷键</p></blockquote><h2 id="cal"><a href="#cal" class="headerlink" title="cal"></a>cal</h2><blockquote><p>查看日历</p></blockquote><pre class=" language-linux"><code class="language-linux"> cal  月 年   eg： cal 6 2020 会显示 2020年6月的日历 cal  年      eg：cal 2020 会显示2020全年的日历</code></pre><h2 id="sync"><a href="#sync" class="headerlink" title="sync"></a>sync</h2><blockquote><p>将数据写到磁盘中</p><p>因为有时候数据只写在了内存或者缓冲中，要用sync才会写入到磁盘</p><p>这就像是用u盘传东西 没有确认退出 有时候会出现 没传上东西的情况</p></blockquote><h2 id="关机"><a href="#关机" class="headerlink" title="关机"></a>关机</h2><blockquote><p>（1）shutdown</p><p>(2) poweroff</p><p>（3）init 0</p></blockquote><h2 id="切换运行等级"><a href="#切换运行等级" class="headerlink" title="切换运行等级"></a>切换运行等级</h2><blockquote><p>可以查看  ls /etc/rc.d/</p><p>ls /etc/rc.d/rc.2.d  里面的K开头的都是不运行的  S开头的都是运行的</p><p>init 0    关机</p><p>init 1 单用户模式（windows中的安全用户模式）</p><p>init 2 多用户模式</p><p>init 3 纯文本 可以输入startx 开启图形用户界面</p><p>init 4 无意义</p><p>init 5 图形化界面</p><p>init 6重启</p><p>==用 runlevel 可以查看 运行等级==</p><p>==第一个数显示的是之前的  第二个数显示的是当前的==</p><p>#runlevel</p><p>N 5 就表示一直用的图形用户界面</p><p>3 5就表示再用图形用户界面以前 用的是纯文本的界面</p></blockquote><h2 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h2><blockquote><p>（1）reboot     加上-f 是立即重启</p><p>（2）init 6</p></blockquote><h2 id="bc"><a href="#bc" class="headerlink" title="bc"></a>bc</h2><blockquote><p>计算器   scale=4 计算后保留小数点后4位  输入quit 退出</p></blockquote><h2 id="Tab按键"><a href="#Tab按键" class="headerlink" title="Tab按键"></a>Tab按键</h2><blockquote><p>Tab 按键会补全命令 按两次后就会显示出 ==以输入的字符==开头的命令 或者文件名</p></blockquote><h2 id="history"><a href="#history" class="headerlink" title="history"></a>history</h2><blockquote><p>历史中的命令</p><p>只会存储1000个   是变量（后面就会看到了）HISTFILESIZE 决定的</p><p>echo $HISTFILESIZE 会显示1000</p><p>清空history    history -c</p><p>==可以在下一行输入 ！再加上 history 里面 命令 前面的数字==</p><p>eg：  #:! 115 就会执行history中的第115条命令</p><p>历史存不下了 就从头开始删 也就是 第一个命令删除 第二个为第一个</p></blockquote><p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://cdn.jsdelivr.net/gh/Arbor334/img/linux/history.jpg"></p><h2 id="一些快捷键"><a href="#一些快捷键" class="headerlink" title="一些快捷键"></a>一些快捷键</h2><blockquote><p>ctrl +a 到命令行开头</p><p>ctrl +E 到命令行结尾</p><p>ctrl+ 方向键左键 一个单词一个单词的往头走</p><p>ctrl+方向键右键 一个单词一个单词的往尾走</p><p>ctrl + U 光标前面的所有字符都删除 一直到开头</p><p>ctrl+K 光标后面的所有字符都删除  一直到结尾</p><p>鼠标左键选中要复制的东西  然后按一下ESC键 在点一下鼠标的滚轮 就复制上了</p></blockquote><h2 id="帮助类的"><a href="#帮助类的" class="headerlink" title="帮助类的"></a>帮助类的</h2><blockquote><p>==/usr/share/doc/==  这个文件下都是帮助文件的程序</p></blockquote><h3 id="help"><a href="#help" class="headerlink" title="help"></a>help</h3><blockquote><p>==命令 –help==   会显示用法  ls [选项]..[文件]..  [ ]中的都是可选的</p><p>eg;ls –help   注意是两个“-”</p></blockquote><h3 id="man（很牛掰的）"><a href="#man（很牛掰的）" class="headerlink" title="man（很牛掰的）"></a>man（很牛掰的）</h3><blockquote><p>==格式：man  命令==</p><p>eg： man ls</p><p>/^n 就会找到以 n为开头的单词</p><p>/root 查找哪里有root</p><p>==man -k 命令==  就会显示出来包含这个==命令字符==的命令或者解释中有这个命令字符的命令</p><p>eg; man -k ls</p></blockquote><h3 id="whatis"><a href="#whatis" class="headerlink" title="whatis"></a>whatis</h3><blockquote><p>格式 ：whatis 命令</p><p>告诉你有什么用 但是不告诉你怎么用</p></blockquote><h2 id="文本编辑器"><a href="#文本编辑器" class="headerlink" title="文本编辑器"></a>文本编辑器</h2><h3 id="nano"><a href="#nano" class="headerlink" title="nano"></a>nano</h3><blockquote><p>格式 : nano  文件名</p><p>ctrl + 下面的字母 进行操作</p></blockquote><h3 id="gedit"><a href="#gedit" class="headerlink" title="gedit"></a>gedit</h3><blockquote><p>很像是windows中的记事本</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 鸟哥的linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>html入门基础</title>
       <link href="/2020/090733834.html"/>
       <url>/2020/090733834.html</url>
