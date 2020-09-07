@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="ctrl快捷键, Arbor1&#39;s CodeHome">
+    <meta name="keywords" content="vim, Arbor1&#39;s CodeHome">
     <meta name="description" content="个人博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>ctrl快捷键 | Arbor1&#39;s CodeHome</title>
+    <title>vim | Arbor1&#39;s CodeHome</title>
     <link rel="icon" type="image/jpeg" href="/medias/header.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -224,12 +224,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">ctrl快捷键</h1>
+                    <h1 class="description center-align post-title">vim</h1>
                 </div>
             </div>
         </div>
@@ -384,7 +384,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    247
+                    1.8k
                 </div>
                 
 
@@ -401,7 +401,296 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>ctrl+a: 光标跳到行首。<br>ctrl+b: 光标左移一个字母。<br>ctrl+c: 杀死当前进程。<br>ctrl+d: 删除光标后一个字符或exit、logout。<br>ctrl+e: 光标移到行尾。<br>ctrl+f：向后移一个字符。<br>ctrl+h: 删除光标前一个字符，同backspace键相同。<br>ctrl+k: 剪切光标后至行尾的内容。<br>ctrl+l: 清屏，相当于clear。<br>Ctrl+p：重复上一次命令。<br>ctrl+r: 搜索之前的命令历史。多次ctrl+r 会一直向上搜索。<br>ctrl+u: 删除光标前至行首间的所有内容。<br>ctrl+w: 删除前面的字符至上一个空格处。<br>ctrl+t: 交换光标位置前的两个字符。<br>ctrl+y: 粘贴或者恢复上次的删除。<br>ctrl+z: 把当前进程转到后台运行，使用fg命令恢复。<br>Ctrl+x: 跳回之前移动的原位置。<br>ctrl+m: 等同于回车键<br>ctrl+o: 等同于回车键<br>ctrl+s: 暂时冻结当前shell的输入<br>ctrl+q: 解冻</p>
+                <h1 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h1><p><a href="http://vimdoc.sourceforge.net/htmldoc/usr_toc.html" target="_blank" rel="noopener">帮助手册</a></p>
+<blockquote>
+<p>命令模式中：</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>输入字符方式</th>
+<th>产生效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>u</td>
+<td>相当于windows中的 撤销</td>
+</tr>
+<tr>
+<td>ctrl+r</td>
+<td>相当于windows中的前进</td>
+</tr>
+<tr>
+<td>i</td>
+<td>从光标当前的位置插入</td>
+</tr>
+<tr>
+<td>I</td>
+<td>从光标的开头插入</td>
+</tr>
+<tr>
+<td>a</td>
+<td>当前光标的下一个字符插入</td>
+</tr>
+<tr>
+<td>A</td>
+<td>光标本行的结束插入</td>
+</tr>
+<tr>
+<td>o</td>
+<td>在下一行产生一个空白行，并在这个空白行插入</td>
+</tr>
+<tr>
+<td>O</td>
+<td>在下一行产生一个空白行，但是实在本行插入</td>
+</tr>
+</tbody></table>
+<h2 id="一些其他的用法"><a href="#一些其他的用法" class="headerlink" title="一些其他的用法"></a>一些其他的用法</h2><table>
+<thead>
+<tr>
+<th>输入</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>：4</td>
+<td>切换到第4行</td>
+</tr>
+<tr>
+<td>：set nu</td>
+<td>在行首出现序号</td>
+</tr>
+<tr>
+<td>：set nonu</td>
+<td>行首序号消失</td>
+</tr>
+<tr>
+<td>：s/xxx/yyy/</td>
+<td>将当前行的第一个xxx替换为yyy</td>
+</tr>
+<tr>
+<td>：s/xxx/yyy/g</td>
+<td>将当前行的所有的xxx都替换为yyy</td>
+</tr>
+<tr>
+<td>:3,13s/xxx/yyy/g</td>
+<td>从第3行到第13行的xxx都替换为yyy</td>
+</tr>
+<tr>
+<td>：.,$s/xx/yyg</td>
+<td>从”.”(当前行)到”$”(最后一行)xx都替换为yy</td>
+</tr>
+<tr>
+<td>：%s/xx/yy/g</td>
+<td>整篇文章xx都替换yy  %就等于(1,$)</td>
+</tr>
+<tr>
+<td>：%s/xx//g</td>
+<td>删除全文的xx</td>
+</tr>
+<tr>
+<td>：.,$s/^/#/g</td>
+<td>^（开头）#(注释) 全都都加上注释</td>
+</tr>
+<tr>
+<td>：.,$s/^#//g</td>
+<td>将开头是#的删除</td>
+</tr>
+<tr>
+<td>yy</td>
+<td>复制当前行</td>
+</tr>
+<tr>
+<td>4yy</td>
+<td>当前行向下数3行 四行都复制</td>
+</tr>
+<tr>
+<td>p</td>
+<td>粘贴复制的数据</td>
+</tr>
+<tr>
+<td>dd</td>
+<td>剪切当前行</td>
+</tr>
+<tr>
+<td>4dd</td>
+<td>当前行下数3行 四行都剪切</td>
+</tr>
+<tr>
+<td>r  x</td>
+<td>按一下r键 在输入想要替换的字符 就可以替换了</td>
+</tr>
+<tr>
+<td>x</td>
+<td>在命令行 按x就删除了字符</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>输入</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>/ xxx</td>
+<td>查找xxx（n从上往下查找，N从下往上查找）</td>
+</tr>
+<tr>
+<td>15gg</td>
+<td>在命令模式输入15 再按两下g 就切换到了15行·</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="块选择"><a href="#块选择" class="headerlink" title="块选择"></a>块选择</h2><blockquote>
+<p>在命令行模式 用 ctrl+V  就可进行块选择 调整用  上下左右键</p>
+<p>用yy复制  p粘贴</p>
+</blockquote>
+<h2 id="打开多个文件"><a href="#打开多个文件" class="headerlink" title="打开多个文件"></a>打开多个文件</h2><blockquote>
+<p>vim file1 file2 file3</p>
+</blockquote>
+<pre class=" language-linux"><code class="language-linux">文件之间的切换
+：files 查看多少个文件
+：n  小n是往下
+：N  大N是往上
+：first 是第一个
+：last 是最后一个
+当然可以文件间的数据剪切和粘贴
+：sp  将文件分为两部分  按住CTRL W按两次 就会来回切换
+                      按CTRL+W + ↓方向键(或者 J 键)  就切换到下面了
+                      按CTRL+W + ↑方向键 （或者 K 键） 切换到上面</code></pre>
+<h2 id="想要的初始设置"><a href="#想要的初始设置" class="headerlink" title="想要的初始设置"></a>想要的初始设置</h2><blockquote>
+<p>打开 .vimrc</p>
+<p>在里面输入   set nu</p>
+<p>​     :wq</p>
+<p>就可以在每次代开vim 的时候显示行号</p>
+</blockquote>
+<h2 id="系统的编码"><a href="#系统的编码" class="headerlink" title="系统的编码"></a>系统的编码</h2><blockquote>
+<p>vim /etc/syscondig/i18n</p>
+</blockquote>
+<h2 id="文件格式"><a href="#文件格式" class="headerlink" title="文件格式"></a>文件格式</h2><blockquote>
+<p>有时我们在linux中创建的文件复制到windows中</p>
+<p>可能文件格式不太一样</p>
+<p>就需要使用   unix2dos -n filenameInLinux  filenameToWindows</p>
+<p>相反过来 就用  doc2unix</p>
+</blockquote>
+<h1 id="shell"><a href="#shell" class="headerlink" title="shell"></a>shell</h1><blockquote>
+<p>shell是一个翻译器，把我们所敲的命令 翻译成cpu可以看懂的 语言</p>
+<p>cpu执行完以后，shell把cpu发送的东西 解析成我们可以看懂的语言</p>
+<p>终端不是shell  打开终端会打开一个shell</p>
+</blockquote>
+<h2 id="查看支持那些shell"><a href="#查看支持那些shell" class="headerlink" title="查看支持那些shell"></a>查看支持那些shell</h2><blockquote>
+<p>cat /etc/shells</p>
+<p>linux中默认使用的是bash</p>
+</blockquote>
+<h2 id="shell切换"><a href="#shell切换" class="headerlink" title="shell切换"></a>shell切换</h2><blockquote>
+<p>敲入 支持的shell 就可以了</p>
+<p>退出是  exit</p>
+</blockquote>
+<h2 id="为啥使用shell"><a href="#为啥使用shell" class="headerlink" title="为啥使用shell"></a>为啥使用shell</h2><blockquote>
+<p>我们主要使用的是命令行，在网络中传输的非常快</p>
+<p>我们有大量的快捷键可以使用</p>
+</blockquote>
+<h2 id="同一行多个命令"><a href="#同一行多个命令" class="headerlink" title="同一行多个命令"></a>同一行多个命令</h2><blockquote>
+<p>cal  ; date  用分号隔开就行了</p>
+<p>\ 命令太长了可以用 \ 下一行也是上一行的延续</p>
+</blockquote>
+<h2 id="shell的变量"><a href="#shell的变量" class="headerlink" title="shell的变量"></a>shell的变量</h2><p><a href="https://blog.csdn.net/x1269778817/article/details/46535729" target="_blank" rel="noopener">括号的区别</a></p>
+<blockquote>
+<p>变量名=值</p>
+<p>变量名可以使用</p>
+<p>数字 字母 下划线组合  开始不是数字就行</p>
+<p>等号两边不能有空格  值中有空格的话  用引号“ ”引起来</p>
+<p>本地变量与环境变量可以互相转换</p>
+</blockquote>
+<pre class=" language-linux"><code class="language-linux"># xx=19  设置一个变量名为xx ，值为19的本地变量
+#  echo $xx 输出变量的值 echo $+变量名
+# unset xx 取消变量
+#echo $$ 输出当前的shell值</code></pre>
+<h3 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h3><blockquote>
+<p>env   列出目前的 shell 环境下的所有环境变量及其内容</p>
+<p>export</p>
+</blockquote>
+<h3 id="本地变量"><a href="#本地变量" class="headerlink" title="本地变量"></a>本地变量</h3><blockquote>
+<p>只会影响当前的shell  不会影响子shell 只会在本shell有用</p>
+</blockquote>
+<h3 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h3><blockquote>
+<p>declare -x 变量名=值  也能创建环境变量</p>
+<p>export  变量名=值 //需要在子程序中运行，需要使用</p>
+<p>export  变量  指令  变为 环境变量</p>
+<p>会影响到所有的子shell</p>
+</blockquote>
+<blockquote>
+<p>set  会显示所有的变量</p>
+<p>env  export export -p 都会显示所有的环境变量</p>
+<p>将环境变量变为本地变量 declare +x 变量名</p>
+</blockquote>
+<blockquote>
+<p>set 3 2 3 4 5 6 7 8 9 a b c</p>
+<p>echo $10</p>
+<p>输出的却是30  ？为什么 呢？</p>
+<p>因为 解析的时候先解析$1 是3    后面的0解析不出来 直接付过去</p>
+<p>为了避免产生歧义  echo ${10} 用大括号括起来</p>
+</blockquote>
+<blockquote>
+<p>set 1 2 3 4 5 6 7 8 9 10 11 12</p>
+<p>echo $10</p>
+<p>输出 10   这个为什么可以输出呢  不清楚。。</p>
+</blockquote>
+<h3 id="删除变量"><a href="#删除变量" class="headerlink" title="删除变量"></a>删除变量</h3><p>unset   -f(删除函数) -v(删除变量)   名称就行 不用加$</p>
+<h2 id="shell编写"><a href="#shell编写" class="headerlink" title="shell编写"></a>shell编写</h2><blockquote>
+<p>vim   xx.sh  //shell文件的后缀是.sh</p>
+<p>#!/bin/bash    //在开头要写的</p>
+<p>chmod +x xx.sh 使其具有执行功能</p>
+<p>运行 ./xx.sh</p>
+<p>注意，一定要写成 <strong>./test.sh</strong>，而不是 <strong>test.sh</strong>，运行其它二进制的程序也一样，直接写 test.sh，linux 系统会去 PATH 里寻找有没有叫 test.sh 的，而只有 /bin, /sbin, /usr/bin，/usr/sbin 等在 PATH 里，你的当前目录通常不在 PATH 里，所以写成 test.sh 是会找不到命令的，要用 ./test.sh 告诉系统说，就在当前目录找</p>
+</blockquote>
+<h2 id="echo"><a href="#echo" class="headerlink" title="echo"></a>echo</h2><blockquote>
+<p>echo  “$xx” 是输出xx的值</p>
+<p>echo ‘$xx’ 是输出 xx</p>
+<p>echo  最好是在${xx}这样输出 记住就行了</p>
+<p>echo  “xxxxx <code>hostname</code>   xxx”  hostname 是一个命令</p>
+<p>命令在双引号中用的时候，要加上 `` 反引号  或者 <del>$()$</del></p>
+<p>echo $HOME</p>
+<p>echo $USER</p>
+<p>登录的时候 这些值还是空值</p>
+<p>当我们切换用户的时候，就是给HOME 和 USER等赋值的时候</p>
+<p>echo $HISTFILESIZE 显示 hostory可以存多少</p>
+<p>echo  $xx   xx我们这个时候没有定义 输出的空行</p>
+<p>xx=    这里我们明确输入值 但是是有值的 为空值</p>
+<p>echo $xx 我们这个时候输出的是空值  不是没有值</p>
+<p>echo $$ 显示我们的PID（线程代号）</p>
+<p>echo $PS1  命令行提示符环境变量</p>
+<p>echo 值 会在下一行直接显示出来值  有换行符</p>
+<p>echo -n 值     也显示 但是没有换行符</p>
+<p>$# 表示的是参数的个数</p>
+<p>$* 表示都有什么参数</p>
+<p>$0 表示文件的名字</p>
+<p>$1 表示第一个参数  以此类推（也叫位置变量）</p>
+</blockquote>
+<h1 id="PS1"><a href="#PS1" class="headerlink" title="PS1"></a>PS1</h1><blockquote>
+<p>更改PS1的格式</p>
+<p>PS1=’[\u@\h \w]’</p>
+<p>\d ：代表日期，格式为weekday month date，例如：”Mon Aug 1”</p>
+<p>　　\H ：完整的主机名称。例如：我的机器名称为：arbor1.linux，则这个名称就是arbor1.linux</p>
+<p>　　\h ：仅取主机的第一个名字，如上例，则为arbo1，.linux则被省略</p>
+<p>　　\t ：显示时间为24小时格式，如：HH：MM：SS</p>
+<p>　　\T ：显示时间为12小时格式</p>
+<p>　　\A ：显示时间为24小时格式：HH：MM</p>
+<p>　　\u ：当前用户的账号名称</p>
+<p>　　\v ：BASH的版本信息</p>
+<p>　　\w ：完整的工作目录名称。家目录会以 ~代替</p>
+<p>　　\W ：利用basename取得工作目录名称，所以只会列出最后一个目录</p>
+<p>　　# ：下达的第几个命令</p>
+<p>　　$ ：提示字符，如果是root时，提示符为：# ，普通用户则为：$</p>
+</blockquote>
+<h1 id="查看系统编码"><a href="#查看系统编码" class="headerlink" title="查看系统编码"></a>查看系统编码</h1><blockquote>
+<p>locale -a   显示系统支持的所有的编码</p>
+<p>echo $LANG 显示当前编码</p>
+</blockquote>
 
             </div>
             <hr/>
@@ -427,7 +716,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://arbor1.github.io/2020/090725810.html">https://arbor1.github.io/2020/090725810.html</a>
+                    <a href="https://arbor1.github.io/2020/090726382.html">https://arbor1.github.io/2020/090726382.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -904,27 +1193,24 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/090754373.html">
+                <a href="/2020/090726726.html">
                     <div class="card-image">
                         
                         
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="/medias/featureimages/15.jpg" class="responsive-img" alt="磁盘与文件系统管理">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="/medias/featureimages/16.jpg" class="responsive-img" alt="目录结构">
                         
-                        <span class="card-title">磁盘与文件系统管理</span>
+                        <span class="card-title">目录结构</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            硬盘与文件系统管理
-block
-（真正存储文件的地方）
+                            目录结构FHS 标准Filesystem Hierarchy Standard
+文件系统层次化标准
+FHS采用树形结构组织文件
 
-默认是 一个小block 4k大小
-如果一个block中存放数据了（存放了1k数据）
-但是没有盛满（还有3k）  那么这block也是不可以再用的
-inode
-每个inode 是12
+/bin：bin是Binary的缩写, 这个目录存放着``最经常使用的命令`。
+/boot：这里存放的是启动L
                         
                     </div>
                     <div class="publish-info">
@@ -933,8 +1219,12 @@ inode
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Arbor1
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E9%B8%9F%E5%93%A5%E7%9A%84linux/" class="post-category">
+                                    鸟哥的linux
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -957,30 +1247,28 @@ inode
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/090760773.html">
+                <a href="/2020/090761117.html">
                     <div class="card-image">
                         
                         
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="/medias/featureimages/12.jpg" class="responsive-img" alt="文件查询">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="/medias/featureimages/22.jpg" class="responsive-img" alt="备份">
                         
-                        <span class="card-title">文件查询</span>
+                        <span class="card-title">备份</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            命令与文件的查询which
-查看命令的路径
-==which   +命令==
+                            备份完全备份
+全部都备份 有新数据也会把旧数据备份一遍浪费很多空间
+dump -数字            数字范围是0~9
 
-whereis
-查找文件
-whereis  +目录
-whereis  -b   只查找二进制文件
-whereis -m 只查找说明文件
 
-locate
-用于查找符
+增量备份在原来的基础上再增加新数据的备份
+0123456789
+
+差异备份
+备份的是 从最开始全部备份 到现在
                         
                     </div>
                     <div class="publish-info">
@@ -989,8 +1277,12 @@ locate
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Arbor1
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E9%B8%9F%E5%93%A5%E7%9A%84linux/" class="post-category">
+                                    鸟哥的linux
+                                </a>
+                            
                             
                         </span>
                     </div>
