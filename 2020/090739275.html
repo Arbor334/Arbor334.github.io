@@ -392,23 +392,16 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>查看文件内容（只能是文本文件）</h1>
-<h2 id="cat">cat</h2>
-<blockquote>
+                <h1 id="查看文件内容（只能是文本文件）"><a href="#查看文件内容（只能是文本文件）" class="headerlink" title="查看文件内容（只能是文本文件）"></a>查看文件内容（只能是文本文件）</h1><h2 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h2><blockquote>
 <p>cat +文件名  直接显示出文件中的所有内容</p>
 <p>适合查看小的文件  只能看到最后一屏内容</p>
 <p>cat -n  文件名  每一行都加上一个编号  从1开始 算空白行</p>
 </blockquote>
-<h2 id="tac">tac</h2>
-<pre class=" language-language-linux"><code class="language-language-linux">tac +文件名 从最后一行开始显示 到第一行
-</code></pre>
-<h2 id="nl">nl</h2>
-<pre class=" language-language-linux"><code class="language-language-linux">nl +文件名
+<h2 id="tac"><a href="#tac" class="headerlink" title="tac"></a>tac</h2><pre class=" language-linux"><code class="language-linux">tac +文件名 从最后一行开始显示 到第一行</code></pre>
+<h2 id="nl"><a href="#nl" class="headerlink" title="nl"></a>nl</h2><pre class=" language-linux"><code class="language-linux">nl +文件名
 和 cat -n的效果是一样的  前面都会加上数字  但是这样不算空白行的
-nl -b a +文件名 就是和cat -n一模一样
-</code></pre>
-<h2 id="more">more</h2>
-<blockquote>
+nl -b a +文件名 就是和cat -n一模一样</code></pre>
+<h2 id="more"><a href="#more" class="headerlink" title="more"></a>more</h2><blockquote>
 <p>more +文件名   可以一屏幕一屏幕的显示</p>
 <p>按 ==空格== 是 更新一屏幕</p>
 <p>按 ==回车==  会显示下一行</p>
@@ -416,8 +409,7 @@ nl -b a +文件名 就是和cat -n一模一样
 <p>按 q 或者 CTRL +c 退出</p>
 <p>支持查找关键字 我觉得不好用</p>
 </blockquote>
-<h2 id="less">less</h2>
-<blockquote>
+<h2 id="less"><a href="#less" class="headerlink" title="less"></a>less</h2><blockquote>
 <p>less +文件名</p>
 <p>按 ==空格== 是 更新一屏幕</p>
 <p>按 ==回车==  会显示下一行</p>
@@ -429,22 +421,17 @@ nl -b a +文件名 就是和cat -n一模一样
 <p>==小写的n 往下查找==</p>
 <p>==大写的N 往上查找==     都是直接按 不用到最下面输入</p>
 </blockquote>
-<h2 id="head">head</h2>
-<pre class=" language-language-linux"><code class="language-language-linux">查看前几行 默认是前10行的数据
+<h2 id="head"><a href="#head" class="headerlink" title="head"></a>head</h2><pre class=" language-linux"><code class="language-linux">查看前几行 默认是前10行的数据
 head  +文件名字
 head -n 3 +文件名字 查看的是文件的前3行
-head -3也是可以的 和 -n 3是一个用法
-</code></pre>
-<h2 id="tail">tail</h2>
-<pre class=" language-language-linux"><code class="language-language-linux">默认查看文件的尾5行
+head -3也是可以的 和 -n 3是一个用法</code></pre>
+<h2 id="tail"><a href="#tail" class="headerlink" title="tail"></a>tail</h2><pre class=" language-linux"><code class="language-linux">默认查看文件的尾5行
 tail +文件名
 tail -n 3 +文件名 查看文件的尾3行
 tail -3 +文件名 也是和上面一样的
 tail -f +文件名  当文件增长时 输出后续添加的文件 可以监测日志
-tailf  等同于上面的
-</code></pre>
-<h1>查看二进制文件</h1>
-<pre class=" language-language-linux"><code class="language-language-linux">    od指令
+tailf  等同于上面的</code></pre>
+<h1 id="查看二进制文件"><a href="#查看二进制文件" class="headerlink" title="查看二进制文件"></a>查看二进制文件</h1><pre class=" language-linux"><code class="language-linux">    od指令
 会读取所给予的文件的内容，并将其内容以八进制字码呈现出来。
 od [-abcdfhilovx][-A <字码基数>][-j <字符数目>][-N <字符数目>][-s <字符串字符数>][-t <输出格式>][-w <每列字符数>][--help][--version][文件...]
 -a 　此参数的效果和同时指定"-ta"参数相同。
@@ -467,48 +454,42 @@ od [-abcdfhilovx][-A <字码基数>][-j <字符数目>][-N <字符数目>][-s <�
 --help 　在线帮助。
 --version 　显示版本信息。
 
-od
-</code></pre>
-<h3 id=""></h3>
-<h1>创建文件</h1>
-<blockquote>
+od</code></pre>
+<p>###</p>
+<h1 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h1><blockquote>
 <p>==touch +文件名==   文件名不存在就是创建新文件</p>
 <p>​                          文件名存在的话就是把文件的创建时间或者修改时间改变为当前</p>
 <p>修改文件时间</p>
 <p>touch -t 时间戳 文件名</p>
 <p>时间戳 年月日时分秒</p>
 </blockquote>
-<h2 id="文件与目录的权限">文件与目录的权限</h2>
-<blockquote>
+<h2 id="文件与目录的权限"><a href="#文件与目录的权限" class="headerlink" title="文件与目录的权限"></a>文件与目录的权限</h2><blockquote>
 <p>默认的目录权限是 777  rwxrwxrwx</p>
 <p>默认的文件权限是 666  rw-rw-rw-</p>
 <p>==umask==  可以理解为权限过滤符</p>
 <p>umask  333 表示的是 我要过滤 -wx-wx-wx权限</p>
 <p>umask  -S 显示的是保留的权限 不是过滤的权限</p>
 </blockquote>
-<h2 id="文件隐藏属性（root受到了限制）">文件隐藏属性（root受到了限制）</h2>
-<blockquote>
+<h2 id="文件隐藏属性（root受到了限制）"><a href="#文件隐藏属性（root受到了限制）" class="headerlink" title="文件隐藏属性（root受到了限制）"></a>文件隐藏属性（root受到了限制）</h2><blockquote>
 <p>==chattr==    +a  目录名  我们只能添加不能删除</p>
 <p>​            +i   目录名  不能添加和删除</p>
 <p>​            -a   -i  就可以恢复</p>
 <p>==lsattr==  会显示出文件的特殊属性</p>
 </blockquote>
-<h2 id="文件特殊权限">文件特殊权限</h2>
-<blockquote>
+<h2 id="文件特殊权限"><a href="#文件特殊权限" class="headerlink" title="文件特殊权限"></a>文件特殊权限</h2><blockquote>
 <p>==chmod  u+s== 文件名</p>
 <p>chmod  u-s 文件名</p>
 <p>如果在所有者权限里面出现了s 权限 表明其他人在执行这个命令的时候 将具有所有者的权限</p>
 <p>如果是root 的文件里面有 所有者权限中有s 普通用户也有了root的权限  可以使用这个文件</p>
 <p>==chmod  g+s==  目录名  那么每次这个文件下创建的文件都是继承目录名的  组</p>
 <p>==chmod o+t== 目录名  表示在这个目录中创建的文件除了所有者和root之外 ，其他人即使有权限 也是不能删除的</p>
-<p>也可以这样来赋予特殊权限 4644 就代表的是给 user 位 加上一个 S  rwsr–r--</p>
+<p>也可以这样来赋予特殊权限 4644 就代表的是给 user 位 加上一个 S  rwsr–r–</p>
 <p>​                                           2644                        group 位加上一个S rw-r-sr–</p>
 <p>​                                          1644                          other位加上一个T rw-r–r-t</p>
 </blockquote>
-<h2 id="插曲">插曲</h2>
-<blockquote>
+<h2 id="插曲"><a href="#插曲" class="headerlink" title="插曲"></a>插曲</h2><blockquote>
 <p>esc下面的   ==飘键==   按两下 可以在输出语句中执行命令</p>
-<p>echo  &quot; xxxx <code>  hostname</code>xxxx &quot;</p>
+<p>echo  “ xxxx <code>  hostname</code>xxxx “</p>
 <p>或者把 飘 键  改为  美元符号和括号结合  $(xxxxx)$</p>
 </blockquote>
 
@@ -1025,22 +1006,18 @@ od
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            命令与文件的查询
-which
-
+                            命令与文件的查询which
 查看命令的路径
 ==which   +命令==
 
 whereis
-
 查找文件
 whereis  +目录
 whereis  -b   只查找二进制文件
 whereis -m 只查找说明文件
 
 locate
-
-用
+用于查找符
                         
                     </div>
                     <div class="publish-info">
@@ -1085,16 +1062,13 @@ locate
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            用户
-用户  /etc/passwd
+                            用户用户  /etc/passwd
 用户的密码 /etc/shadow
 组 /etc/group
 系统读取的是UID（就像是身份证号一样）
 用 id 用户名 查找uid gid
-
-chmod
-ls -l
-drwxr-x--x 1  roo
+chmodls -l
+drwxr-x--x 1  root  
                         
                     </div>
                     <div class="publish-info">

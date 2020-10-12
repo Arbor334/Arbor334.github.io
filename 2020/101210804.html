@@ -384,7 +384,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    103
+                    222
                 </div>
                 
 
@@ -401,49 +401,44 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="知道任何一个日期求出星期几">知道任何一个日期求出星期几</h2>
-<blockquote>
+                <h2 id="知道任何一个日期求出星期几"><a href="#知道任何一个日期求出星期几" class="headerlink" title="知道任何一个日期求出星期几"></a>知道任何一个日期求出星期几</h2><blockquote>
 <p>理论支撑  <a href="https://baike.baidu.com/item/%E8%94%A1%E5%8B%92%E5%85%AC%E5%BC%8F/10491767?fr=aladdin" target="_blank" rel="noopener">蔡勒公式</a></p>
 </blockquote>
-<pre class=" language-language-cpp"><code class="language-language-cpp">#include<iostream>
-using namespace std;
-int slove(int year,int cen,int month,int day){
-    int w=year+year/4+cen/4-2*cen+(int)(26*(month+1)/10)+day-1;
-    return w;
-}
-int main(){
-    int year,month,day,w;
-    cin>>year>>month>>day;
-   if(month>=3)
-     w=slove(year%100,year/100,month,day)%7; //第一种情况
-    else
-     w=slove((year-1)%100,(year-1)/100,month+12,day)%7; //第二种情况
-    if(w==0)
-    cout<<7<<endl;
-    else cout<<w<<endl;
-    return 0;
-}
-</code></pre>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
+<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">slove</span><span class="token punctuation">(</span><span class="token keyword">int</span> year<span class="token punctuation">,</span><span class="token keyword">int</span> cen<span class="token punctuation">,</span><span class="token keyword">int</span> month<span class="token punctuation">,</span><span class="token keyword">int</span> day<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">int</span> w<span class="token operator">=</span>year<span class="token operator">+</span>year<span class="token operator">/</span><span class="token number">4</span><span class="token operator">+</span>cen<span class="token operator">/</span><span class="token number">4</span><span class="token operator">-</span><span class="token number">2</span><span class="token operator">*</span>cen<span class="token operator">+</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">26</span><span class="token operator">*</span><span class="token punctuation">(</span>month<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token operator">+</span>day<span class="token number">-1</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> w<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">int</span> year<span class="token punctuation">,</span>month<span class="token punctuation">,</span>day<span class="token punctuation">,</span>w<span class="token punctuation">;</span>
+    cin<span class="token operator">>></span>year<span class="token operator">>></span>month<span class="token operator">>></span>day<span class="token punctuation">;</span>
+   <span class="token keyword">if</span><span class="token punctuation">(</span>month<span class="token operator">>=</span><span class="token number">3</span><span class="token punctuation">)</span>
+     w<span class="token operator">=</span><span class="token function">slove</span><span class="token punctuation">(</span>year<span class="token operator">%</span><span class="token number">100</span><span class="token punctuation">,</span>year<span class="token operator">/</span><span class="token number">100</span><span class="token punctuation">,</span>month<span class="token punctuation">,</span>day<span class="token punctuation">)</span><span class="token operator">%</span><span class="token number">7</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//第一种情况</span>
+    <span class="token keyword">else</span>
+     w<span class="token operator">=</span><span class="token function">slove</span><span class="token punctuation">(</span><span class="token punctuation">(</span>year<span class="token number">-1</span><span class="token punctuation">)</span><span class="token operator">%</span><span class="token number">100</span><span class="token punctuation">,</span><span class="token punctuation">(</span>year<span class="token number">-1</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">100</span><span class="token punctuation">,</span>month<span class="token operator">+</span><span class="token number">12</span><span class="token punctuation">,</span>day<span class="token punctuation">)</span><span class="token operator">%</span><span class="token number">7</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//第二种情况</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>w<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span>
+    cout<span class="token operator">&lt;&lt;</span><span class="token number">7</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token keyword">else</span> cout<span class="token operator">&lt;&lt;</span>w<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <ul>
-<li>
-<p>解释每个元素的含义</p>
+<li><p>解释每个元素的含义</p>
 <ul>
-<li>
-<p>year 就是输入的年数，在使用的时候只需要后两位</p>
-</li>
-<li>
-<p>cen  century就是世纪的意思，在使用的时候就是year的高两位</p>
-</li>
-<li>
-<p>month 就是月份  在蔡勒公式中 只有[3-14]月 也就是把1月、2月当做上一年的13月、14月</p>
-</li>
-<li>
-<p>day 就是天数</p>
-</li>
-<li>
-<p>w  就是星期的意思</p>
-</li>
+<li>year 就是输入的年数，在使用的时候只需要后两位</li>
 </ul>
+</li>
+<li><p>cen  century就是世纪的意思，在使用的时候就是year的高两位</p>
+<ul>
+<li>month 就是月份  在蔡勒公式中 只有[3-14]月 也就是把1月、2月当做上一年的13月、14月</li>
+</ul>
+</li>
+<li><p>day 就是天数</p>
+<ul>
+<li>w  就是星期的意思</li>
+</ul>
+</li>
+<li><p>这就完了</p>
 </li>
 </ul>
 
@@ -962,13 +957,12 @@ int main(){
                     <div class="summary block-with-text">
                         
                             知道任何一个日期求出星期几
-
 理论支撑  蔡勒公式
 
-#include
+#include&lt;iostream>
 using namespace std;
 int slove(int year,int cen,int month,int day){
-    int w=year+y
+    
                         
                     </div>
                     <div class="publish-info">
@@ -1018,14 +1012,13 @@ int slove(int year,int cen,int month,int day){
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            安装Tomcat
-【1】、进入官网下载 tomcat解压版
+                            安装Tomcat【1】、进入官网下载 tomcat解压版
 
 【2】、将文件进行解压 找到bin目录下的 startup.bat文件  双击打开
 
 
 出现了 最后的毫秒数以后 ，tomcat就可以在本地测试了
-注意：测试的时候 startu
+注意：测试的时候 startup
                         
                     </div>
                     <div class="publish-info">

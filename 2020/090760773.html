@@ -392,29 +392,24 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>命令与文件的查询</h1>
-<h2 id="which">which</h2>
-<blockquote>
+                <h1 id="命令与文件的查询"><a href="#命令与文件的查询" class="headerlink" title="命令与文件的查询"></a>命令与文件的查询</h1><h2 id="which"><a href="#which" class="headerlink" title="which"></a>which</h2><blockquote>
 <p>查看命令的路径</p>
 <p>==which   +命令==</p>
 </blockquote>
-<h2 id="whereis">whereis</h2>
-<blockquote>
+<h2 id="whereis"><a href="#whereis" class="headerlink" title="whereis"></a>whereis</h2><blockquote>
 <p>查找文件</p>
 <p>whereis  +目录</p>
 <p>whereis  -b   只查找二进制文件</p>
 <p>whereis -m 只查找说明文件</p>
 </blockquote>
-<h2 id="locate">locate</h2>
-<blockquote>
+<h2 id="locate"><a href="#locate" class="headerlink" title="locate"></a>locate</h2><blockquote>
 <p>用于查找符合条件的文档或者目录</p>
 <p>使用locate的时候 他会去数据库（/var/lib/mlocate/mlocate.db）中查找而不是整个磁盘中</p>
 <p>所以当天创建的文件可能当天查不出来(数据库一天会自己更新)</p>
 <p>如果想今天就查找出来 我们可以用==updatedb 命令==</p>
 <p>locate -i 目录  忽略大小写  查找</p>
 </blockquote>
-<h2 id="find">find</h2>
-<blockquote>
+<h2 id="find"><a href="#find" class="headerlink" title="find"></a>find</h2><blockquote>
 <p>find  目录 -属性 值</p>
 <p>默认是 当前目录</p>
 <p>属性 可以是 名字  大小 用户 UID 权限</p>
@@ -953,13 +948,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            ctrl+a: 光标跳到行首。
-ctrl+b: 光标左移一个字母。
-ctrl+c: 杀死当前进程。
-ctrl+d: 删除光标后一个字符或exit、logout。
-ctrl+e: 光标移到行尾。
-ctrl+f：向后移一个字符。
-ctrl+h:
+                            ctrl+a: 光标跳到行首。ctrl+b: 光标左移一个字母。ctrl+c: 杀死当前进程。ctrl+d: 删除光标后一个字符或exit、logout。ctrl+e: 光标移到行尾。ctrl+f：向后移一个字符。ctrl+h: 删除光标前
                         
                     </div>
                     <div class="publish-info">
@@ -1008,15 +997,12 @@ ctrl+h:
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            查看文件内容（只能是文本文件）
-cat
-
+                            查看文件内容（只能是文本文件）cat
 cat +文件名  直接显示出文件中的所有内容
 适合查看小的文件  只能看到最后一屏内容
 cat -n  文件名  每一行都加上一个编号  从1开始 算空白行
 
-tac
-tac +文件名 从最后一行
+tactac +文件名 从最后一行开始显
                         
                     </div>
                     <div class="publish-info">
