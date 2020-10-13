@@ -384,7 +384,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    500
+                    498
                 </div>
                 
 
@@ -401,15 +401,12 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>用户</h1>
-<pre class=" language-language-linux"><code class="language-language-linux">用户  /etc/passwd
+                <h1 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h1><pre class=" language-linux"><code class="language-linux">用户  /etc/passwd
 用户的密码 /etc/shadow
 组 /etc/group
 系统读取的是UID（就像是身份证号一样）
-用 id 用户名 查找uid gid
-</code></pre>
-<h1>chmod</h1>
-<pre class=" language-language-linux"><code class="language-language-linux">ls -l
+用 id 用户名 查找uid gid</code></pre>
+<h1 id="chmod"><a href="#chmod" class="headerlink" title="chmod"></a>chmod</h1><pre class=" language-linux"><code class="language-linux">ls -l
 drwxr-x--x 1  root   root 2302
 10个字符 数字 所有者 所在组 数字  时间
 第一个字符表示 文件类型   "-"普通文件 "d"文件夹
@@ -446,24 +443,17 @@ drwxr-x--x 1  root   root 2302
   当我们改变文件夹的权限的时候，里面文件的权限不变
 
 可以用 chmod -R 755 文件夹名
-用递归的方式把文件夹，文件的权限都改变
-</code></pre>
-<h1>chown</h1>
-<pre class=" language-language-linux"><code class="language-language-linux">chown 改变文件所有者
+用递归的方式把文件夹，文件的权限都改变</code></pre>
+<h1 id="chown"><a href="#chown" class="headerlink" title="chown"></a>chown</h1><pre class=" language-linux"><code class="language-linux">chown 改变文件所有者
 chown tom yy
 改变文件所在组
 chown  tom:tom  yy
      所有者:所在组 文件名
-     : . 都是可以的
-</code></pre>
-<h1>chgrp</h1>
-<pre class=" language-language-linux"><code class="language-language-linux">改变文件所在组
-chgrp 组名  文件
-</code></pre>
-<h1>扩展名</h1>
-<pre class=" language-language-linux"><code class="language-language-linux">在linux中 文件的扩展名 不是很重要 我们可以通过
-file 文件名   来查看是什么类型的
-</code></pre>
+     : . 都是可以的</code></pre>
+<h1 id="chgrp"><a href="#chgrp" class="headerlink" title="chgrp"></a>chgrp</h1><pre class=" language-linux"><code class="language-linux">改变文件所在组
+chgrp 组名  文件</code></pre>
+<h1 id="扩展名"><a href="#扩展名" class="headerlink" title="扩展名"></a>扩展名</h1><pre class=" language-linux"><code class="language-linux">在linux中 文件的扩展名 不是很重要 我们可以通过
+file 文件名   来查看是什么类型的</code></pre>
 
             </div>
             <hr/>
@@ -978,15 +968,12 @@ file 文件名   来查看是什么类型的
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            查看文件内容（只能是文本文件）
-cat
-
+                            查看文件内容（只能是文本文件）cat
 cat +文件名  直接显示出文件中的所有内容
 适合查看小的文件  只能看到最后一屏内容
 cat -n  文件名  每一行都加上一个编号  从1开始 算空白行
 
-tac
-tac +文件名 从最后一行
+tactac +文件名 从最后一行开始显
                         
                     </div>
                     <div class="publish-info">
@@ -1032,16 +1019,14 @@ tac +文件名 从最后一行
                     <div class="summary block-with-text">
                         
                             基础
-
 linux 每个模式都有7个控制台
 
-ls
-ls  -l  查看 有时间 权限等
+lsls  -l  查看 有时间 权限等
     -1（数字1）一行一个显示文件
     -a all
     -s size 显示出大小
     -h human 以人类更容易看到的来显示
-
+  
                         
                     </div>
                     <div class="publish-info">
