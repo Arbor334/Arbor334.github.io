@@ -384,7 +384,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    876
+                    875
                 </div>
                 
 
@@ -401,12 +401,10 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>基础</h1>
-<blockquote>
+                <h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><blockquote>
 <p>linux 每个模式都有7个控制台</p>
 </blockquote>
-<h2 id="ls">ls</h2>
-<pre class=" language-language-linux"><code class="language-language-linux">ls  -l  查看 有时间 权限等
+<h2 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h2><pre class=" language-linux"><code class="language-linux">ls  -l  查看 有时间 权限等
     -1（数字1）一行一个显示文件
     -a all
     -s size 显示出大小
@@ -414,33 +412,26 @@
     -d 目录本身的信息
     -ld --time=atime  //查看文件访问时间
     -ld --time=ctime  //查看文件的创建时间
- ls -l -a -1  -> ls -la1
-</code></pre>
-<h2 id="clear">clear</h2>
-<blockquote>
+ ls -l -a -1  -> ls -la1</code></pre>
+<h2 id="clear"><a href="#clear" class="headerlink" title="clear"></a>clear</h2><blockquote>
 <p>清空屏幕   ctrl+L 是它的快捷键</p>
 </blockquote>
-<h2 id="cal">cal</h2>
-<blockquote>
+<h2 id="cal"><a href="#cal" class="headerlink" title="cal"></a>cal</h2><blockquote>
 <p>查看日历</p>
 </blockquote>
-<pre class=" language-language-linux"><code class="language-language-linux"> cal  月 年   eg： cal 6 2020 会显示 2020年6月的日历
- cal  年      eg：cal 2020 会显示2020全年的日历
-</code></pre>
-<h2 id="sync">sync</h2>
-<blockquote>
+<pre class=" language-linux"><code class="language-linux"> cal  月 年   eg： cal 6 2020 会显示 2020年6月的日历
+ cal  年      eg：cal 2020 会显示2020全年的日历</code></pre>
+<h2 id="sync"><a href="#sync" class="headerlink" title="sync"></a>sync</h2><blockquote>
 <p>将数据写到磁盘中</p>
 <p>因为有时候数据只写在了内存或者缓冲中，要用sync才会写入到磁盘</p>
 <p>这就像是用u盘传东西 没有确认退出 有时候会出现 没传上东西的情况</p>
 </blockquote>
-<h2 id="关机">关机</h2>
-<blockquote>
+<h2 id="关机"><a href="#关机" class="headerlink" title="关机"></a>关机</h2><blockquote>
 <p>（1）shutdown</p>
 <p>(2) poweroff</p>
 <p>（3）init 0</p>
 </blockquote>
-<h2 id="切换运行等级">切换运行等级</h2>
-<blockquote>
+<h2 id="切换运行等级"><a href="#切换运行等级" class="headerlink" title="切换运行等级"></a>切换运行等级</h2><blockquote>
 <p>可以查看  ls /etc/rc.d/</p>
 <p>ls /etc/rc.d/rc.2.d  里面的K开头的都是不运行的  S开头的都是运行的</p>
 <p>init 0    关机</p>
@@ -456,21 +447,17 @@
 <p>N 5 就表示一直用的图形用户界面</p>
 <p>3 5就表示再用图形用户界面以前 用的是纯文本的界面</p>
 </blockquote>
-<h2 id="重启">重启</h2>
-<blockquote>
+<h2 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h2><blockquote>
 <p>（1）reboot     加上-f 是立即重启</p>
 <p>（2）init 6</p>
 </blockquote>
-<h2 id="bc">bc</h2>
-<blockquote>
+<h2 id="bc"><a href="#bc" class="headerlink" title="bc"></a>bc</h2><blockquote>
 <p>计算器   scale=4 计算后保留小数点后4位  输入quit 退出</p>
 </blockquote>
-<h2 id="Tab按键">Tab按键</h2>
-<blockquote>
+<h2 id="Tab按键"><a href="#Tab按键" class="headerlink" title="Tab按键"></a>Tab按键</h2><blockquote>
 <p>Tab 按键会补全命令 按两次后就会显示出 ==以输入的字符==开头的命令 或者文件名</p>
 </blockquote>
-<h2 id="history">history</h2>
-<blockquote>
+<h2 id="history"><a href="#history" class="headerlink" title="history"></a>history</h2><blockquote>
 <p>历史中的命令</p>
 <p>只会存储1000个   是变量（后面就会看到了）HISTFILESIZE 决定的</p>
 <p>echo $HISTFILESIZE 会显示1000</p>
@@ -479,9 +466,8 @@
 <p>eg：  #:! 115 就会执行history中的第115条命令</p>
 <p>历史存不下了 就从头开始删 也就是 第一个命令删除 第二个为第一个</p>
 </blockquote>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://cdn.jsdelivr.net/gh/Arbor334/img/linux/history.jpg" alt=""></p>
-<h2 id="一些快捷键">一些快捷键</h2>
-<blockquote>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://cdn.jsdelivr.net/gh/Arbor334/img/linux/history.jpg"></p>
+<h2 id="一些快捷键"><a href="#一些快捷键" class="headerlink" title="一些快捷键"></a>一些快捷键</h2><blockquote>
 <p>ctrl +a 到命令行开头</p>
 <p>ctrl +E 到命令行结尾</p>
 <p>ctrl+ 方向键左键 一个单词一个单词的往头走</p>
@@ -490,17 +476,14 @@
 <p>ctrl+K 光标后面的所有字符都删除  一直到结尾</p>
 <p>鼠标左键选中要复制的东西  然后按一下ESC键 在点一下鼠标的滚轮 就复制上了</p>
 </blockquote>
-<h2 id="帮助类的">帮助类的</h2>
-<blockquote>
+<h2 id="帮助类的"><a href="#帮助类的" class="headerlink" title="帮助类的"></a>帮助类的</h2><blockquote>
 <p>==/usr/share/doc/==  这个文件下都是帮助文件的程序</p>
 </blockquote>
-<h3 id="help">help</h3>
-<blockquote>
-<p>==命令 --help==   会显示用法  ls [选项]…[文件]…  [ ]中的都是可选的</p>
-<p>eg;ls --help   注意是两个“-”</p>
+<h3 id="help"><a href="#help" class="headerlink" title="help"></a>help</h3><blockquote>
+<p>==命令 –help==   会显示用法  ls [选项]..[文件]..  [ ]中的都是可选的</p>
+<p>eg;ls –help   注意是两个“-”</p>
 </blockquote>
-<h3 id="man（很牛掰的）">man（很牛掰的）</h3>
-<blockquote>
+<h3 id="man（很牛掰的）"><a href="#man（很牛掰的）" class="headerlink" title="man（很牛掰的）"></a>man（很牛掰的）</h3><blockquote>
 <p>==格式：man  命令==</p>
 <p>eg： man ls</p>
 <p>/^n 就会找到以 n为开头的单词</p>
@@ -508,19 +491,15 @@
 <p>==man -k 命令==  就会显示出来包含这个==命令字符==的命令或者解释中有这个命令字符的命令</p>
 <p>eg; man -k ls</p>
 </blockquote>
-<h3 id="whatis">whatis</h3>
-<blockquote>
+<h3 id="whatis"><a href="#whatis" class="headerlink" title="whatis"></a>whatis</h3><blockquote>
 <p>格式 ：whatis 命令</p>
 <p>告诉你有什么用 但是不告诉你怎么用</p>
 </blockquote>
-<h2 id="文本编辑器">文本编辑器</h2>
-<h3 id="nano">nano</h3>
-<blockquote>
+<h2 id="文本编辑器"><a href="#文本编辑器" class="headerlink" title="文本编辑器"></a>文本编辑器</h2><h3 id="nano"><a href="#nano" class="headerlink" title="nano"></a>nano</h3><blockquote>
 <p>格式 : nano  文件名</p>
 <p>ctrl + 下面的字母 进行操作</p>
 </blockquote>
-<h3 id="gedit">gedit</h3>
-<blockquote>
+<h3 id="gedit"><a href="#gedit" class="headerlink" title="gedit"></a>gedit</h3><blockquote>
 <p>很像是windows中的记事本</p>
 </blockquote>
 
@@ -1037,16 +1016,13 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            用户
-用户  /etc/passwd
+                            用户用户  /etc/passwd
 用户的密码 /etc/shadow
 组 /etc/group
 系统读取的是UID（就像是身份证号一样）
 用 id 用户名 查找uid gid
-
-chmod
-ls -l
-drwxr-x--x 1  roo
+chmodls -l
+drwxr-x--x 1  root  
                         
                     </div>
                     <div class="publish-info">
@@ -1095,22 +1071,8 @@ drwxr-x--x 1  roo
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            一、基本语法
-（1）文档类型及注释
-
-     
-       
-         
-      
-             
-           
-            
- 
-
-（2）标题和字符集
-
-  
-   标题和字符集 （打开网
+                            一、基本语法（1）文档类型及注释&lt;！DOCTYPE html>&lt;!-- ！DOCTYPE 标识当前的html类型是html5，要写在html文档的第一行-->
+  &lt;html>   &lt;!-- 所有的内容都写到html
                         
                     </div>
                     <div class="publish-info">
