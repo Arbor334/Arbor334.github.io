@@ -384,7 +384,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    604
+                    123
                 </div>
                 
 
@@ -401,92 +401,97 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="类似的翻硬币问题"><a href="#类似的翻硬币问题" class="headerlink" title="类似的翻硬币问题"></a>类似的翻硬币问题</h2><h3 id="翻硬币"><a href="#翻硬币" class="headerlink" title="翻硬币"></a>翻硬币</h3><p><a href="https://www.acwing.com/problem/content/description/1210/" target="_blank" rel="noopener">题目链接</a></p>
+                <h2 id="类似的翻硬币问题">类似的翻硬币问题</h2>
+<h3 id="翻硬币">翻硬币</h3>
+<p><a href="https://www.acwing.com/problem/content/description/1210/" target="_blank" rel="noopener">题目链接</a></p>
 <blockquote>
 <p>如何思考？</p>
 <p>通常情况下，都是按照顺序，从前往后依次比较。</p>
 <p>当发现在第i个位置，初始字符和最后的字符不同的时候，我们就让初始的第i个位置的硬币和第i+1个位置的硬币翻转。保证翻过的硬币和目标状态相同。</p>
 </blockquote>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;string></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-string a<span class="token punctuation">,</span>b<span class="token punctuation">;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    cin<span class="token operator">>></span>a<span class="token operator">>></span>b<span class="token punctuation">;</span>
-    <span class="token keyword">int</span> ans<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>a<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">==</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token keyword">continue</span><span class="token punctuation">;</span>
-        <span class="token keyword">else</span><span class="token punctuation">{</span>
-            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span>i<span class="token punctuation">;</span>j<span class="token operator">&lt;=</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">==</span><span class="token string">'o'</span><span class="token punctuation">)</span> a<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">'*'</span><span class="token punctuation">;</span>
-            <span class="token keyword">else</span> a<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">'o'</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        ans<span class="token operator">++</span><span class="token punctuation">;</span>
+<pre class=" language-language-cpp"><code class="language-language-cpp">#include<iostream>
+#include<string>
+using namespace std;
+string a,b;
+int main(){
+    cin>>a>>b;
+    int ans=0;
+    for(int i=0;i<a.length();i++){
+        if(b[i]==a[i])continue;
+        else{
+            for(int j=i;j<=i+1;j++)
+            if(a[j]=='o') a[j]='*';
+            else a[j]='o';
+        }
+        ans++;
 
-    <span class="token punctuation">}</span>
-    cout<span class="token operator">&lt;&lt;</span>ans<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<h3 id="费解的开关"><a href="#费解的开关" class="headerlink" title="费解的开关"></a>费解的开关</h3><p><a href="https://www.acwing.com/problem/content/description/97/" target="_blank" rel="noopener">题目链接</a></p>
+    }
+    cout<<ans<<endl;
+}
+</code></pre>
+<h3 id="费解的开关">费解的开关</h3>
+<p><a href="https://www.acwing.com/problem/content/description/97/" target="_blank" rel="noopener">题目链接</a></p>
 <blockquote>
 <p>还是上面的思想，先把第一行固定好，剩下的没有固定好的在变化。</p>
 </blockquote>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;iostream></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;cstring></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-<span class="token keyword">int</span> dx<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">,</span>dy<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token keyword">char</span> f<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token keyword">void</span> <span class="token function">turn</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span><span class="token keyword">int</span> y<span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//将周围的灯改变</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">5</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">int</span> nx<span class="token operator">=</span>x<span class="token operator">+</span>dx<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span>ny<span class="token operator">=</span>y<span class="token operator">+</span>dy<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>nx<span class="token operator">>=</span><span class="token number">0</span><span class="token operator">&amp;&amp;</span>nx<span class="token operator">&lt;</span><span class="token number">5</span><span class="token operator">&amp;&amp;</span>ny<span class="token operator">>=</span><span class="token number">0</span><span class="token operator">&amp;&amp;</span>ny<span class="token operator">&lt;</span><span class="token number">5</span><span class="token punctuation">)</span>
-           f<span class="token punctuation">[</span>nx<span class="token punctuation">]</span><span class="token punctuation">[</span>ny<span class="token punctuation">]</span><span class="token operator">^</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">int</span> <span class="token function">work</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-   <span class="token keyword">int</span> ans<span class="token operator">=</span><span class="token number">1000000</span><span class="token punctuation">;</span>
-   <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> k<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>k<span class="token operator">&lt;=</span><span class="token number">1</span><span class="token operator">&lt;&lt;</span><span class="token number">5</span><span class="token punctuation">;</span>k<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//第一层一共是 2^5种情况 00000 ....  11111</span>
-       <span class="token keyword">int</span> cnt<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>            <span class="token comment" spellcheck="true">//记录每种情况的操作次数</span>
-       <span class="token keyword">char</span> backup<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//因为有2^5中情况，都会改变原数组，要备份一下</span>
-       <span class="token function">memcpy</span><span class="token punctuation">(</span>backup<span class="token punctuation">,</span>f<span class="token punctuation">,</span><span class="token keyword">sizeof</span> f<span class="token punctuation">)</span><span class="token punctuation">;</span>
-       <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">5</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 这个就是k的2^5中情况 来把第一行的灯搞定  ex： 10010 就是将第一行的第一个和第四个周围的灯翻转</span>
-           <span class="token keyword">if</span><span class="token punctuation">(</span>k<span class="token operator">>></span>i<span class="token operator">&amp;</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>  <span class="token comment" spellcheck="true">// 这就是是让他翻转</span>
-               cnt<span class="token operator">++</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//翻转的次数+1</span>
-               <span class="token function">turn</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 翻转操作</span>
-           <span class="token punctuation">}</span>
-       <span class="token punctuation">}</span>
-       <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">4</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">//对前四行进行扫描  找到还不是亮的点</span>
-         <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span><span class="token number">5</span><span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-             <span class="token keyword">if</span><span class="token punctuation">(</span>f<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">==</span><span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment" spellcheck="true">//如果不是亮灯就翻转一下</span>
-             cnt<span class="token operator">++</span><span class="token punctuation">;</span>
-             <span class="token function">turn</span><span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>j<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//因为上面的已经是固定好了的 改变的话就改变下面的行</span>
-             <span class="token punctuation">}</span>
-         <span class="token punctuation">}</span>
-         <span class="token keyword">bool</span> re<span class="token operator">=</span><span class="token boolean">true</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//设置变量判断最后一行是不是都亮</span>
-         <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">5</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-             <span class="token keyword">if</span><span class="token punctuation">(</span>f<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">==</span><span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-                 re<span class="token operator">=</span><span class="token boolean">false</span><span class="token punctuation">;</span>
-                 <span class="token keyword">break</span><span class="token punctuation">;</span>
-             <span class="token punctuation">}</span>
-         <span class="token punctuation">}</span>
-         <span class="token keyword">if</span><span class="token punctuation">(</span>re<span class="token punctuation">)</span> ans<span class="token operator">=</span><span class="token function">min</span><span class="token punctuation">(</span>ans<span class="token punctuation">,</span>cnt<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//取最小值</span>
-         <span class="token function">memcpy</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span>backup<span class="token punctuation">,</span><span class="token keyword">sizeof</span> backup<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//把f数组搞回来</span>
+<pre class=" language-language-cpp"><code class="language-language-cpp">#include<iostream>
+#include<stdio.h>
+#include<cstring>
+using namespace std;
+int dx[5]={0,0,-1,0,1},dy[5]={0,-1,0,1,0};
+char f[10][10];
+void turn(int x,int y){ //将周围的灯改变
+    for(int i=0;i<5;i++){
+        int nx=x+dx[i],ny=y+dy[i];
+        if(nx>=0&&nx<5&&ny>=0&&ny<5)
+           f[nx][ny]^=1;
+    }
+}
+int work(){
+   int ans=1000000;
+   for(int k=0;k<=1<<5;k++){ //第一层一共是 2^5种情况 00000 ....  11111
+       int cnt=0;            //记录每种情况的操作次数
+       char backup[10][10];  //因为有2^5中情况，都会改变原数组，要备份一下
+       memcpy(backup,f,sizeof f);
+       for(int i=0;i<5;i++){ // 这个就是k的2^5中情况 来把第一行的灯搞定  ex： 10010 就是将第一行的第一个和第四个周围的灯翻转
+           if(k>>i&1){  // 这就是是让他翻转
+               cnt++;   //翻转的次数+1
+               turn(0,i); // 翻转操作
+           }
+       }
+       for(int i=0;i<4;i++)  //对前四行进行扫描  找到还不是亮的点
+         for(int j=0;j<5;j++){
+             if(f[i][j]=='0'){ //如果不是亮灯就翻转一下
+             cnt++;
+             turn(i+1,j); //因为上面的已经是固定好了的 改变的话就改变下面的行
+             }
+         }
+         bool re=true;   //设置变量判断最后一行是不是都亮
+         for(int i=0;i<5;i++){
+             if(f[4][i]=='0'){
+                 re=false;
+                 break;
+             }
+         }
+         if(re) ans=min(ans,cnt); //取最小值
+         memcpy(f,backup,sizeof backup); //把f数组搞回来
 
-   <span class="token punctuation">}</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>ans<span class="token operator">></span><span class="token number">6</span><span class="token punctuation">)</span><span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token keyword">else</span> <span class="token keyword">return</span> ans<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-<span class="token keyword">int</span> n<span class="token punctuation">;</span>
-    cin<span class="token operator">>></span>n<span class="token punctuation">;</span>
-   <span class="token keyword">while</span><span class="token punctuation">(</span>n<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token function">memset</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token keyword">sizeof</span> f<span class="token punctuation">)</span><span class="token punctuation">;</span>
-       <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">5</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-           cin<span class="token operator">>></span>f<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-       <span class="token punctuation">}</span>
-       cout<span class="token operator">&lt;&lt;</span><span class="token function">work</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+   }
+    if(ans>6)return -1;
+    else return ans;
+}
+int main(){
+int n;
+    cin>>n;
+   while(n--){
+        memset(f,0,sizeof f);
+       for(int i=0;i<5;i++){
+           cin>>f[i];
+       }
+       cout<<work()<<endl;
+    }
+}
+</code></pre>
 
             </div>
             <hr/>
@@ -1002,13 +1007,15 @@ string a<span class="token punctuation">,</span>b<span class="token punctuation"
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            类似的翻硬币问题翻硬币题目链接
+                            类似的翻硬币问题
+翻硬币
+题目链接
 
 如何思考？
 通常情况下，都是按照顺序，从前往后依次比较。
 当发现在第i个位置，初始字符和最后的字符不同的时候，我们就让初始的第i个位置的硬币和第i+1个位置的硬币翻转。保证翻过的硬币和目标状态相同。
 
-#i
+
                         
                     </div>
                     <div class="publish-info">
@@ -1059,6 +1066,7 @@ string a<span class="token punctuation">,</span>b<span class="token punctuation"
                     <div class="summary block-with-text">
                         
                             双蛋问题
+
 用于解决  从第t层楼扔下n个鸡蛋的问题
 
 
@@ -1066,7 +1074,7 @@ string a<span class="token punctuation">,</span>b<span class="token punctuation"
 如果在第k层鸡蛋碎了，那么就计算 M(k,n-1);
 如果在第k层鸡蛋没碎，那么就计算M(t-k,n)
 
-我们要找的是最坏的情况
+我们要找的是最坏的情
                         
                     </div>
                     <div class="publish-info">
