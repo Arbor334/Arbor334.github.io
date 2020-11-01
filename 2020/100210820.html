@@ -384,7 +384,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    314
+                    316
                 </div>
                 
 
@@ -401,35 +401,43 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Ubuntu-20-4-安装vim"><a href="#Ubuntu-20-4-安装vim" class="headerlink" title="Ubuntu 20.4 安装vim"></a>Ubuntu 20.4 安装vim</h2><blockquote>
+                <h2 id="Ubuntu-20-4-安装vim">Ubuntu 20.4 安装vim</h2>
+<blockquote>
 <p>配置文件搞坏了，开不了机 重装ubuntu</p>
 </blockquote>
-<h2 id="第一个困难-网络连接"><a href="#第一个困难-网络连接" class="headerlink" title="第一个困难  网络连接"></a>第一个困难  网络连接</h2><blockquote>
+<h2 id="第一个困难-网络连接">第一个困难  网络连接</h2>
+<blockquote>
 <p>开始下载的时候  说什么也不行，我ping了一下百度</p>
 </blockquote>
-<pre class=" language-cpp"><code class="language-cpp">ping www<span class="token punctuation">.</span>baidu<span class="token punctuation">.</span>com</code></pre>
+<pre class=" language-language-cpp"><code class="language-language-cpp">ping www.baidu.com
+</code></pre>
 <blockquote>
 <p>发现 没有网，并且上边的小网络标识显示异常</p>
 <p>o，网络连接换一个</p>
 </blockquote>
-<h2 id="第二个困难-显示无法获得锁-var-lib-apt-lists-lock。"><a href="#第二个困难-显示无法获得锁-var-lib-apt-lists-lock。" class="headerlink" title="第二个困难  显示无法获得锁 /var/lib/apt/lists/lock。"></a>第二个困难  显示无法获得锁 /var/lib/apt/lists/lock。</h2><blockquote>
+<h2 id="第二个困难-显示无法获得锁-var-lib-apt-lists-lock。">第二个困难  显示无法获得锁 /var/lib/apt/lists/lock。</h2>
+<blockquote>
 <p>这个使用 ps -aux 显示中找到有 apt-get的进程</p>
 <p>然后  sudo kill 进程号</p>
 </blockquote>
-<h2 id="第三个困难-更改国内安装源"><a href="#第三个困难-更改国内安装源" class="headerlink" title="第三个困难 更改国内安装源"></a>第三个困难 更改国内安装源</h2><blockquote>
-<p>sudo <code>/``etc``/``apt``/``sources.``list</code><br>将所有的行号都注释掉  （前面加上”# “） 然后把下面的东西复制进去就行</p>
+<h2 id="第三个困难-更改国内安装源">第三个困难 更改国内安装源</h2>
+<blockquote>
+<p>sudo <code>/``etc``/``apt``/``sources.``list</code><br>
+将所有的行号都注释掉  （前面加上&quot;# &quot;） 然后把下面的东西复制进去就行</p>
 </blockquote>
-<pre class=" language-cpp"><code class="language-cpp">deb http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>mirrors<span class="token punctuation">.</span>ustc<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>ubuntu<span class="token operator">/</span> focal main restricted universe multiverse
-deb http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>mirrors<span class="token punctuation">.</span>ustc<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>ubuntu<span class="token operator">/</span> focal<span class="token operator">-</span>security main restricted universe multiverse
-deb http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>mirrors<span class="token punctuation">.</span>ustc<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>ubuntu<span class="token operator">/</span> focal<span class="token operator">-</span>updates main restricted universe multiverse
-deb http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>mirrors<span class="token punctuation">.</span>ustc<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>ubuntu<span class="token operator">/</span> focal<span class="token operator">-</span>proposed main restricted universe multiverse
-deb http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>mirrors<span class="token punctuation">.</span>ustc<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>ubuntu<span class="token operator">/</span> focal<span class="token operator">-</span>backports main restricted universe multiverse
-deb<span class="token operator">-</span>src http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>mirrors<span class="token punctuation">.</span>ustc<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>ubuntu<span class="token operator">/</span> focal main restricted universe multiverse
-deb<span class="token operator">-</span>src http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>mirrors<span class="token punctuation">.</span>ustc<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>ubuntu<span class="token operator">/</span> focal<span class="token operator">-</span>security main restricted universe multiverse
-deb<span class="token operator">-</span>src http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>mirrors<span class="token punctuation">.</span>ustc<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>ubuntu<span class="token operator">/</span> focal<span class="token operator">-</span>updates main restricted universe multiverse
-deb<span class="token operator">-</span>src http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>mirrors<span class="token punctuation">.</span>ustc<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>ubuntu<span class="token operator">/</span> focal<span class="token operator">-</span>proposed main restricted universe multiverse
-deb<span class="token operator">-</span>src http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>mirrors<span class="token punctuation">.</span>ustc<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>ubuntu<span class="token operator">/</span> focal<span class="token operator">-</span>backports main restricted universe multiverse</code></pre>
-<h2 id="成功"><a href="#成功" class="headerlink" title="成功"></a>成功</h2><blockquote>
+<pre class=" language-language-cpp"><code class="language-language-cpp">deb http://mirrors.ustc.edu.cn/ubuntu/ focal main restricted universe multiverse
+deb http://mirrors.ustc.edu.cn/ubuntu/ focal-security main restricted universe multiverse
+deb http://mirrors.ustc.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
+deb http://mirrors.ustc.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
+deb http://mirrors.ustc.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
+deb-src http://mirrors.ustc.edu.cn/ubuntu/ focal main restricted universe multiverse
+deb-src http://mirrors.ustc.edu.cn/ubuntu/ focal-security main restricted universe multiverse
+deb-src http://mirrors.ustc.edu.cn/ubuntu/ focal-updates main restricted universe multiverse
+deb-src http://mirrors.ustc.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse
+deb-src http://mirrors.ustc.edu.cn/ubuntu/ focal-backports main restricted universe multiverse
+</code></pre>
+<h2 id="成功">成功</h2>
+<blockquote>
 <p>sudo apt-get update</p>
 <p>完成之后</p>
 <p>sudo apt-get install vim</p>
@@ -948,13 +956,14 @@ deb<span class="token operator">-</span>src http<span class="token operator">:</
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            安装Tomcat【1】、进入官网下载 tomcat解压版
+                            安装Tomcat
+【1】、进入官网下载 tomcat解压版
 
 【2】、将文件进行解压 找到bin目录下的 startup.bat文件  双击打开
 
 
 出现了 最后的毫秒数以后 ，tomcat就可以在本地测试了
-注意：测试的时候 startup
+注意：测试的时候 startu
                         
                     </div>
                     <div class="publish-info">
@@ -1003,15 +1012,19 @@ deb<span class="token operator">-</span>src http<span class="token operator">:</
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            vim帮助手册
+                            vim
+帮助手册
 
 命令模式中：
 
-第一部分 命令模式下可用的功能按键说明：移动光表达的方法
+第一部分 命令模式下可用的功能按键说明：
+移动光表达的方法
+
 
 
 移动光标的方法
 -
+
 
 
 
@@ -1028,7 +1041,7 @@ k或者↑
 
 
 L或者右箭头
-向右移动
+
                         
                     </div>
                     <div class="publish-info">

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="cpp内存四区, Arbor1&#39;s CodeHome">
+    <meta name="keywords" content="cpp基础[1], Arbor1&#39;s CodeHome">
     <meta name="description" content="个人博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>cpp内存四区 | Arbor1&#39;s CodeHome</title>
+    <title>cpp基础[1] | Arbor1&#39;s CodeHome</title>
     <link rel="icon" type="image/jpeg" href="/medias/header.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -224,12 +224,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">cpp内存四区</h1>
+                    <h1 class="description center-align post-title">cpp基础[1]</h1>
                 </div>
             </div>
         </div>
@@ -362,8 +362,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/CPlusPuls/" class="post-category">
-                                CPlusPuls
+                            <a href="/categories/CPlusPlus/" class="post-category">
+                                CPlusPlus
                             </a>
                         
                     </div>
@@ -384,7 +384,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    413
+                    17
                 </div>
                 
 
@@ -401,95 +401,224 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="c-内存四区">c++内存四区</h2>
-<h3 id="内存分区模型">内存分区模型</h3>
-<blockquote>
-<p>代码区：存放函数的二进制代码，有操作系统进行管理</p>
-<p>全局区：存放全局变量和静态常量以及常量</p>
-<p>栈区：由编译器自动分配释放，存放函数的参数值，局部变量等</p>
-<p>堆区：有程序员分配和释放，若程序员不释放，程序结束时由操作系统回收</p>
-</blockquote>
-<h3 id="程序执行前">程序执行前</h3>
-<blockquote>
-<p>在程序编译后，生成了exe可执行文件，未执行该程序前分为两个区域。</p>
-<p>代码区和全局区</p>
-</blockquote>
-<h3 id="一、代码区">一、代码区</h3>
-<blockquote>
-<p>存放cpu执行的指令  (01代码)</p>
-<p>代码区是<code>共享</code>的，共享的目的是对于频繁被执行的程序，只需要在内存中有一份代码即可</p>
-<p>代码区是<code>只读</code>的，使其只读的原因是方式程序以外的修改它的指令</p>
-</blockquote>
-<h3 id="二、全局区">二、全局区</h3>
-<blockquote>
-<p><code>全局变量</code>和<code>静态常量（static）</code>存放在此</p>
-<p>全局区还包含了<code>常量区</code>，<code>字符串常量</code>和<code>其他常量</code>在存放在此。</p>
-<p>该区域的数据在程序结束够由`操作系统释放</p>
-</blockquote>
-<ul>
-<li>
-<p>在全局区中的数据</p>
-<ul>
-<li>
-<p>全局变量</p>
-</li>
-<li>
-<p>字符串常量</p>
-</li>
-<li>
-<p>const修饰的全局常量</p>
-</li>
-<li>
-<p>static表示的静态常量</p>
-</li>
-</ul>
-</li>
-<li>
-<p>不在全局区中的数据</p>
-<ul>
-<li>局部变量</li>
-<li>const修饰的局部常量</li>
-</ul>
-</li>
-</ul>
-<pre class=" language-language-cpp"><code class="language-language-cpp">#include<algorithm>
-#include<iostream>
+                <h2 id="c-基础【1】">c++ 基础【1】</h2>
+<h3 id="一、c-中的hello-world">一、c++中的hello world</h3>
+<pre class=" language-language-cpp"><code class="language-language-cpp">#include<iostream>
 using namespace std;
-int g_a = 10;//全局变量
-const int c_g_a = 10;//const修饰的全局常量
-int main() {
-	static int a = 10;//static 表示的静态常量
-	cout << "全局变量：" << (int)&g_a << endl;
-	cout << "const 修饰的全局常量的地址为：" << (int)&c_g_a << endl;
-	cout << "static 表示的静态常量"<<(int)&a << endl;
-	cout << "字符串常量的地址:" << (int)&"hello world" << endl;
+int main(){
+  cout<<"hello world"<<endl;
 }
 </code></pre>
-<h3 id="三、栈区">三、栈区</h3>
 <blockquote>
-<p>由编译器自动分配释放，存放函数的参数值，局部变量等</p>
-<p>注意事项，不要反悔局部变量的地址，栈区开辟的数据有编译器自动释放</p>
+<p>问题1：为啥要使用 using namespace std?</p>
+<p>因为 c++中的cout定义在 一个人叫做  std的 命名空间中，如果不加 namespace  std;</p>
+<p>可以改用 std::cout来代替加了 namespace std; 的  cout</p>
 </blockquote>
-<h3 id="四、堆区">四、堆区</h3>
+<h3 id="二、命名空间">二、命名空间</h3>
 <blockquote>
-<p>有程序员分配释放，若程序员不释放，程序结束时有操作系统回收</p>
-<p>在c++中主要利用new 在堆区开辟内存</p>
+<p>namespace</p>
+<p>具体使用:</p>
+</blockquote>
+<pre class=" language-language-cpp"><code class="language-language-cpp">#include<iostream>
+using namespace std;
+namespace  spaceA{
+    int a=10;
+   }
+namespace spaceB{
+   namespace spaceC{
+       struct teacher{
+          string name;
+       };
+   }
+
+}
+int main(){
+ spaceB::spaceC::teacher t1;//定义一个在spaceB中的spaceC中的 teacher结构体
+
+}
+</code></pre>
+<h3 id="三、c-对c的增强和bool">三、c++对c的增强和bool</h3>
+<pre class=" language-language-cpp"><code class="language-language-cpp">#include<iostream>
+using namespace std;
+int value;   //这个存在于c++的bss段中  ，bss段中的所有数据初值都为0
+int value=10; //这个是重新定义了一个value变量，这样写是会报错的，c++会检测是不是有重名的
+int main(){
+      cout<<value<<endl; //  这样编译不通过
+
+}
+</code></pre>
+<pre class=" language-language-cpp"><code class="language-language-cpp">#include<iostream>
+using namespace std;
+int main(){
+  bool flag=false;  //只能输出 0 1 两个值
+  cout<<flag<<endl; //输出0
+    flag=true;
+  cout<<flag<<endl;//输出1
+  flag=20；
+    cout<<flag<<endl;//输出1
+  flag=-20;
+  cout<<flag<<endl;//输出1   因为只要赋的值不是0  就会返回1
+
+}
+</code></pre>
+<h3 id="四、三目运算符">四、三目运算符</h3>
+<blockquote>
+<p>三目运算符在c++中可以被当作左值来处理了</p>
+<p>返回的类似于变量的引用 可以直接修改变量的值</p>
+</blockquote>
+<pre class=" language-language-cpp"><code class="language-language-cpp">#include<iostream>
+using namespace std;
+int main(){
+int a=10;
+int b=20;
+  ((a<b)?a:b)=40;
+  cout<<"a="<<a<<endl; //输出a=40
+}
+</code></pre>
+<h3 id="五、-const增强">五、 const增强</h3>
+<blockquote>
+<p>const int a和 int const a;</p>
+<p>在c语言中代表的都是不可修改的</p>
+<p>const int * c;  c指向的区域中的数不可修改，但是c指针指的位置是可以修改的</p>
+<p>int *const c;  c指向的区域中的数是可修改的，但是指向的位置是不可修改的</p>
+<p>cosnt int * const c;是c指向的区域中的数都不可修改，指向的位置也不可修改</p>
+</blockquote>
+<blockquote>
+<p>const int a=10;</p>
+<p>当我们创建了这样一个常量值的时候，实际上是在一个名为<code>符号表</code>的东西中创建了一个键值对，这样常量值就是不能修改的。</p>
+<p>int *p=(int*)&amp;a;</p>
+<p>*p=20;</p>
+<p>如果像这样一样，对一个常量取地址，编译器会临时开辟一个空间，让这个指针存放这个临时空间的地址。</p>
+<p>注: const 是编译器的工作，而 #define 是于处理的工作</p>
+</blockquote>
+<pre class=" language-language-cpp"><code class="language-language-cpp">#include<iostream>
+using namespace std;
+const int a=10;  //一定要初始化
+int main(){
+  int *p=(int*)&a;
+  *p=20;
+  cout<<a<<endl;// c++中的 const 变量一旦定义 用指针也不能修改
+  cout<<p<<endl;
+
+}
+
+</code></pre>
+<h3 id="六、枚举的增强">六、枚举的增强</h3>
+<blockquote>
+<p>c++枚举类型不能用 c语言的  像下标一样的东西</p>
+<p>只能用 enum 中的东西。</p>
+</blockquote>
+<pre class=" language-language-cpp"><code class="language-language-cpp">#include<iostream>
+using namespace std;
+enum season{
+     spring=0,
+      summer,
+     autumn,
+    winter
+};
+int main(){
+  enum season s=winter;
+  enum  season a=1;// 这样的在c++是不行的
+  cout<<s<<endl;  // 输出3
+
+
+}
+</code></pre>
+<h3 id="七、引用">七、引用</h3>
+<blockquote>
+<p>引用可以理解为就是一个变量的别名</p>
+<p>1、引用没有定义，是一种关系型声明。 不分配内存，而是与被引用的变量有相同的地址；</p>
+<p>2、申明必须初始化，一经声明，不可变更</p>
+<p>3、可对引用再次引用，多次引用的结果就是某一个便量有多个别名</p>
+<p>4、&amp;符号前没有 数据类型的时候，都是取地址</p>
+</blockquote>
+<pre class=" language-language-cpp"><code class="language-language-cpp">#include<iostream>
+using namespace std;
+void change(int &r){ // 引用  int &r=a; r 就是a 改变r就是改变a
+  r=90;
+}
+int main(){
+  int a=20;
+  int b=30;
+  int &re=a; //一定要初始化
+  re=50;
+  cout<<"a="<<a<<endl;// 输出50
+  re=b;
+  re=40;
+  cout<<"a="<<a<<endl; //输出40  因为re=b 并不是让这个引用re是b的别名，而是把b的值给了re
+                                                            //re始终是a的别名
+  cout<<"b="<<b<<endl;//输出30
+  change(a);
+  cout<<"a="<<a<<endl; /
+
+}
+</code></pre>
+<blockquote>
+<p>本质：</p>
+<p>1、引用所占的大小和指针是相等的。</p>
+<p>2、const int a=10;  const常量需要初始化   int &amp;re=a; 应用也需要初始化；</p>
+<p>3、综上两点，引用本质就是一个常指针。即  int *const p;</p>
+</blockquote>
+<pre class=" language-language-cpp"><code class="language-language-cpp">void modify(int &a){ //当我们将引用作为函数参数传递的时候，编译器会替我们将实参，取地址给引用
+
+  a=300;//对一个引用操作赋值的时候，编译器替我们隐藏*操作
+
+}
+
+</code></pre>
+<blockquote>
+<p>引用存放的位置是常量区</p>
+</blockquote>
+<h4 id="引用作函数的返回值">引用作函数的返回值</h4>
+<blockquote>
+<p>1、不要返回局部变量的引用</p>
+<p>2、函数的调用可以作为左值</p>
 </blockquote>
 <pre class=" language-language-cpp"><code class="language-language-cpp">#include<algorithm>
 #include<iostream>
 using namespace std;
-int* func() {
-     //利用new关键字 可已经数据开辟到堆区
-      // 指针 本职业是局部变量，放在栈上，指针保存的数据是放在堆区的
-  int* p = new int(10); //创建好以后，返回的是堆区的地址
-
-	return p;
+// 引用作为函数的返回值
+//1、不要返回局部变量的引用
+int & test(){
+   int a=10; //在内存四区的栈中
+  return a;
+}
+//2、函数的调用可以作为左值
+int & test2(){
+  static int a=10;   //在内存四区中的全局区，全局区上的数据在程序结束后系统释放
+  return a;
 
 }
 int main() {
-	int *p = func();
-	cout << *p << endl;
+	int &p=test();
+  cout<<p<<endl; //第一次可以打印出来  是因为编译器做了保留
+  cout<<p<<endl;//乱码
+  int &p2=test2();
+  cout<<p2<<endl;
+  cout<<p2<<endl;
+  test2()=1000;   //test2()返回的是a的引用  也就是a的别名  改变别名的值 就是改变a的值
+  cout<<p2<<endl;
 }
+
+</code></pre>
+<h4 id="常量的引用">常量的引用</h4>
+<blockquote>
+<p>使用场景：用来修饰形参，防止误操作。</p>
+</blockquote>
+<pre class=" language-language-cpp"><code class="language-language-cpp"> #include<iostream>
+using namespace std;
+void print(const int &val){  // val的值不能再变了
+cout<<"val="<<val<<endl;
+ }
+int main(){
+  //加上const 之后，编译器将代码修改，为  int temp=10; const int &ref=temp;
+  const int &ref=10; // 引用必须引一块合法的内存空间
+  // ref=20;  加上const 之后 ref变为只读 不可修改
+  int a=10;
+  print(a);
+
+}
+
 </code></pre>
 
             </div>
@@ -516,7 +645,7 @@ int main() {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://arbor1.github.io/2020/11017247.html">https://arbor1.github.io/2020/11017247.html</a>
+                    <a href="https://arbor1.github.io/2020/110127054.html">https://arbor1.github.io/2020/110127054.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -989,9 +1118,65 @@ int main() {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2020/110127054.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="/medias/featureimages/6.jpg" class="responsive-img" alt="cpp基础[1]">
+                        
+                        <span class="card-title">cpp基础[1]</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            c++ 基础【1】
+一、c++中的hello world
+#include
+using namespace std;
+int main(){
+  cout
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/CPlusPlus/" class="post-category">
+                                    CPlusPlus
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/cpp/">
+                        <span class="chip bg-color">cpp</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2020/110140155.html">
                     <div class="card-image">
@@ -1017,9 +1202,9 @@ c++ 中利用new操作符在堆区开辟数据
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1037,63 +1222,6 @@ c++ 中利用new操作符在堆区开辟数据
                     
                     <a href="/tags/cpp/">
                         <span class="chip bg-color">cpp</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/101363303.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="/medias/featureimages/1.jpg" class="responsive-img" alt="类似的翻硬币问题">
-                        
-                        <span class="card-title">类似的翻硬币问题</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            类似的翻硬币问题
-翻硬币
-题目链接
-
-如何思考？
-通常情况下，都是按照顺序，从前往后依次比较。
-当发现在第i个位置，初始字符和最后的字符不同的时候，我们就让初始的第i个位置的硬币和第i+1个位置的硬币翻转。保证翻过的硬币和目标状态相同。
-
-
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-13
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                    算法
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
