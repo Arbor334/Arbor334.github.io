@@ -410,7 +410,7 @@
 <p>每次都找距离最近的点</p>
 <p>只能处理边权为正数的问题</p>
 </blockquote>
-<pre class=" language-language-c"><code class="language-language-c">const int N=510,M=N*2;
+<pre class=" language-language-cpp"><code class="language-language-cpp">const int N=510,M=N*2;
 int a[M][M],d[M],n,m,x,y,z,start; //a 存邻接矩阵 d表示每个点到起点的距离
 bool v[M];
 void dijkstra(int start){
@@ -451,7 +451,7 @@ int main(){
 <p>我们这里使用的是<code>priority_queue</code>中的大根堆</p>
 <p>只能处理边权是正数的问题</p>
 </blockquote>
-<pre class=" language-language-c"><code class="language-language-c">const int N=150010,M=2*N;
+<pre class=" language-language-cpp"><code class="language-language-cpp">const int N=150010,M=2*N;
 priority_queue<pair<int,int> >q;
 int e[M],idx,ver[N],h[N],ne[M],n,m,d[M];
 bool v[M];
@@ -497,7 +497,7 @@ int main(){
 然后用以前的边更新这个边<br>
 需要用一个last数组存上次使用的点，需要<code>备份数组</code>。</p>
 </blockquote>
-<pre class=" language-language-c"><code class="language-language-c">const int N=100010;
+<pre class=" language-language-cpp"><code class="language-language-cpp">const int N=100010;
 struct node{
     int a,b,w;
 }e[N];
@@ -534,7 +534,7 @@ int main(){
 <p>是BF算法优化版本，可以处理存在<code>负边权</code>的最短路问题</p>
 <p>在网格图中，spfa算法效率较低，边权都为正买最好使用Dijkstra</p>
 </blockquote>
-<pre class=" language-language-c"><code class="language-language-c">const int N=100010,M=N*2;
+<pre class=" language-language-cpp"><code class="language-language-cpp">const int N=100010,M=N*2;
 int ne[M],e[N],var[M],h[N],n,m,idx,start;
 int x,y,z,d[M];
 bool v[M];
@@ -582,7 +582,7 @@ int main(){
 需要注意循环顺序不能变：第一层枚举中间点，第二层和第三层枚举起点和终点。</p>
 <p>由于这道题目的数据范围较大，点数最多有1000个，因此floyd算法会超时。</p>
 </blockquote>
-<pre class=" language-language-c"><code class="language-language-c">const int N=1010;
+<pre class=" language-language-cpp"><code class="language-language-cpp">const int N=1010;
 int n,m,t,x,y,z;
 int d[N][N];
 int main(){
